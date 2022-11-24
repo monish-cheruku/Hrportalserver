@@ -1,0 +1,39 @@
+from django.db import models
+
+from jobpost.models.jobpostmodel import JobPost
+from managestages.models import Stage
+
+
+
+class Candidate(models.Model):
+    CandidateId = models.AutoField(primary_key=True, db_column='Candidate_ID')
+    CandidateCode = models.CharField(max_length=20 ,  unique = True, null=False, db_column='Candidate_Code')
+    Jobpost = models.ForeignKey(JobPost, null =True, on_delete=models.CASCADE, db_column='Job_Post_ID')
+    HRUserName = models.CharField(max_length=20 ,  null=True, db_column='HR_User_Name')
+    CanFirstName = models.CharField(max_length=50 ,  null=True, db_column='Can_First_Name')
+    CanLastName = models.CharField(max_length=50  , null=True, db_column='Can_Last_Name')    
+    Stage = models.ForeignKey(Stage, null =True, on_delete=models.CASCADE, db_column='Stage_Id')
+    Qualification = models.CharField(max_length=30  , null =True,db_column='High_Qualification')
+    OverallExpYear = models.IntegerField(null=True, db_column='Overall_Exp_Year')
+    OverallExpMonth = models.IntegerField(null=True, db_column='Overall_Exp_Month')
+    ReleventExpYear = models.IntegerField(null=True, db_column='Relevent_Exp_Year')
+    ReleventExpMonth = models.IntegerField(null=True, db_column='Relevent_Exp_Month')
+    CurrentCTC = models.IntegerField(null=True, db_column='Current_CTC')
+    ExpectedCTC = models.IntegerField(null=True, db_column='Expected_CTC')
+    NegotiatedCTC = models.IntegerField(null=True, db_column='Negotiated_CTC')
+    ExpectedDOJ = models.DateField(db_column='Expected_DOJ')
+    CurrentOrganization = models.CharField(max_length=50  , null =True,db_column='Current_Org')
+    CurrentJobLocation = models.CharField(max_length=50  , null =True,db_column='Current_Job_Loc')
+    Skills = models.CharField(max_length=200  , null =True,db_column='Skills')
+    Email = models.CharField(max_length=100 ,  null=True, db_column='Email')
+    ConatctNo = models.CharField(max_length=20 ,  null=True, db_column='Contact_No')
+    Resume = models.FileField()
+    AvgApprovedCTC = models.IntegerField(null=True, db_column='Avg_Approved_CTC')
+    AvgBillRate = models.IntegerField(null=True, db_column='Avg_Bill_Rate')
+    CreatedBy = models.CharField(max_length=20  ,null =True, db_column='Created_By')
+    CreatedOn = models.DateTimeField(db_column='Created_On',  null =True, blank=True)
+    ModifiedBy = models.CharField(max_length=20,  null =True, db_column='Modified_By')
+    ModifiedOn = models.DateTimeField(db_column='Modified_On', null =True, blank=True)
+
+    class Meta:    
+        db_table = 'HW_Candidate_Details'
