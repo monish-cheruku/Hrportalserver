@@ -7,8 +7,8 @@ from candidate.serializers import CandidateDetailsGridSerializer
 
 class CandidateDetails(APIView):
 
-    def get(self, request, format=None): 
+    def post(self, request, format=None): 
 
-        candidates = Candidate.objects.filter(Jobpost_id=1)
+        candidates = Candidate.objects.filter(Jobpost_id=request.data["jobpostID"])
         CandidateDetailsGrid_serializer = CandidateDetailsGridSerializer(candidates, many=True)
         return Response(CandidateDetailsGrid_serializer.data)
