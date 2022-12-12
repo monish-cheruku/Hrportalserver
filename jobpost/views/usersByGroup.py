@@ -9,7 +9,7 @@ from jobpost.serializers import JobPostUserRolesModelSerializer
 
 class usersByGroup(APIView):
 
-    def get(self, request, format=None): 
+    def post(self, request, format=None): 
         # roleName = request.data['RoleName']
         jobPostUserRoles = JobPostUserRolesModel.objects.all()
         JobPostUserRoles_serializer = JobPostUserRolesModelSerializer(jobPostUserRoles, many=True)

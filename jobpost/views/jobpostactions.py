@@ -49,12 +49,12 @@ class JobPostAction(ModelViewSet):
                         response =   'Job post has been approved Successfully'
                     elif (approvalStatus == 'R'):
                         stage = Stage.objects.filter(StageName='Rejected').first()
-                        response =   'Job post hase been rejected'
+                        response =   'Job post has been rejected'
                     print(stage.StageId)
                     jobpost =  JobPost.objects.filter(JobPostId=jobPostId).update(
                         Stage =  stage   
                     )
-                    # print(jobpost)
+                    print(jobpost)
                     return Response(response, status=status.HTTP_200_OK)            
                 #     jobpost.Stage = stage                
                 #     JobPostDetailsPost_serializer = JobPostDetailsPostSerializer(jobpost)

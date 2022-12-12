@@ -6,7 +6,7 @@ from rest_framework import status
 from candidate.models.candidateapprovalmodel import CandidateApprovalModel
 from candidate.models.candidatemodel import Candidate  
 from datetime import datetime
-from candidate.serializers import CandidatePostSerializer
+from candidate.serializers import CandidatePostSerializer, CandidatePutSerializer
 from django.contrib.auth.models import User, Group
 from jobpost.models.jobpostapprovalmodel import JobPostApproval
 from jobpost.models.jobpostuserrolesmodel import JobPostUserRolesModel
@@ -29,7 +29,7 @@ class CandidateApi(APIView):
                         else:
                             return Response("Candidate profile Creation failed", status=status.HTTP_400_BAD_REQUEST)                     
                     
-                return Response(CandidatePost_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)    
+                return Response(CandidatePost_serializer.errors, status=status.HTTP_400_BAD_REQUEST)    
         except Exception as exp:
             # exp.with_traceback()
             return Response("Exception while profile creation "+str(exp), status=status.HTTP_400_BAD_REQUEST)
@@ -39,13 +39,18 @@ class CandidateApi(APIView):
         candidate =  Candidate.objects.get(CandidateId=request.data['CandidateId'])
         # jobpost.ModifiedBy = ""
         candidate.ModifiedOn = datetime.now()
-        CandidatePost_serializer = CandidatePostSerializer(candidate ,data=request.data)
+        if(type(request.data["Resume"]) is str):
+            print("old file name")
+            CandidatePost_serializer = CandidatePutSerializer(candidate ,data=request.data)
+        else:
+            print("new file ") 
+            CandidatePost_serializer = CandidatePostSerializer(candidate ,data=request.data)
         if CandidatePost_serializer.is_valid():
             candidate1 = CandidatePost_serializer.save()
             if candidate1 is not None:
                 self.insertorupdatecandidateapproval(candidate1, request.data)
                 return Response("Updated Successfully")
-        return Response(CandidatePost_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST) 
+        return Response(CandidatePost_serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
 
 
     def insertorupdatecandidateapproval(self, candidate1, data):

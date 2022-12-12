@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from datetime import timedelta
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -61,7 +62,8 @@ INSTALLED_APPS = [
     "login",
     'Scheduler',
     'drf_yasg',
-    'candidate'
+    'candidate',
+    'pdf'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -209,3 +211,6 @@ SIMPLE_JWT = {
     'BLACKLIST_AFTER_ROTATION': True
 }
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+ROOT_URL=os.path.join(BASE_DIR,'a')

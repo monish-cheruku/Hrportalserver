@@ -52,13 +52,13 @@ class  JobPostDetailsPostSerializer(serializers.ModelSerializer):
     # Stage_id = serializers.IntegerField()
     
 
-    Company_id = serializers.IntegerField()
-    BusinessUnit_id = serializers.IntegerField()
-    Serviceline_id = serializers.IntegerField()
-    Customer_id = serializers.IntegerField()
-    Location_id = serializers.IntegerField()
-    ExperianceLevel_id = serializers.IntegerField()
-    Industry_id = serializers.IntegerField()
+    Company = serializers.IntegerField()
+    BusinessUnit = serializers.IntegerField()
+    ServiceLine = serializers.IntegerField()
+    Customer = serializers.IntegerField()
+    Location = serializers.IntegerField()
+    ExperianceLevel = serializers.IntegerField()
+    Industry = serializers.IntegerField()
     BH_User_Name = serializers.CharField()
     HR_User_Name = serializers.CharField()
 
@@ -73,14 +73,14 @@ class  JobPostDetailsPostSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         stage_name = "BH Approval"
-        serviceline = ServiceLine.objects.filter(ServiceLineId=validated_data["Serviceline_id"]).first()
-        customer = Customer.objects.filter(CustomerId=validated_data["Customer_id"]).first()
+        serviceline = ServiceLine.objects.filter(ServiceLineId=validated_data["ServiceLine"]).first()
+        customer = Customer.objects.filter(CustomerId=validated_data["Customer"]).first()
         stage = Stage.objects.filter(StageName=stage_name).first()
-        industry = Industry.objects.filter(IndustryId=validated_data["Industry_id"]).first()
-        company = Company.objects.filter(CompanyId=validated_data["Company_id"]).first()
-        businessUnit = BusinessUnit.objects.filter(BusinessUnitId=validated_data["BusinessUnit_id"]).first()
-        location = Location.objects.filter(LocationId=validated_data["Location_id"]).first()
-        experience = Experience.objects.filter(ExperienceLevelId=validated_data["ExperianceLevel_id"]).first()
+        industry = Industry.objects.filter(IndustryId=validated_data["Industry"]).first()
+        company = Company.objects.filter(CompanyId=validated_data["Company"]).first()
+        businessUnit = BusinessUnit.objects.filter(BusinessUnitId=validated_data["BusinessUnit"]).first()
+        location = Location.objects.filter(LocationId=validated_data["Location"]).first()
+        experience = Experience.objects.filter(ExperienceLevelId=validated_data["ExperianceLevel"]).first()
         user = User.objects.get(username=validated_data["UserName"])
         max =  JobPost.objects.all().aggregate(Max('JobPostId'))
         count = JobPost.objects.count()
@@ -91,9 +91,10 @@ class  JobPostDetailsPostSerializer(serializers.ModelSerializer):
         # else:    
         #     maxvalue =  max['JobPostId__max']+1 
         maxvaluepad = str(count+1).zfill(5)
-        if serviceline and customer :
-            jobcode =  serviceline.Acronym+"-"+customer.Acronym+"-"+maxvaluepad
-
+        if businessUnit and customer :
+            jobcode =  businessUnit.Acronym+"-"+customer.Acronym+"-"+maxvaluepad
+        else:
+            jobcode= None
         CreatedOn = datetime.now()
         # ModifiedBy = None
         ModifiedOn = None
@@ -127,13 +128,51 @@ class  JobPostDetailsPostSerializer(serializers.ModelSerializer):
             Qualification = validated_data["Qualification"],
             OnBoardingDate = validated_data["OnBoardingDate"],
             POReference = validated_data["POReference"],
-            CreatedBy = validated_data["CreatedBy"],
+            CreatedBy = validated_data["UserName"],
             CreatedOn = CreatedOn,
-            ModifiedBy = validated_data["ModifiedBy"],
+            ModifiedBy = None,
             ModifiedOn = ModifiedOn
         )
         return jobpost
 
+    def update(self, instance, validated_data):
+        # stage_name = "BH Approval"
+        serviceline = ServiceLine.objects.filter(ServiceLineId=validated_data["ServiceLine"]).first()
+        customer = Customer.objects.filter(CustomerId=validated_data["Customer"]).first()
+        # stage = Stage.objects.filter(StageName=stage_name).first()
+        industry = Industry.objects.filter(IndustryId=validated_data["Industry"]).first()
+        company = Company.objects.filter(CompanyId=validated_data["Company"]).first()
+        businessUnit = BusinessUnit.objects.filter(BusinessUnitId=validated_data["BusinessUnit"]).first()
+        location = Location.objects.filter(LocationId=validated_data["Location"]).first()
+        experience = Experience.objects.filter(ExperienceLevelId=validated_data["ExperianceLevel"]).first()
+        user = User.objects.get(username=validated_data["UserName"])
+
+        substr = instance.JobCode.split("-")[2]
+        if businessUnit and customer :
+            jobcode =  businessUnit.Acronym+"-"+customer.Acronym+"-"+substr
+        else:
+            jobcode= None
+
+        instance.JobCode = jobcode
+        instance.JobTitle=validated_data.get('JobTitle', instance.JobTitle) 
+        instance.Serviceline = serviceline
+        instance.BusinessUnit = businessUnit
+        instance.Customer = customer
+        instance.Location = location
+        instance.EmploymentType =validated_data.get('EmploymentType', instance.EmploymentType)
+        instance.Duration =validated_data.get('Duration', instance.Duration)
+        instance.JobDesc =validated_data.get('JobDesc', instance.JobDesc)
+        instance.NoOfPositions =validated_data.get('NoOfPositions', instance.NoOfPositions)
+        instance.ExperianceLevel = experience
+        instance.Qualification = validated_data.get('Qualification', instance.Qualification) 
+        instance.OnBoardingDate =validated_data.get('OnBoardingDate', instance.OnBoardingDate)
+        instance.POReference = validated_data.get('POReference', instance.POReference)
+        instance.ModifiedBy=validated_data.get('ModifiedBy', instance.ModifiedBy)
+        instance.ModifiedOn =datetime.now()
+        instance.Industry = industry
+        instance.Company = company
+        instance.save()
+        return instance
     class Meta:
         model = JobPost
         fields = [
@@ -157,22 +196,24 @@ class  JobPostDetailsPostSerializer(serializers.ModelSerializer):
             # "Location",
             # "ExperianceLevel",
             #"Stage_id",
-            "Industry_id",
-            "Company_id",
-            "BusinessUnit_id", 
-            "Serviceline_id" ,
-            "Customer_id" ,
-            "Location_id" ,
-            "ExperianceLevel_id" ,     
-            "CreatedBy",
-            "ModifiedBy",
+            "Industry",
+            "Company",
+            "BusinessUnit", 
+            "ServiceLine" ,
+            "Customer" ,
+            "Location" ,
+            "ExperianceLevel" ,     
+            # "CreatedBy",
+            # "ModifiedBy",
             "BH_User_Name",
-            "HR_User_Name"
+            "HR_User_Name",
+            "ModifiedBy"
         ]
         required_fields = fields
 
 
 class  JobPostApprovalSerializer(serializers.ModelSerializer):
+    role_name = serializers.CharField(read_only=True, source="role.name")
 
 
     class Meta:
