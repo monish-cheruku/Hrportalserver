@@ -24,13 +24,14 @@ class JobPostApi(APIView):
         jobpost =  JobPost.objects.get(JobPostId=request.data['JobPostId'])
         # jobpost.ModifiedBy = ""
         jobpost.ModifiedOn = datetime.now()
+        jobpost.ModifiedBy = request.data['UserName']
         JobPostDetailsPost_serializer = JobPostDetailsPostSerializer(jobpost ,data=request.data)
         if JobPostDetailsPost_serializer.is_valid():
             jobpost1 = JobPostDetailsPost_serializer.save()
             if jobpost1 is not None:
                 self.insertorupdatejobpostapproval(jobpost1, request.data)
             return Response("Updated Successfully")
-        return Response(JobPostDetailsPost_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)        
+        return Response(JobPostDetailsPost_serializer.errors, status=status.HTTP_400_BAD_REQUEST)        
         
 
     # @transaction.atomic

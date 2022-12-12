@@ -39,7 +39,8 @@ class JobPostActionModel(models.Model):
     Customer = models.CharField(max_length=50, db_column='Customer_Name')
     Location = models.CharField(max_length=50, db_column='Location_Name')
     ExperianceLevel = models.CharField(max_length=50, db_column='Experience_Level')
-
+    AvgApprovedCTC=models.FloatField(db_column="Avg_Approved_CTC")
+    AvgBillRate=models.FloatField(db_column="Avg_Bill_Rate")
 
     class Meta:   
         managed = False 

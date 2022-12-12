@@ -2,10 +2,13 @@ from django.db import models
 
 from jobpost.models.jobpostmodel import JobPost
 from managestages.models import Stage
-
+import os
 
 
 class Candidate(models.Model):
+    def get_upload_path(instance, filename):
+        return os.path.join(
+        instance.Jobpost.JobCode,  instance.CandidateCode, filename) 
     CandidateId = models.AutoField(primary_key=True, db_column='Candidate_ID')
     CandidateCode = models.CharField(max_length=20 ,  unique = True, null=False, db_column='Candidate_Code')
     Jobpost = models.ForeignKey(JobPost, null =True, on_delete=models.CASCADE, db_column='Job_Post_ID')
@@ -26,8 +29,8 @@ class Candidate(models.Model):
     CurrentJobLocation = models.CharField(max_length=50  , null =True,db_column='Current_Job_Loc')
     Skills = models.CharField(max_length=200  , null =True,db_column='Skills')
     Email = models.CharField(max_length=100 ,  null=True, db_column='Email')
-    ConatctNo = models.CharField(max_length=20 ,  null=True, db_column='Contact_No')
-    Resume = models.FileField()
+    ContactNo = models.CharField(max_length=20 ,  null=True, db_column='Contact_No')
+    Resume = models.FileField(upload_to=get_upload_path)
     AvgApprovedCTC = models.IntegerField(null=True, db_column='Avg_Approved_CTC')
     AvgBillRate = models.IntegerField(null=True, db_column='Avg_Bill_Rate')
     CreatedBy = models.CharField(max_length=20  ,null =True, db_column='Created_By')
@@ -35,5 +38,6 @@ class Candidate(models.Model):
     ModifiedBy = models.CharField(max_length=20,  null =True, db_column='Modified_By')
     ModifiedOn = models.DateTimeField(db_column='Modified_On', null =True, blank=True)
 
+   
     class Meta:    
         db_table = 'HW_Candidate_Details'
