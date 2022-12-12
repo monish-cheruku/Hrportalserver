@@ -62,7 +62,7 @@ def PDF(request):
     Story.append(Spacer(1, 8))
     for part in Job_Desc:
         ptext = '%s' % part.strip()
-        Story.append(Paragraph(ptext, TEXT_STYLE, bulletText='•'))
+        Story.append(Paragraph(ptext, TEXT_STYLE))
         Story.append(Spacer(1, 12))
 
     Story.append(Spacer(1, 12))
