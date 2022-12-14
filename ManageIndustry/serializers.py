@@ -4,6 +4,7 @@ import json
 from pyexpat import model
 from rest_framework import serializers
 from .models import Industry
+from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
 
 class IndustrySerializer(serializers.ModelSerializer):
     class Meta:
@@ -14,5 +15,5 @@ class IndustrySerializer(serializers.ModelSerializer):
     def validate_IndustryName(self, value):
         print(value)
         if value is None:
-            raise serializers.ValidationError("Industry name should not be empty")
+            raise serializers.ValidationError(Messages1.IN_Empty)
         return value   

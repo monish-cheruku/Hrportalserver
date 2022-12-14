@@ -11,6 +11,7 @@ from rest_framework.response import Response
 from rest_framework import status  
 
 from login.serializers import LoginSerializer, UserSerializer
+from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
 
 # Create your views here.
 
@@ -26,7 +27,7 @@ class LoginApi(APIView):
             # l_as_list = list(l)   
             # print(l_as_list)
         else:
-            return Response("User not found", status=status.HTTP_403_FORBIDDEN)
+            return Response(Messages1.UNF, status=status.HTTP_403_FORBIDDEN)
 
             
 

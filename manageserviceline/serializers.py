@@ -4,6 +4,8 @@ import json
 from pyexpat import model
 from rest_framework import serializers
 from .models import ServiceLine
+from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
+
 
 class  ServiceLineSerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,7 +18,7 @@ class  ServiceLineSerializer(serializers.ModelSerializer):
         # entered_name = json.loads(value).get('en', None)
         print(value)
         if value is None:
-            raise serializers.ValidationError("ServiceLine name should not be empty")
+            raise serializers.ValidationError(Messages1.SL_name_Empty)
         #elif (value and Company.objects.filter(ServiceLineName=value).exists()):
           #  raise serializers.ValidationError("ServiceLine name already exists!")
         # You need to return the value in after validation.

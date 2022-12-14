@@ -5,7 +5,9 @@ from candidate.models.candidateapprovalmodel import CandidateApprovalModel
 from candidate.models.candidatemodel import Candidate
 from jobpost.models.jobpostmodel import JobPost
 from managestages.models import Stage
+from candidate.models.candidateactionmodel import CandidateActionModel
 import os
+from HRproj.util.Constants.HR_WorkFlow_Constants import Constants1
 
 class  CandidatePostSerializer(serializers.ModelSerializer):    
 
@@ -23,7 +25,7 @@ class  CandidatePostSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         print("sasas-"+str(validated_data))
-        stage_name = "Candidate Review"
+        stage_name = Constants1.Stage_CR
         jobp = JobPost.objects.filter(JobPostId=validated_data["Job_Post_ID"]).first()
         print("2323-"+str(jobp.JobCode))
         stage = Stage.objects.filter(StageName=stage_name).first()        
@@ -248,4 +250,11 @@ class  CandidateApprovalSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CandidateApprovalModel
+        fields = "__all__"
+        
+
+class  CandidateActionModelSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = CandidateActionModel
         fields = "__all__"

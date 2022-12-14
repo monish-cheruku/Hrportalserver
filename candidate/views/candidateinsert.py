@@ -11,6 +11,8 @@ from django.contrib.auth.models import User, Group
 from jobpost.models.jobpostapprovalmodel import JobPostApproval
 from jobpost.models.jobpostuserrolesmodel import JobPostUserRolesModel
 from managestages.models import Stage
+from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
+from HRproj.util.Constants.HR_WorkFlow_Constants import Constants1
 
 class CandidateApi(APIView):
 
@@ -25,14 +27,14 @@ class CandidateApi(APIView):
                         success = self.insertorupdatecandidateapproval(candidate1, request.data)
                         if success == True:
                     # return Response({"status": "success", "data": company_serializer.data}, status=status.HTTP_200_OK)  
-                            return Response("Candidate profile Created Successfully", status=status.HTTP_200_OK)
+                            return Response(Messages1.Can_Prf_Crtd_Scfl, status=status.HTTP_200_OK)
                         else:
-                            return Response("Candidate profile Creation failed", status=status.HTTP_400_BAD_REQUEST)                     
+                            return Response(Messages1.Can_Prf_Crtd_Fail, status=status.HTTP_400_BAD_REQUEST)                     
                     
                 return Response(CandidatePost_serializer.errors, status=status.HTTP_400_BAD_REQUEST)    
         except Exception as exp:
             # exp.with_traceback()
-            return Response("Exception while profile creation "+str(exp), status=status.HTTP_400_BAD_REQUEST)
+            return Response(Messages1.Err_Prf_Crtn+str(exp), status=status.HTTP_400_BAD_REQUEST)
         # return Response("Exception while creation Job Post", status=status.HTTP_400_BAD_REQUEST)
 
     def put(self, request, format=None):         
@@ -49,8 +51,8 @@ class CandidateApi(APIView):
             candidate1 = CandidatePost_serializer.save()
             if candidate1 is not None:
                 self.insertorupdatecandidateapproval(candidate1, request.data)
-                return Response("Updated Successfully")
-        return Response(CandidatePost_serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
+                return Response(Messages1.Upd_Scfl)
+        return Response(CandidatePost_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST) 
 
 
     def insertorupdatecandidateapproval(self, candidate1, data):
@@ -59,21 +61,21 @@ class CandidateApi(APIView):
             # Hiring Manager
             HMUserName =  candidate1.Jobpost.UserName
             # HR
-            HRstage = Stage.objects.filter(StageName="Profiles Pending").first()
-            HR1role = Group.objects.filter(name="HR").first()  
+            HRstage = Stage.objects.filter(StageName=Constants1.Stage_PP).first()
+            HR1role = Group.objects.filter(name=Constants1.Role_HR).first()  
             jobpostHRApprover = JobPostApproval.objects.filter(jobpost= candidate1.Jobpost, Stage =HRstage, role=HR1role).first()
             if jobpostHRApprover is not None:
                 HRUserName = jobpostHRApprover.approverName
             else:
                 HRUserName = ""      
             # Finannce Controller
-            FCUserObj =  JobPostUserRolesModel.objects.filter(RoleName = "Finance Controller").first()
+            FCUserObj =  JobPostUserRolesModel.objects.filter(RoleName = Constants1.Role_FC).first()
             if FCUserObj is not None:
                 FCUserName = FCUserObj.UserName
             else:
                 FCUserName = ""  
             # General Manager
-            GMUserObj =  JobPostUserRolesModel.objects.filter(RoleName = "General Manager").first()
+            GMUserObj =  JobPostUserRolesModel.objects.filter(RoleName = Constants1.Role_GM).first()
             if GMUserObj is not None:
                 GMUserName = GMUserObj.UserName
             else:
@@ -85,21 +87,21 @@ class CandidateApi(APIView):
             print("GMUserName Name --"+GMUserName)
 
             HMUser = User.objects.get(username=HMUserName)
-            HMCandReviewstage = Stage.objects.filter(StageName="Candidate Review").first()
-            HMCandInterviewstage = Stage.objects.filter(StageName="Candidate Interview").first()
-            HMrole = Group.objects.filter(name="Hiring Manager").first()
+            HMCandReviewstage = Stage.objects.filter(StageName=Constants1.Stage_CR).first()
+            HMCandInterviewstage = Stage.objects.filter(StageName=Constants1.Stage_CI).first()
+            HMrole = Group.objects.filter(name=Constants1.Role_HM).first()
 
             HRuser = User.objects.get(username=HRUserName)
-            HRInterviewstage = Stage.objects.filter(StageName="Shortlisted").first()
-            HRrole = Group.objects.filter(name="HR").first()
+            HRInterviewstage = Stage.objects.filter(StageName=Constants1.Stage_SL).first()
+            HRrole = Group.objects.filter(name=Constants1.Role_HR).first()
 
             GMuser = User.objects.get(username=GMUserName)
-            GMApprovalstage = Stage.objects.filter(StageName="GM Approval").first()
-            GMrole = Group.objects.filter(name="General Manager").first() 
+            GMApprovalstage = Stage.objects.filter(StageName=Constants1.Stage_GMA).first()
+            GMrole = Group.objects.filter(name=Constants1.Role_GM).first() 
 
             FCuser = User.objects.get(username=FCUserName)
-            FCApprovalstage = Stage.objects.filter(StageName="FC Approval").first()
-            FCrole = Group.objects.filter(name="Finance Controller").first()                          
+            FCApprovalstage = Stage.objects.filter(StageName=Constants1.Stage_FCA).first()
+            FCrole = Group.objects.filter(name=Constants1.Role_FC).first()                          
 
             if (HMUser is not None and HMCandReviewstage is not None and HMrole is not None):
                 candidatereviewHM = CandidateApprovalModel.objects.filter(Candidate= candidate1, Stage=HMCandReviewstage, role=HMrole).first()
@@ -249,5 +251,5 @@ class CandidateApi(APIView):
                     CreatedOn = datetime.now())                                          
         except Exception as exp:
             success = False
-            raise Exception ("Error while saving approvers data"+str(exp))
+            raise Exception (Messages1.Err_Save_app_data+str(exp))
         return success            

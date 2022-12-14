@@ -14,6 +14,8 @@ from managestages.models import Stage
 from django.db import transaction
 from rest_framework.decorators import action
 from rest_framework.viewsets import ModelViewSet
+from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
+from HRproj.util.Constants.HR_WorkFlow_Constants import Constants1
 
 # Create your views here.
 
@@ -44,12 +46,12 @@ class JobPostAction(ModelViewSet):
                 # if JobPostApproval_serializer.is_valid():
                 #     jobPostApprovalupdated = JobPostApproval_serializer.save()
                 if jobPostApproval is not None:
-                    if (approvalStatus == 'A'):
-                        stage = Stage.objects.filter(StageName='Profiles Pending').first()
-                        response =   'Job post has been approved Successfully'
-                    elif (approvalStatus == 'R'):
-                        stage = Stage.objects.filter(StageName='Rejected').first()
-                        response =   'Job post has been rejected'
+                    if (approvalStatus == Constants1.Approved):
+                        stage = Stage.objects.filter(StageName=Constants1.Stage_PP).first()
+                        response = Messages1.JP_app_scfl
+                    elif (approvalStatus == Constants1.Rejected):
+                        stage = Stage.objects.filter(StageName=Constants1.Stage_R).first()
+                        response = Messages1.JP_Rjctd
                     print(stage.StageId)
                     jobpost =  JobPost.objects.filter(JobPostId=jobPostId).update(
                         Stage =  stage   
@@ -64,4 +66,4 @@ class JobPostAction(ModelViewSet):
                 #     return Response("Exception while approve the job post details"+str(JobPostDetailsPost_serializer.errors), status=status.HTTP_400_BAD_REQUEST) 
                 # return Response(JobPostApproval_serializer.errors, status=status.HTTP_400_BAD_REQUEST)  
         except Exception as exp:
-            return Response("Exception while approve the job post details"+str(exp), status=status.HTTP_400_BAD_REQUEST)        
+            return Response(Messages1.Err_app_JP_dtls+str(exp), status=status.HTTP_400_BAD_REQUEST)        

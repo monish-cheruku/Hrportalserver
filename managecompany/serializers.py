@@ -4,6 +4,7 @@ import json
 from pyexpat import model
 from rest_framework import serializers
 from managecompany.models import Company
+from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
 
 class  CompanySerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,7 +17,7 @@ class  CompanySerializer(serializers.ModelSerializer):
         # entered_name = json.loads(value).get('en', None)
         print(value)
         if value is None:
-            raise serializers.ValidationError("Company name should not be empty")
+            raise serializers.ValidationError(Messages1.Com_name_empty)
         #elif (value and Company.objects.filter(CompanyName=value).exists()):
           #  raise serializers.ValidationError("Company name already exists!")
         # You need to return the value in after validation.

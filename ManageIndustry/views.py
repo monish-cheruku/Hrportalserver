@@ -8,6 +8,8 @@ from .models import Industry
 from .serializers import IndustrySerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
+from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
+
 
 class IndustryApi(APIView):
     # permission_classes = (IsAuthenticated,)
@@ -20,7 +22,7 @@ class IndustryApi(APIView):
         industry_serializer = IndustrySerializer(data=request.data)
         if industry_serializer.is_valid():
             industry_serializer.save()
-            return Response("Added Successfully")
+            return Response(Messages1.Add_Scfl)
         return Response(industry_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
     
     def put(self, request, format=None):
@@ -28,11 +30,11 @@ class IndustryApi(APIView):
         industry_serializer = IndustrySerializer(industries, data=request.data)
         if industry_serializer.is_valid():
             industry_serializer.save()
-            return Response("Updated Successfully")
+            return Response(Messages1.Upd_Scfl)
         return Response(industry_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
     
     def delete(self, request, pk, format=None):      
         designations =  Industry.objects.get(IndustryId=pk)    
         designations.delete()
-        return Response("Deleted Successfully")
+        return Response(Messages1.Del_Scfl)
        

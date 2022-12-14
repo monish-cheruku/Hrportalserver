@@ -4,6 +4,7 @@ import json
 from pyexpat import model
 from rest_framework import serializers
 from ManageAdUsers.models import AdUsers
+from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
 
 class AdUsersSerializer(serializers.ModelSerializer):
     class Meta:
@@ -13,23 +14,23 @@ class AdUsersSerializer(serializers.ModelSerializer):
     def validate_UserName(self, value):
         print(value)
         if value is None:
-            raise serializers.ValidationError("User name is mandatory")
+            raise serializers.ValidationError(Messages1.User_name_empty)
         return value 
     
     def validate_FirstName(self, value):
         print(value)
         if value is None:
-            raise serializers.ValidationError("First name should not be empty")
+            raise serializers.ValidationError(Messages1.FN_Empty)
         return value 
 
     def validate_LastName(self, value):
         print(value)
         if value is None:
-            raise serializers.ValidationError("Last name should not be empty")
+            raise serializers.ValidationError(Messages1.LN_Empty)
         return value 
 
     def validate_Email(self, value):
         print(value)
         if value is None:
-            raise serializers.ValidationError("Email is mandatory")
+            raise serializers.ValidationError(Messages1.Email_Empty)
         return value   
