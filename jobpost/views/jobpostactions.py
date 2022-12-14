@@ -23,7 +23,7 @@ class JobPostAction(ModelViewSet):
     @action(detail=True, methods=['post'])
     def jobpostactiondetails(self, request, format=None):     
         print(request.data)   
-        jobPostActionModel = JobPostActionModel.objects.filter(ApproverName=request.data["ApproverName"])
+        jobPostActionModel = JobPostActionModel.objects.filter(ApproverName=request.data["ApproverName"]).order_by("id").reverse()
         JobPostActionModel_serializer = JobPostActionModelSerializer(jobPostActionModel, many=True)
         return Response(JobPostActionModel_serializer.data)
         # return Response(JobPostActionModel_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST) 

@@ -31,8 +31,9 @@ class  CandidatePostSerializer(serializers.ModelSerializer):
         stage = Stage.objects.filter(StageName=stage_name).first()        
         count = Candidate.objects.filter(Jobpost = jobp).count()
         maxvaluepad = str(count+1).zfill(2)
-        if jobp.ServiceLine and jobp.Customer :
-            Cancode =  jobp.ServiceLine.Acronym+"-"+jobp.Customer.Acronym+"-CAND-"+maxvaluepad
+        # if jobp.ServiceLine and jobp.Customer :
+            # Cancode =  jobp.ServiceLine.Acronym+"-"+jobp.Customer.Acronym+"-"+jobp.JobPostId+"-"+maxvaluepad
+        Cancode = jobp.JobCode+"-"+maxvaluepad
         CreatedOn = datetime.now()
         ModifiedOn = None
         print("Cancode-"+str(Cancode))
