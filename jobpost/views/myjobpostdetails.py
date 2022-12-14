@@ -12,7 +12,7 @@ from rest_framework.response import Response
 class MyJobPostDetails(APIView):
 
     def post(self, request, format=None): 
-        Jobposts = JobPost.objects.filter(UserName=request.data["UserName"])
+        Jobposts = JobPost.objects.filter(UserName=request.data["UserName"]).order_by("JobPostId").reverse()
         jobpostdetailsgrid_serializer = JobPostDetailsGridSerializer(Jobposts, many=True)
         return Response(jobpostdetailsgrid_serializer.data)
 
