@@ -6,7 +6,7 @@ class Constants1():
     Stage_CR = 'Candidate Review'
     Stage_CI = 'Candidate Interview'
     Role_HM = 'Hiring Manager'
-    Stage_SL = 'Shortlisted'
+    STAGE_SL = 'Shortlisted'
     Stage_GMA = 'General Manager Approval'
     Stage_FCA = 'Finance Controller Approval'
     App_Status_N = 'Not Approved'
@@ -14,6 +14,6 @@ class Constants1():
     Stage_BHA = 'Business Head Approval'
     Role_BH = 'Business Head'
     Approved = 'A'
-    Rejected = 'R'
+    STAGE_RP = 'Review Pending'
     
     

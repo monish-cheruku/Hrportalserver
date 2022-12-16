@@ -6,7 +6,7 @@ class Messages1():
     Err_Save_app_data = 'Error while saving approvers data'
     Can_miss_fields = 'Candidate missing the following fields'
     JP_app_scfl = 'Job post has been approved Successfully'
-    JP_Rjctd = 'Job post hase been rejected'
+    JP_Rjctd = 'Job post has been rejected'
     Err_app_JP_dtls = 'Exception while approve the job post details'
     JP_Crtd_Scfl = 'Job Post Created Successfully'
     JP_Crtd_Fail = 'Job Post Createion Failed'
@@ -36,4 +36,7 @@ class Messages1():
     Err = 'Error'
     FNF = 'File not found'
     UNF = 'User not found'
+    CAN_SL = 'Candidate has been shortlisted'
+    CAN_RJCTD = 'Candidate has been rejected'
+    ERR_APP_CAN_DTLS = 'Exception while approving the candidate details'
 
