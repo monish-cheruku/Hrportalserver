@@ -63,7 +63,10 @@ INSTALLED_APPS = [
     'Scheduler',
     'drf_yasg',
     'candidate',
-    'pdf'
+    'pdf',
+    'Employementtype',
+    'Qualification',
+    'CandidateFeedback'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -115,7 +118,7 @@ DATABASES = {
         'PASSWORD': 'Belcan@123',
         'HOST': 'ENG127224\SQLEXPRESS',
         'PORT': '1433',
-        'OPTIONS': {"driver": "ODBC Driver 11 for SQL Server", 
+        'OPTIONS': {"driver": "ODBC Driver 17 for SQL Server", 
         },
         
     },

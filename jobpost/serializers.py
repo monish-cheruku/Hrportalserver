@@ -119,6 +119,9 @@ class  JobPostDetailsPostSerializer(serializers.ModelSerializer):
             ServiceLine = serviceline,
             Customer = customer,
             Location = location,
+            MinimumExperiance=validated_data["minimumexperiance"],
+            MaximumExperiance=validated_data["maximumexperiance"],
+            MaximumCTC=validated_data["maximumctc"],
             EmploymentType = validated_data["EmploymentType"],
             Duration = validated_data["Duration"],
             JobTitle =validated_data["JobTitle"],
@@ -169,6 +172,9 @@ class  JobPostDetailsPostSerializer(serializers.ModelSerializer):
         instance.POReference = validated_data.get('POReference', instance.POReference)
         instance.ModifiedBy=validated_data.get('ModifiedBy', instance.ModifiedBy)
         instance.ModifiedOn =datetime.now()
+        instance.MinimumExperiance=validated_data.get("MinimumExperiance",instance.MinimumExperiance)
+        instance.MaximumExperiance=validated_data.get("MaximumExperiance",instance.MaximumExperiance)
+        instance.MaximumCTC=validated_data.get("MaximumCTC",instance.MaximumCTC)
         instance.Industry = industry
         instance.Company = company
         instance.save()
@@ -202,6 +208,9 @@ class  JobPostDetailsPostSerializer(serializers.ModelSerializer):
             "ServiceLine" ,
             "Customer" ,
             "Location" ,
+            "MinimumExperiance",
+            "MaximumExperiance",
+            "MaximumCTC",
             "ExperianceLevel" ,     
             # "CreatedBy",
             # "ModifiedBy",

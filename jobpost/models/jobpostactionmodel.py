@@ -41,6 +41,9 @@ class JobPostActionModel(models.Model):
     experience_Level = models.CharField(max_length=50, db_column='Experience_Level')
     AvgApprovedCTC=models.FloatField(db_column="Avg_Approved_CTC")
     AvgBillRate=models.FloatField(db_column="Avg_Bill_Rate")
+    MaximumExperiance=models.FloatField(db_column="Maximum_Experiance")
+    MinimumExperiance=models.FloatField(db_column="Minimum_Experiance")
+    MaximumCTC=models.FloatField(db_column="Maximum_CTC")
 
     class Meta:   
         managed = False 

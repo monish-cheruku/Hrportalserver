@@ -64,7 +64,8 @@ class  CandidatePostSerializer(serializers.ModelSerializer):
             CreatedBy = validated_data["CreatedBy"],
             CreatedOn = CreatedOn,
             ModifiedBy = validated_data["ModifiedBy"],
-            ModifiedOn = ModifiedOn
+            ModifiedOn = ModifiedOn,
+            Comments = validated_data["Comments"],
         )
         return candidate
     
@@ -95,6 +96,7 @@ class  CandidatePostSerializer(serializers.ModelSerializer):
         instance.Skills = validated_data.get('Skills', instance.Skills) 
         instance.Email = validated_data.get('Email', instance.Email) 
         instance.ContactNo = validated_data.get('ContactNo', instance.ContactNo) 
+        instance.Comments = validated_data.get('Comments', instance.Comments) 
         # if(type(validated_data.get("Resume")) is str):
         #     print("old file name")
         # else:
@@ -145,6 +147,7 @@ class  CandidatePostSerializer(serializers.ModelSerializer):
             "Job_Post_ID",   
             "CreatedBy",
             "ModifiedBy",
+            "Comments"
         ]
         required_fields = fields
 
@@ -195,7 +198,7 @@ class  CandidatePutSerializer(serializers.ModelSerializer):
         instance.CreatedBy =validated_data.get('CreatedBy', instance.CreatedBy) 
         instance.CreatedOn = validated_data.get('CreatedOn', instance.CreatedOn) 
         instance.ModifiedOn = datetime.now() 
-      
+        instance.Comments=validated_data.get('Comments',instance.Comments)
        
         instance.save()
         return instance
@@ -224,6 +227,7 @@ class  CandidatePutSerializer(serializers.ModelSerializer):
             "Job_Post_ID",   
             "CreatedBy",
             "ModifiedBy",
+            "Comments"
         ]
         required_fields = fields
 

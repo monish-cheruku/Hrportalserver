@@ -37,7 +37,7 @@ class Candidate(models.Model):
     CreatedOn = models.DateTimeField(db_column='Created_On',  null =True, blank=True)
     ModifiedBy = models.CharField(max_length=20,  null =True, db_column='Modified_By')
     ModifiedOn = models.DateTimeField(db_column='Modified_On', null =True, blank=True)
-
+    Comments=models.CharField(max_length=500,db_column="Comments",null=True,blank=True)
    
     class Meta:    
         db_table = 'HW_Candidate_Details'
