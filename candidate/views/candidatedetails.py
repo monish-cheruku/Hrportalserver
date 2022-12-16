@@ -11,6 +11,7 @@ from django.http import HttpResponse, Http404
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.decorators import action
 import base64
+from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
 
 class CandidateDetails(ModelViewSet):
     @action(detail=True, methods=['post'])
@@ -19,6 +20,7 @@ class CandidateDetails(ModelViewSet):
         candidates = Candidate.objects.filter(Jobpost_id=request.data["jobpostID"])
         CandidateDetailsGrid_serializer = CandidateDetailsGridSerializer(candidates, many=True)
         return Response(CandidateDetailsGrid_serializer.data)
+   
     @action(detail=True, methods=['post'])
     def download(self,request):
         print(request.data["Resume"])
@@ -32,4 +34,4 @@ class CandidateDetails(ModelViewSet):
                 # response['Content-Disposition'] = 'inline; filename=' + os.path.basename(file_path)
                 # return response
                 return HttpResponse(response, content_type="text/html")
-        return Response("File not found", status=status.HTTP_404_NOT_FOUND)
+        return Response(Messages1.FNF, status=status.HTTP_404_NOT_FOUND)

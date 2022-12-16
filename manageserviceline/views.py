@@ -8,6 +8,7 @@ from .models import ServiceLine
 from .serializers import ServiceLineSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
+from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
 
 class ServiceLineApi(APIView):
     # permission_classes = (IsAuthenticated,)
@@ -22,7 +23,7 @@ class ServiceLineApi(APIView):
         if serviceline_serializer.is_valid():
             serviceline_serializer.save()
             # return Response({"status": "success", "data": serviceline_serializer.data}, status=status.HTTP_200_OK)  
-            return Response("Added Successfully")
+            return Response(Messages1.Add_Scfl)
         return Response(serviceline_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
         # else:
             # return Response({"status": "error", "data": serviceline_serializer.errors}, status=status.HTTP_400_BAD_REQUEST)  
@@ -33,13 +34,13 @@ class ServiceLineApi(APIView):
         serviceline_serializer = ServiceLineSerializer(servicelines, data=request.data)
         if serviceline_serializer.is_valid():
             serviceline_serializer.save()
-            return Response("Updated Successfully")
+            return Response(Messages1.Upd_Scfl)
         return Response(serviceline_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
        # return JsonResponse("Failed To update", safe=False)
     
     def delete(self, request, pk, format=None):      
         servicelines =  ServiceLine.objects.get(ServiceLineId=pk)    
         servicelines.delete()
-        return Response("Deleted Successfully")
+        return Response(Messages1.Del_Scfl)
        
 

@@ -15,7 +15,8 @@ from manageserviceline.models import ServiceLine
 from managestages.models import Stage
 from django.db.models import Max
 from django.contrib.auth.models import User
-
+from HRproj.util.Constants.HR_WorkFlow_Constants import Constants1
+from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
 
 class  JobPostDetailsGridSerializer(serializers.ModelSerializer):
     stage_name = serializers.CharField(read_only=True, source="Stage.StageDesc")
@@ -67,12 +68,12 @@ class  JobPostDetailsPostSerializer(serializers.ModelSerializer):
 
         if missing_fields:
             mf = ", ".join(missing_fields)
-            raise serializers.ValidationError(f"job post missing the following fields: {mf}")
+            raise serializers.ValidationError(Messages1.JP_miss_fields)
 
         return data
 
     def create(self, validated_data):
-        stage_name = "BH Approval"
+        stage_name = Constants1.Stage_BHA
         serviceline = ServiceLine.objects.filter(ServiceLineId=validated_data["ServiceLine"]).first()
         customer = Customer.objects.filter(CustomerId=validated_data["Customer"]).first()
         stage = Stage.objects.filter(StageName=stage_name).first()

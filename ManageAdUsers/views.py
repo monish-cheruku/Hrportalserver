@@ -6,6 +6,7 @@ from rest_framework import status
 from django.http.response import JsonResponse
 from ManageAdUsers.serializers import AdUsersSerializer
 from .models import AdUsers
+from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
 
 class UsersApi(APIView):
 
@@ -18,7 +19,7 @@ class UsersApi(APIView):
         user_serializer = AdUsersSerializer(data=request.data)
         if user_serializer.is_valid():
             user_serializer.save() 
-            return Response("Added Successfully")
+            return Response(Messages1.Add_Scfl)
         return Response(user_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
 
      def put(self, request, format=None):
@@ -26,5 +27,5 @@ class UsersApi(APIView):
         user_serializer = AdUsersSerializer(users, data=request.data)
         if user_serializer.is_valid():
             user_serializer.save()
-            return Response("Updated Successfully")
+            return Response(Messages1.Upd_Scfl)
         return Response(user_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)

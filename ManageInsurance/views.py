@@ -8,6 +8,7 @@ from .models import Insurance
 from .serializers import InsuranceSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
+from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
 
 class InsuranceApi(APIView):
     # permission_classes = (IsAuthenticated,)
@@ -22,7 +23,7 @@ class InsuranceApi(APIView):
         if insurance_serializer.is_valid():
             insurance_serializer.save()
             # return Response({"status": "success", "data": insurance_serializer.data}, status=status.HTTP_200_OK)  
-            return Response("Added Successfully")
+            return Response(Messages1.Add_Scfl)
         return Response(insurance_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
         # else:
             # return Response({"status": "error", "data": insurance_serializer.errors}, status=status.HTTP_400_BAD_REQUEST)  
@@ -33,11 +34,11 @@ class InsuranceApi(APIView):
         insurance_serializer = InsuranceSerializer(insurance, data=request.data)
         if insurance_serializer.is_valid():
             insurance_serializer.save()
-            return Response("Updated Successfully")
+            return Response(Messages1.Upd_Scfl)
         return Response(insurance_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
        # return JsonResponse("Failed To update", safe=False)
     
     def delete(self, request, pk, format=None):      
         insurance =  Insurance.objects.get(InsuranceAccidentLimitId=pk)    
         insurance.delete()
-        return Response("Deleted Successfully")
+        return Response(Messages1.Del_Scfl)

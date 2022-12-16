@@ -4,6 +4,7 @@ import json
 from pyexpat import model
 from rest_framework import serializers
 from .models import BusinessUnit
+from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
 
 class  BusinessUnitSerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,7 +17,7 @@ class  BusinessUnitSerializer(serializers.ModelSerializer):
         # entered_name = json.loads(value).get('en', None)
         print(value)
         if value is None:
-            raise serializers.ValidationError("BusinessUnit name should not be empty")
+            raise serializers.ValidationError(Messages1.BN_Empty)
         #elif (value and Company.objects.filter(BusinessUnit Name=value).exists()):
           #  raise serializers.ValidationError("BusinessUnit name already exists!")
         # You need to return the value in after validation.

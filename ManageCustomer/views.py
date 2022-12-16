@@ -8,6 +8,8 @@ from .models import Customer
 from .serializers import CustomerSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
+from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
+
 
 class CustomerApi(APIView):
     # permission_classes = (IsAuthenticated,)
@@ -22,7 +24,7 @@ class CustomerApi(APIView):
         if customer_serializer.is_valid():
             customer_serializer.save()
             # return Response({"status": "success", "data": customer_serializer.data}, status=status.HTTP_200_OK)  
-            return Response("Added Successfully")
+            return Response(Messages1.Add_Scfl)
         return Response(customer_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
         # else:
             # return Response({"status": "error", "data": customer_serializer.errors}, status=status.HTTP_400_BAD_REQUEST)  
@@ -33,12 +35,12 @@ class CustomerApi(APIView):
         customer_serializer = CustomerSerializer(customers, data=request.data)
         if customer_serializer.is_valid():
             customer_serializer.save()
-            return Response("Updated Successfully")
+            return Response(Messages1.Upd_Scfl)
         return Response(customer_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
         #return JsonResponse("Failed To update", safe=False)
     
     def delete(self, request, pk, format=None):      
         customers =  Customer.objects.get(CustomerId=pk)    
         customers.delete()
-        return Response("Deleted Successfully")
+        return Response(Messages1.Del_Scfl)
 

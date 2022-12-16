@@ -4,6 +4,7 @@ import json
 from pyexpat import model
 from rest_framework import serializers
 from .models import SubBand
+from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
 
 class  SubBandSerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,7 +17,7 @@ class  SubBandSerializer(serializers.ModelSerializer):
         # entered_name = json.loads(value).get('en', None)
         print(value)
         if value is None:
-            raise serializers.ValidationError("SubBand name should not be empty")
+            raise serializers.ValidationError(Messages1.SB_Name_Empty)
         #elif (value and Company.objects.filter(BandName=value).exists()):
           #  raise serializers.ValidationError("Band name already exists!")
         # You need to return the value in after validation.
