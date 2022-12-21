@@ -32,7 +32,7 @@ class JobPostApi(APIView):
             jobpost1 = JobPostDetailsPost_serializer.save()
             if jobpost1 is not None:
                 self.insertorupdatejobpostapproval(jobpost1, request.data)
-            return Response(Messages1.Upd_Scfl)
+            return Response(Messages1.UPD_SCFL)
         return Response(JobPostDetailsPost_serializer.errors, status=status.HTTP_400_BAD_REQUEST)        
         
 
@@ -49,13 +49,13 @@ class JobPostApi(APIView):
                         if success == True:
 
                     # return Response({"status": "success", "data": company_serializer.data}, status=status.HTTP_200_OK)  
-                            return Response(Messages1.JP_Crtd_Scfl, status=status.HTTP_200_OK)
+                            return Response(Messages1.JP_CRTD_SCFL, status=status.HTTP_200_OK)
                         else:
-                            return Response(Messages1.JP_Crtd_Fail, status=status.HTTP_400_BAD_REQUEST)   
+                            return Response(Messages1.JP_CRTN_FAIL, status=status.HTTP_400_BAD_REQUEST)   
                 return Response(JobPostDetailsPost_serializer.errors, status=status.HTTP_400_BAD_REQUEST)            
         except Exception as exp:
             # exp.with_traceback()
-            return Response(Messages1.Err_Crtd_JP+str(exp), status=status.HTTP_400_BAD_REQUEST)
+            return Response(Messages1.ERR_CRTG_JP+str(exp), status=status.HTTP_400_BAD_REQUEST)
         # return Response("Exception while creation Job Post", status=status.HTTP_400_BAD_REQUEST)
 
     def insertorupdatejobpostapproval(self, jobpost1, data):
@@ -65,12 +65,12 @@ class JobPostApi(APIView):
             HRUserName =  data["HR_User_Name"]
 
             BHuser = User.objects.get(username=BHUserName)
-            BHstage = Stage.objects.filter(StageName=Constants1.Stage_BHA).first()
-            BHrole = Group.objects.filter(name=Constants1.Role_BH).first()
+            BHstage = Stage.objects.filter(StageName=Constants1.STAGE_BHA).first()
+            BHrole = Group.objects.filter(name=Constants1.ROLE_BH).first()
 
             HRuser = User.objects.get(username=HRUserName)
-            HRstage = Stage.objects.filter(StageName=Constants1.Stage_PP).first()
-            HRrole = Group.objects.filter(name=Constants1.Role_HR).first()  
+            HRstage = Stage.objects.filter(StageName=Constants1.STAGE_PP).first()
+            HRrole = Group.objects.filter(name=Constants1.ROLE_HR).first()  
             if (BHuser is not None and BHstage is not None and BHrole is not None):
                 jobpostapprovalBH = JobPostApproval.objects.filter(jobpost= jobpost1, Stage=BHstage, role=BHrole).first()
                 if jobpostapprovalBH is not None:
@@ -83,7 +83,7 @@ class JobPostApi(APIView):
                     Email = BHuser.email,
                     Stage = BHstage,
                     role = BHrole,
-                    approvalStatus = 'N',
+                    approvalStatus = Constants1.NA,
                     approvalDate = None,
                     approvalComments = None,
                     CreatedOn = datetime.now())
@@ -96,7 +96,7 @@ class JobPostApi(APIView):
                     Email = BHuser.email,
                     Stage = BHstage,
                     role = BHrole,
-                    approvalStatus = 'N',
+                    approvalStatus = Constants1.NA,
                     approvalDate = None,
                     approvalComments = None,
                     CreatedOn = datetime.now())         
@@ -112,7 +112,7 @@ class JobPostApi(APIView):
                     Email = HRuser.email,
                     Stage = HRstage,
                     role = HRrole,
-                    approvalStatus = 'N',
+                    approvalStatus = Constants1.NA,
                     approvalDate = None,
                     approvalComments = None,
                     CreatedOn = datetime.now())
@@ -125,11 +125,11 @@ class JobPostApi(APIView):
                     Email = HRuser.email,
                     Stage = HRstage,
                     role = HRrole,
-                    approvalStatus = 'N',
+                    approvalStatus = Constants1.NA,
                     approvalDate = None,
                     approvalComments = None,
                     CreatedOn = datetime.now())
         except:
             success = False
-            raise Exception (Messages1.Err_Save_app_data)
+            raise Exception (Messages1.ERR_SAVE_APP_DATA)
         return success

@@ -19,7 +19,7 @@ class UsersApi(APIView):
         user_serializer = AdUsersSerializer(data=request.data)
         if user_serializer.is_valid():
             user_serializer.save() 
-            return Response(Messages1.Add_Scfl)
+            return Response(Messages1.ADD_SCFL)
         return Response(user_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
 
      def put(self, request, format=None):
@@ -27,5 +27,5 @@ class UsersApi(APIView):
         user_serializer = AdUsersSerializer(users, data=request.data)
         if user_serializer.is_valid():
             user_serializer.save()
-            return Response(Messages1.Upd_Scfl)
+            return Response(Messages1.UPD_SCFL)
         return Response(user_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)

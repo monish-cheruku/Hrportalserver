@@ -23,7 +23,7 @@ class BandApi(APIView):
         if band_serializer.is_valid():
             band_serializer.save()
             # return Response({"status": "success", "data": band_serializer.data}, status=status.HTTP_200_OK)  
-            return Response(Messages1.Add_Scfl)
+            return Response(Messages1.ADD_SCFL)
         return Response(band_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
         # else:
             # return Response({"status": "error", "data": band_serializer.errors}, status=status.HTTP_400_BAD_REQUEST)  
@@ -34,12 +34,12 @@ class BandApi(APIView):
         band_serializer = BandSerializer(bands ,data=request.data)
         if band_serializer.is_valid():
             band_serializer.save()
-            return Response(Messages1.Upd_Scfl)
+            return Response(Messages1.UPD_SCFL)
         return Response(band_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
        # return JsonResponse("Failed To update", safe=False)
     
     def delete(self, request, pk, format=None):      
         bands =  Band.objects.get(BandId=pk)    
         bands.delete()
-        return Response(Messages1.Del_Scfl)
+        return Response(Messages1.DEL_SCFL)
        

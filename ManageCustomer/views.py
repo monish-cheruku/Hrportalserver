@@ -24,7 +24,7 @@ class CustomerApi(APIView):
         if customer_serializer.is_valid():
             customer_serializer.save()
             # return Response({"status": "success", "data": customer_serializer.data}, status=status.HTTP_200_OK)  
-            return Response(Messages1.Add_Scfl)
+            return Response(Messages1.ADD_SCFL)
         return Response(customer_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
         # else:
             # return Response({"status": "error", "data": customer_serializer.errors}, status=status.HTTP_400_BAD_REQUEST)  
@@ -35,12 +35,12 @@ class CustomerApi(APIView):
         customer_serializer = CustomerSerializer(customers, data=request.data)
         if customer_serializer.is_valid():
             customer_serializer.save()
-            return Response(Messages1.Upd_Scfl)
+            return Response(Messages1.UPD_SCFL)
         return Response(customer_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
         #return JsonResponse("Failed To update", safe=False)
     
     def delete(self, request, pk, format=None):      
         customers =  Customer.objects.get(CustomerId=pk)    
         customers.delete()
-        return Response(Messages1.Del_Scfl)
+        return Response(Messages1.DEL_SCFL)
 

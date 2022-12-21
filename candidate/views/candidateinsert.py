@@ -27,14 +27,14 @@ class CandidateApi(APIView):
                         success = self.insertorupdatecandidateapproval(candidate1, request.data)
                         if success == True:
                     # return Response({"status": "success", "data": company_serializer.data}, status=status.HTTP_200_OK)  
-                            return Response(Messages1.Can_Prf_Crtd_Scfl, status=status.HTTP_200_OK)
+                            return Response(Messages1.CAN_PRF_CRTD_SCFL, status=status.HTTP_200_OK)
                         else:
-                            return Response(Messages1.Can_Prf_Crtd_Fail, status=status.HTTP_400_BAD_REQUEST)                     
+                            return Response(Messages1.Can_PRF_CRTN_FAIL, status=status.HTTP_400_BAD_REQUEST)                     
                     
                 return Response(CandidatePost_serializer.errors, status=status.HTTP_400_BAD_REQUEST)    
         except Exception as exp:
             # exp.with_traceback()
-            return Response(Messages1.Err_Prf_Crtn+str(exp), status=status.HTTP_400_BAD_REQUEST)
+            return Response(Messages1.ERR_CRTG_PRF+str(exp), status=status.HTTP_400_BAD_REQUEST)
         # return Response("Exception while creation Job Post", status=status.HTTP_400_BAD_REQUEST)
 
     def put(self, request, format=None):         
@@ -51,7 +51,7 @@ class CandidateApi(APIView):
             candidate1 = CandidatePost_serializer.save()
             if candidate1 is not None:
                 self.insertorupdatecandidateapproval(candidate1, request.data)
-                return Response(Messages1.Upd_Scfl)
+                return Response(Messages1.UPD_SCFL)
         return Response(CandidatePost_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST) 
 
 
@@ -61,21 +61,21 @@ class CandidateApi(APIView):
             # Hiring Manager
             HMUserName =  candidate1.Jobpost.UserName
             # HR
-            HRstage = Stage.objects.filter(StageName=Constants1.Stage_PP).first()
-            HR1role = Group.objects.filter(name=Constants1.Role_HR).first()  
+            HRstage = Stage.objects.filter(StageName=Constants1.STAGE_PP).first()
+            HR1role = Group.objects.filter(name=Constants1.ROLE_HR).first()  
             jobpostHRApprover = JobPostApproval.objects.filter(jobpost= candidate1.Jobpost, Stage =HRstage, role=HR1role).first()
             if jobpostHRApprover is not None:
                 HRUserName = jobpostHRApprover.approverName
             else:
                 HRUserName = ""      
             # Finannce Controller
-            FCUserObj =  JobPostUserRolesModel.objects.filter(RoleName = Constants1.Role_FC).first()
+            FCUserObj =  JobPostUserRolesModel.objects.filter(RoleName = Constants1.ROLE_FC).first()
             if FCUserObj is not None:
                 FCUserName = FCUserObj.UserName
             else:
                 FCUserName = ""  
             # General Manager
-            GMUserObj =  JobPostUserRolesModel.objects.filter(RoleName = Constants1.Role_GM).first()
+            GMUserObj =  JobPostUserRolesModel.objects.filter(RoleName = Constants1.ROLE_GM).first()
             if GMUserObj is not None:
                 GMUserName = GMUserObj.UserName
             else:
@@ -87,21 +87,21 @@ class CandidateApi(APIView):
             print("GMUserName Name --"+GMUserName)
 
             HMUser = User.objects.get(username=HMUserName)
-            HMCandReviewstage = Stage.objects.filter(StageName=Constants1.Stage_CR).first()
-            HMCandInterviewstage = Stage.objects.filter(StageName=Constants1.Stage_CI).first()
-            HMrole = Group.objects.filter(name=Constants1.Role_HM).first()
+            HMCandReviewstage = Stage.objects.filter(StageName=Constants1.STAGE_CR).first()
+            HMCandInterviewstage = Stage.objects.filter(StageName=Constants1.STAGE_CI).first()
+            HMrole = Group.objects.filter(name=Constants1.ROLE_HM).first()
 
             HRuser = User.objects.get(username=HRUserName)
-            HRInterviewstage = Stage.objects.filter(StageName=Constants1.Stage_SL).first()
-            HRrole = Group.objects.filter(name=Constants1.Role_HR).first()
+            HRInterviewstage = Stage.objects.filter(StageName=Constants1.STAGE_SL).first()
+            HRrole = Group.objects.filter(name=Constants1.ROLE_HR).first()
 
             GMuser = User.objects.get(username=GMUserName)
-            GMApprovalstage = Stage.objects.filter(StageName=Constants1.Stage_GMA).first()
-            GMrole = Group.objects.filter(name=Constants1.Role_GM).first() 
+            GMApprovalstage = Stage.objects.filter(StageName=Constants1.STAGE_GMA).first()
+            GMrole = Group.objects.filter(name=Constants1.ROLE_GM).first() 
 
             FCuser = User.objects.get(username=FCUserName)
-            FCApprovalstage = Stage.objects.filter(StageName=Constants1.Stage_FCA).first()
-            FCrole = Group.objects.filter(name=Constants1.Role_FC).first()                          
+            FCApprovalstage = Stage.objects.filter(StageName=Constants1.STAGE_FCA).first()
+            FCrole = Group.objects.filter(name=Constants1.ROLE_FC).first()                          
 
             if (HMUser is not None and HMCandReviewstage is not None and HMrole is not None):
                 candidatereviewHM = CandidateApprovalModel.objects.filter(Candidate= candidate1, Stage=HMCandReviewstage, role=HMrole).first()
@@ -115,7 +115,7 @@ class CandidateApi(APIView):
                     Email = HMUser.email,
                     Stage = HMCandReviewstage,
                     role = HMrole,
-                    approvalStatus = 'N',
+                    approvalStatus = Constants1.NA,
                     approvalDate = None,
                     approvalComments = None,
                     CreatedOn = datetime.now())
@@ -128,7 +128,7 @@ class CandidateApi(APIView):
                     Email = HMUser.email,
                     Stage = HMCandReviewstage,
                     role = HMrole,
-                    approvalStatus = 'N',
+                    approvalStatus = Constants1.NA,
                     approvalDate = None,
                     approvalComments = None,
                     CreatedOn = datetime.now())   
@@ -146,7 +146,7 @@ class CandidateApi(APIView):
                     Email = HMUser.email,
                     Stage = HMCandInterviewstage,
                     role = HMrole,
-                    approvalStatus = 'N',
+                    approvalStatus = Constants1.NA,
                     approvalDate = None,
                     approvalComments = None,
                     CreatedOn = datetime.now())
@@ -159,7 +159,7 @@ class CandidateApi(APIView):
                     Email = HMUser.email,
                     Stage = HMCandInterviewstage,
                     role = HMrole,
-                    approvalStatus = 'N',
+                    approvalStatus = Constants1.NA,
                     approvalDate = None,
                     approvalComments = None,
                     CreatedOn = datetime.now())       
@@ -176,7 +176,7 @@ class CandidateApi(APIView):
                     Email = HRuser.email,
                     Stage = HRInterviewstage,
                     role = HRrole,
-                    approvalStatus = 'N',
+                    approvalStatus = Constants1.NA,
                     approvalDate = None,
                     approvalComments = None,
                     CreatedOn = datetime.now())
@@ -189,7 +189,7 @@ class CandidateApi(APIView):
                     Email = HRuser.email,
                     Stage = HRInterviewstage,
                     role = HRrole,
-                    approvalStatus = 'N',
+                    approvalStatus = Constants1.NA,
                     approvalDate = None,
                     approvalComments = None,
                     CreatedOn = datetime.now())
@@ -204,7 +204,7 @@ class CandidateApi(APIView):
                     Email = GMuser.email,
                     Stage = GMApprovalstage,
                     role = GMrole,
-                    approvalStatus = 'N',
+                    approvalStatus = Constants1.NA,
                     approvalDate = None,
                     approvalComments = None,
                     CreatedOn = datetime.now())
@@ -217,7 +217,7 @@ class CandidateApi(APIView):
                     Email = GMuser.email,
                     Stage = GMApprovalstage,
                     role = GMrole,
-                    approvalStatus = 'N',
+                    approvalStatus = Constants1.NA,
                     approvalDate = None,
                     approvalComments = None,
                     CreatedOn = datetime.now())
@@ -232,7 +232,7 @@ class CandidateApi(APIView):
                     Email = FCuser.email,
                     Stage = FCApprovalstage,
                     role = FCrole,
-                    approvalStatus = 'N',
+                    approvalStatus = Constants1.NA,
                     approvalDate = None,
                     approvalComments = None,
                     CreatedOn = datetime.now())
@@ -245,11 +245,11 @@ class CandidateApi(APIView):
                     Email = FCuser.email,
                     Stage = FCApprovalstage,
                     role = FCrole,
-                    approvalStatus = 'N',
+                    approvalStatus = Constants1.NA,
                     approvalDate = None,
                     approvalComments = None,
                     CreatedOn = datetime.now())                                          
         except Exception as exp:
             success = False
-            raise Exception (Messages1.Err_Save_app_data+str(exp))
+            raise Exception (Messages1.ERR_SAVE_APP_DATA+str(exp))
         return success            
