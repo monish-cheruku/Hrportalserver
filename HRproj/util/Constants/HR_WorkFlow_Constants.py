@@ -1,20 +1,27 @@
 class Constants1():
-    Stage_PP = 'Profiles Pending'
-    Role_HR = 'HR'
-    Role_FC = 'Finance Controller'
-    Role_GM = 'General Manager'
-    Stage_CR = 'Candidate Review'
-    Stage_CI = 'Candidate Interview'
-    Role_HM = 'Hiring Manager'
+    STAGE_PP = 'Profiles Pending'
+    ROLE_HR = 'HR'
+    ROLE_FC = 'Finance Controller'
+    ROLE_GM = 'General Manager'
+    STAGE_CR = 'Candidate Review'
+    STAGE_CI = 'Candidate Interview'
+    ROLE_HM = 'Hiring Manager'
     STAGE_SL = 'Shortlisted'
-    Stage_GMA = 'General Manager Approval'
-    Stage_FCA = 'Finance Controller Approval'
-    App_Status_N = 'Not Approved'
-    Stage_R = 'Rejected'
-    Stage_BHA = 'Business Head Approval'
-    Role_BH = 'Business Head'
-    Approved = 'A'
-    STAGE_RP = 'Review Pending'
+    STAGE_GMA = 'General Manager Approval'
+    STAGE_FCA = 'Finance Controller Approval'
+    APP_STATUS_N = 'Not Approved'
+    STAGE_A = 'Approved'
+    STAGE_R = 'Rejected'
+    STAGE_BHA = 'Business Head Approval'
+    ROLE_BH = 'Business Head'
+    STAGE_CANR = 'Candidate Rejected'
+    NA = 'Not Approved'
+    STAGE_IP = 'Interview Pending'
+    SELECT_FOR_INTERVIEW = 'Select For Interview'
+    REJECTED_AT_REVIEW = 'Rejected at Review'
+    
+    
+   
 
     STAGE_HR_INTERVIEW="HR Interview"
     HM_HOLD="HM Hold"

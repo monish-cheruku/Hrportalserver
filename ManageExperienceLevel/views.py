@@ -24,7 +24,7 @@ class ExperienceApi(APIView):
         if experience_serializer.is_valid():
             experience_serializer.save()
             # return Response({"status": "success", "data": experience_serializer.data}, status=status.HTTP_200_OK)  
-            return Response(Messages1.Add_Scfl)
+            return Response(Messages1.ADD_SCFL)
         return Response(experience_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
         # else:
             # return Response({"status": "error", "data": experience_serializer.errors}, status=status.HTTP_400_BAD_REQUEST)  
@@ -35,13 +35,13 @@ class ExperienceApi(APIView):
         experience_serializer = ExperienceSerializer(experiences ,data=request.data)
         if experience_serializer.is_valid():
             experience_serializer.save()
-            return Response(Messages1.Upd_Scfl)
+            return Response(Messages1.UPD_SCFL)
         return Response(experience_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
        # return JsonResponse("Failed To update", safe=False)
     
     def delete(self, request, pk, format=None):      
         experiences =  Experience.objects.get(ExperienceLevelId=pk)    
         experiences.delete()
-        return Response(Messages1.Del_Scfl)
+        return Response(Messages1.DEL_SCFL)
 
        

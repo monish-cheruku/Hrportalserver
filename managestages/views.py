@@ -10,7 +10,7 @@ class StageApi(APIView):
     # permission_classes = (IsAuthenticated,)
 
     def get(self, request, format=None): 
-        stages = Stage.objects.all();
+        stages = Stage.objects.all()
         stage_serializer = SatgeSerializer(stages, many=True)
         return JsonResponse(stage_serializer.data, safe=False)
 

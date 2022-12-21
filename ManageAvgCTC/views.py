@@ -23,7 +23,7 @@ class AvgCTCApi(APIView):
         if avgCTC_serializer.is_valid():
             avgCTC_serializer.save()
             # return Response({"status": "success", "data": avgCTC_serializer.data}, status=status.HTTP_200_OK)  
-            return Response(Messages1.Add_Scfl)
+            return Response(Messages1.ADD_SCFL)
         return Response(avgCTC_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
         # else:
             # return Response({"status": "error", "data": avgCTC_serializer.errors}, status=status.HTTP_400_BAD_REQUEST)  
@@ -34,11 +34,11 @@ class AvgCTCApi(APIView):
         avgCTC_serializer = AvgCTCSerializer(avgCTC ,data=request.data)
         if avgCTC_serializer.is_valid():
             avgCTC_serializer.save()
-            return Response(Messages1.Upd_Scfl)
+            return Response(Messages1.UPD_SCFL)
         return Response(avgCTC_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
        # return JsonResponse("Failed To update", safe=False)
     
     def delete(self, request, pk, format=None):      
         avgCTC =  AvgCTC.objects.get(Id=pk)    
         avgCTC.delete()
-        return Response(Messages1.Del_Scfl)
+        return Response(Messages1.DEL_SCFL)

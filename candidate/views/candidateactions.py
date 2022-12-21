@@ -33,24 +33,24 @@ class CandidateAction(ModelViewSet):
         
         try:
             with transaction.atomic():
-                candidateReview =  CandidateApprovalModel.objects.filter(candidateApprovalId=candidateApprovalId).update(
+                candidateReview =  CandidateApprovalModel.objects.filter(CandidateApprovalId=candidateApprovalId).update(
                     approvalDate = datetime.now(),
                     approvalStatus = reviewStatus,
                     approvalComments = reviewComments,
                 )
                 
                 if candidateReview is not None:
-                    if (reviewStatus == Constants1.Shortlisted):
-                        stage = Stage.objects.filter(StageName=Constants1.STAGE_SL).first()
-                        response = Messages1.CAN_SL
-                    elif (reviewStatus == Constants1.Rejected):
-                        stage = Stage.objects.filter(StageName=Constants1.Stage_R).first()
+                    if (reviewStatus == Constants1.SELECT_FOR_INTERVIEW):
+                        stage = Stage.objects.filter(StageName=Constants1.STAGE_CI).first()
+                        response = Messages1.CAN_IP
+                    elif (reviewStatus == Constants1.REJECTED_AT_REVIEW):
+                        stage = Stage.objects.filter(StageName=Constants1.STAGE_CANR).first()
                         response = Messages1.CAN_RJCTD
                     print(stage.StageId)
-                    candidate =  Candidate.objects.filter(CandidateId=candidateId).update(
+                    candidates =  Candidate.objects.filter(CandidateId=candidateId).update(
                         Stage =  stage   
                     )
-                    print(candidate)
+                    print(candidates)
                     return Response(response, status=status.HTTP_200_OK) 
                 
         except Exception as exp:

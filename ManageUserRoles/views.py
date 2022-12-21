@@ -5,6 +5,7 @@ from django.http.response import JsonResponse
 from django.contrib.auth.models import Group
 from django.contrib.auth.models import User
 from .serializers import UserSerializer, PostUserSerializer
+from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
 # Create your views here.
 
 class UserRolesApi(APIView):
@@ -27,7 +28,7 @@ class UserRolesApi(APIView):
         for i in groups:
                 g = Group.objects.get(id = i)
                 g.user_set.add(users)
-        return Response("Added Successfully")
+        return Response(Messages1.ADD_SCFL)
 
     def put(self, request, format=None):
         userroles =  User.objects.get(id=request.data['id'])
@@ -40,12 +41,12 @@ class UserRolesApi(APIView):
             for i in groups:
                 g = Group.objects.get(id = i)
                 g.user_set.add(userroles)
-            return Response("Updated")
+            return Response(Messages1.UPD_SCFL)
         else:
             return Response("Error")
 
     def delete(self, request, pk, format=None):      
         userroles =  User.objects.get(id=pk)    
         userroles.delete()
-        return Response("Deleted Successfully")
+        return Response(Messages1.DEL_SCFL)
 

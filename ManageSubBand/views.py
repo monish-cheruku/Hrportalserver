@@ -24,7 +24,7 @@ class SubBandApi(APIView):
         if subband_serializer.is_valid():
             subband_serializer.save()
             # return Response({"status": "success", "data": subband_serializer.data}, status=status.HTTP_200_OK)  
-            return Response(Messages1.Add_Scfl)
+            return Response(Messages1.ADD_SCFL)
         return Response(subband_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
         # else:
             # return Response({"status": "error", "data": subband_serializer.errors}, status=status.HTTP_400_BAD_REQUEST)  
@@ -35,12 +35,12 @@ class SubBandApi(APIView):
         subband_serializer = SubBandSerializer(subbands, data=request.data)
         if subband_serializer.is_valid():
             subband_serializer.save()
-            return Response(Messages1.Upd_Scfl)
+            return Response(Messages1.UPD_SCFL)
         return Response(subband_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
        # return JsonResponse("Failed To update", safe=False)
     
     def delete(self, request, pk, format=None):      
         subbands =  SubBand.objects.get(SubBandId=pk)    
         subbands.delete()
-        return JsonResponse(Messages1.Del_Scfl, safe=False)
+        return JsonResponse(Messages1.DEL_SCFL, safe=False)
        

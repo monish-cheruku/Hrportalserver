@@ -26,7 +26,7 @@ class companyApi(GenericAPIView):
         if company_serializer.is_valid():
             company_serializer.save()
             # return Response({"status": "success", "data": company_serializer.data}, status=status.HTTP_200_OK)  
-            return Response(Messages1.Add_Scfl)
+            return Response(Messages1.ADD_SCFL)
         return Response(company_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
         # else:
             # return Response({"status": "error", "data": company_serializer.errors}, status=status.HTTP_400_BAD_REQUEST)  
@@ -37,13 +37,13 @@ class companyApi(GenericAPIView):
         company_serializer = CompanySerializer(companies, data=request.data)
         if company_serializer.is_valid():
             company_serializer.save()
-            return Response(Messages1.Upd_Scfl)
+            return Response(Messages1.UPD_SCFL)
         return Response(company_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
        # return JsonResponse("Failed To update", safe=False)
     
     def delete(self, request, pk, format=None):      
         companies =  Company.objects.get(CompanyId=pk)    
         companies.delete()
-        return Response(Messages1.Del_Scfl)
+        return Response(Messages1.DEL_SCFL)
        
 

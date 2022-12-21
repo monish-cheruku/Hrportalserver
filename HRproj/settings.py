@@ -66,7 +66,8 @@ INSTALLED_APPS = [
     'pdf',
     'Employementtype',
     'Qualification',
-    'CandidateFeedback'
+    'CandidateFeedback',
+    'Outlook'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
