@@ -35360,3 +35360,71 @@ UnboundLocalError: local variable 'res' referenced before assignment
 2022-12-21 18:12:12,773 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
 2022-12-21 18:12:12,774 apscheduler.scheduler INFO     Scheduler started
 2022-12-21 18:12:13,029 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-12-21 18:14:25,102 django.utils.autoreload INFO     C:\work\HRproj\HRproj\settings.py changed, reloading.
+2022-12-21 18:19:48,566 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 18:19:48,590 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 18:19:48,591 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 18:19:59,201 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 18:19:59,218 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 18:19:59,219 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 18:19:59,499 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-12-21 18:21:11,201 django.utils.autoreload INFO     C:\work\HRproj\Outlook\views.py changed, reloading.
+2022-12-21 18:21:22,280 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 18:21:22,296 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 18:21:22,297 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 18:21:22,591 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-12-21 18:22:33,651 django.request WARNING  Bad Request: /api/candidateFeedback/getfeedbackfields
+2022-12-21 18:22:48,523 django.request WARNING  Bad Request: /api/candidateFeedback/getfeedbackfields
+2022-12-21 18:23:22,659 django.utils.autoreload INFO     C:\work\HRproj\CandidateFeedback\views\FeedbackFeilds.py changed, reloading.
+2022-12-21 18:23:36,049 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 18:23:36,066 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 18:23:36,067 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 18:23:36,342 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-12-21 18:42:04,156 django.utils.autoreload INFO     C:\work\HRproj\CandidateFeedback\views\FeedbackFeilds.py changed, reloading.
+2022-12-21 18:42:18,324 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 18:42:18,350 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 18:42:18,351 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 18:42:18,727 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-12-21 18:49:23,479 django.utils.autoreload INFO     C:\work\HRproj\CandidateFeedback\views\FeedbackFeilds.py changed, reloading.
+2022-12-21 18:49:41,783 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 18:49:41,804 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 18:49:41,806 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 18:49:42,156 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-12-21 18:57:10,738 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 18:57:10,743 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 18:57:10,744 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 19:01:22,135 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 19:01:22,141 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 19:01:22,142 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 19:02:02,239 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 19:02:02,244 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 19:02:02,245 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 19:04:09,321 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 19:04:09,326 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 19:04:09,326 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 19:05:40,728 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 19:05:40,734 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 19:05:40,734 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 19:08:46,706 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 19:08:46,714 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 19:08:46,715 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 19:10:16,772 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 19:10:16,778 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 19:10:16,779 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 19:12:03,056 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 19:12:03,064 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 19:12:03,065 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 19:12:57,287 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 19:12:57,306 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 19:12:57,307 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 19:13:08,654 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 19:13:08,678 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 19:13:08,680 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 19:13:08,995 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-12-21 19:21:44,151 django.request WARNING  Not Found: /api/candidate/downloadresume
+2022-12-21 19:24:21,161 django.request WARNING  Not Found: /api/candidate/downloadresume
+2022-12-21 19:34:13,375 django.utils.autoreload INFO     C:\work\HRproj\candidate\serializers.py changed, reloading.
+2022-12-21 19:34:27,865 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 19:34:27,890 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 19:34:27,890 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 19:34:28,234 django.utils.autoreload INFO     Watching for file changes with StatReloader

@@ -259,7 +259,22 @@ class  CandidateApprovalSerializer(serializers.ModelSerializer):
         
 
 class  CandidateActionModelSerializer(serializers.ModelSerializer):
+    Comments = serializers.SerializerMethodField()     
+
+
+    def get_Comments(self, Candidate1):
+        can=Candidate.objects.filter(CandidateId=Candidate1.CandidateId).first()
+        qs = CandidateApprovalModel.objects.filter(Candidate=can).exclude(approvalStatus="N")
+        # qs1=qs.filter(approvalStatus="N")
+        serializer = CandidateApprovalCommentsSerializer(instance=qs, many=True)
+        return serializer.data    
 
     class Meta:
         model = CandidateActionModel
         fields = "__all__"
+class CandidateApprovalCommentsSerializer(serializers.ModelSerializer):
+    role_name = serializers.CharField(read_only=True, source="role.name")
+    stage_name = serializers.CharField(read_only=True, source="Stage.StageName")
+    class Meta:
+        model=CandidateApprovalModel
+        fields=["approvalComments","role_name","stage_name"]

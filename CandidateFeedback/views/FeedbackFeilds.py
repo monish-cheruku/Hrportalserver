@@ -8,7 +8,7 @@ from CandidateFeedback.serializers.FeedbackFieldsSerializer import FeedbackField
 class FeedbackFields(APIView):
     def post(self,request,format=None):
         try:
-            feedbackfields = Feedback_Category.objects.filter(InterviewType=request.data["Interview_Round"])
+            feedbackfields = Feedback_Category.objects.filter(Stage=request.data["stagename"])
             res = FeedbackFieldsSerializer(feedbackfields, many=True)
 
             return Response(res.data)    
