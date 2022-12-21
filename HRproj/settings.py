@@ -63,7 +63,8 @@ INSTALLED_APPS = [
     'Scheduler',
     'drf_yasg',
     'candidate',
-    'pdf'
+    'pdf',
+    'Outlook'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True

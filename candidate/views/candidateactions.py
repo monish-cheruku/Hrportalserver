@@ -40,10 +40,10 @@ class CandidateAction(ModelViewSet):
                 )
                 
                 if candidateReview is not None:
-                    if (reviewStatus == Constants1.STAGE_CI):
+                    if (reviewStatus == Constants1.SELECT_FOR_INTERVIEW):
                         stage = Stage.objects.filter(StageName=Constants1.STAGE_CI).first()
                         response = Messages1.CAN_IP
-                    elif (reviewStatus == Constants1.STAGE_CANR):
+                    elif (reviewStatus == Constants1.REJECTED_AT_REVIEW):
                         stage = Stage.objects.filter(StageName=Constants1.STAGE_CANR).first()
                         response = Messages1.CAN_RJCTD
                     print(stage.StageId)

@@ -59,6 +59,7 @@ urlpatterns = [
      path('api/jobpost', include('jobpost.urls')),
      path('api/candidate', include('candidate.urls')),
      path('api/pdf', include('pdf.urls')),
+     path('api/Outlook', include('Outlook.urls')),
 
 
 

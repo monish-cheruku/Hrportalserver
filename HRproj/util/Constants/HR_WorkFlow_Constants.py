@@ -17,6 +17,8 @@ class Constants1():
     STAGE_CANR = 'Candidate Rejected'
     NA = 'Not Approved'
     STAGE_IP = 'Interview Pending'
+    SELECT_FOR_INTERVIEW = 'Select For Interview'
+    REJECTED_AT_REVIEW = 'Rejected at Review'
     
     
    
