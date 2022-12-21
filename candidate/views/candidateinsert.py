@@ -61,14 +61,19 @@ class CandidateApi(APIView):
             # Hiring Manager
             HMUserName =  candidate1.Jobpost.UserName
             # HR
-            HRstage = Stage.objects.filter(StageName=Constants1.Stage_PP).first()
-            HR1role = Group.objects.filter(name=Constants1.Role_HR).first()  
-            jobpostHRApprover = JobPostApproval.objects.filter(jobpost= candidate1.Jobpost, Stage =HRstage, role=HR1role).first()
-            if jobpostHRApprover is not None:
-                HRUserName = jobpostHRApprover.approverName
-            else:
-                HRUserName = ""      
+            # HRstage = Stage.objects.filter(StageName=Constants1.Stage_PP).first()
+            # HR1role = Group.objects.filter(name=Constants1.Role_HR).first()  
+            # jobpostHRApprover = JobPostApproval.objects.filter(jobpost= candidate1.Jobpost, Stage =HRstage, role=HR1role).first()
+            # if jobpostHRApprover is not None:
+            #     HRUserName = jobpostHRApprover.approverName
+            # else:
+            #     HRUserName = ""      
             # Finannce Controller
+            HRUserObj =  JobPostUserRolesModel.objects.filter(RoleName = Constants1.Role_HR).first()
+            if HRUserObj is not None:
+                HRUserName = HRUserObj.UserName
+            else:
+                HRUserName = ""  
             FCUserObj =  JobPostUserRolesModel.objects.filter(RoleName = Constants1.Role_FC).first()
             if FCUserObj is not None:
                 FCUserName = FCUserObj.UserName
@@ -92,7 +97,7 @@ class CandidateApi(APIView):
             HMrole = Group.objects.filter(name=Constants1.Role_HM).first()
 
             HRuser = User.objects.get(username=HRUserName)
-            HRInterviewstage = Stage.objects.filter(StageName=Constants1.Stage_SL).first()
+            HRInterviewstage = Stage.objects.filter(StageName=Constants1.Stage_HR_INTERVIEW).first()
             HRrole = Group.objects.filter(name=Constants1.Role_HR).first()
 
             GMuser = User.objects.get(username=GMUserName)

@@ -35296,3 +35296,67 @@ UnboundLocalError: local variable 'res' referenced before assignment
 2022-12-16 14:44:52,146 django.request WARNING  Not Found: /api/candidate/candidateactionsdetails
 2022-12-16 14:45:19,789 django.request WARNING  Not Found: /api/candidate/candidateactionsdetails
 2022-12-16 14:45:30,262 django.request WARNING  Not Found: /api/candidate/candidateactionsdetails
+2022-12-21 17:38:52,060 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 17:38:52,071 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 17:38:52,071 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 17:40:19,264 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 17:40:19,270 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 17:40:19,270 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 17:42:40,439 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 17:42:40,445 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 17:42:40,446 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 17:43:44,446 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 17:43:44,464 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 17:43:44,465 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 17:43:53,295 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 17:43:53,311 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 17:43:53,311 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 17:43:53,577 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-12-21 17:45:51,112 django.utils.autoreload INFO     C:\work\HRproj\HRproj\settings.py changed, reloading.
+2022-12-21 17:46:02,430 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 17:46:02,445 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 17:46:02,446 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 17:46:02,727 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-12-21 17:46:53,004 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 17:46:53,027 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 17:46:53,028 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 17:47:02,553 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 17:47:02,569 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 17:47:02,570 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 17:47:02,831 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-12-21 17:54:00,068 apscheduler.executors.default INFO     Running job "simulatejob (trigger: cron[day_of_week='mon-sun', hour='17', minute='54'], next run at: 2022-12-22 17:54:00 IST)" (scheduled at 2022-12-21 17:54:00+05:30)
+2022-12-21 17:54:00,071 apscheduler.executors.default INFO     Job "simulatejob (trigger: cron[day_of_week='mon-sun', hour='17', minute='54'], next run at: 2022-12-22 17:54:00 IST)" executed successfully
+2022-12-21 17:54:00,081 apscheduler.executors.default INFO     Running job "simulatejob (trigger: cron[day_of_week='mon-sun', hour='17', minute='54'], next run at: 2022-12-22 17:54:00 IST)" (scheduled at 2022-12-21 17:54:00+05:30)
+2022-12-21 17:54:00,109 apscheduler.executors.default INFO     Job "simulatejob (trigger: cron[day_of_week='mon-sun', hour='17', minute='54'], next run at: 2022-12-22 17:54:00 IST)" executed successfully
+2022-12-21 17:56:24,216 django.utils.autoreload INFO     C:\work\HRproj\HRproj\util\Constants\HR_WorkFlow_Constants.py changed, reloading.
+2022-12-21 17:56:36,411 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 17:56:36,427 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 17:56:36,428 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 17:56:36,718 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-12-21 17:57:28,811 django.utils.autoreload INFO     C:\work\HRproj\HRproj\util\Constants\HR_WorkFlow_Constants.py changed, reloading.
+2022-12-21 17:57:43,235 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 17:57:43,255 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 17:57:43,257 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 17:57:43,837 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-12-21 17:59:21,995 django.utils.autoreload INFO     C:\work\HRproj\HRproj\util\Constants\HR_WorkFlow_Constants.py changed, reloading.
+2022-12-21 17:59:47,783 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 17:59:47,829 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 17:59:47,830 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 17:59:48,771 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-12-21 18:03:11,153 django.utils.autoreload INFO     C:\work\HRproj\HRproj\util\Constants\HR_WorkFlow_Constants.py changed, reloading.
+2022-12-21 18:03:23,322 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 18:03:23,338 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 18:03:23,338 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 18:03:23,661 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-12-21 18:03:53,286 django.utils.autoreload INFO     C:\work\HRproj\HRproj\util\Constants\HR_WorkFlow_Constants.py changed, reloading.
+2022-12-21 18:04:05,644 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 18:04:05,661 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 18:04:05,662 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 18:04:05,987 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-12-21 18:06:14,797 django.request WARNING  Not Found: /api/candidate/candidatesreviewsubmit
+2022-12-21 18:10:40,501 django.request WARNING  Not Found: /api/candidate/candidatesreviewsubmit
+2022-12-21 18:12:02,008 django.utils.autoreload INFO     C:\work\HRproj\candidate\urls.py changed, reloading.
+2022-12-21 18:12:12,755 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-21 18:12:12,773 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-21 18:12:12,774 apscheduler.scheduler INFO     Scheduler started
+2022-12-21 18:12:13,029 django.utils.autoreload INFO     Watching for file changes with StatReloader

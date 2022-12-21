@@ -8,5 +8,6 @@ urlpatterns=[
      path('/addcandidate', CandidateApi.as_view()),
      path('/gridcandidates', CandidateDetails.as_view({'post': 'candidatedetails'})),
      path('/downloadresume', CandidateDetails.as_view({'post': 'download'})),
-     path('/candidateactionsdetails', CandidateAction.as_view({'post': 'candidateactiondetails'}))
+     path('/candidateactionsdetails', CandidateAction.as_view({'post': 'candidateactiondetails'})),
+     path('/candidatesreviewsubmit', CandidateAction.as_view({'post': 'candidatereviewsubmit'}))
 ]

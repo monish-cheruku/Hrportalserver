@@ -15,5 +15,18 @@ class Constants1():
     Role_BH = 'Business Head'
     Approved = 'A'
     STAGE_RP = 'Review Pending'
-    
+
+    STAGE_HR_INTERVIEW="HR Interview"
+    HM_HOLD="HM Hold"
+
+    STAGE_HM_HOLD="HM Hold"
+    STAGE_HR_HOLD="HR Hold"
+    REJECTED="Rejected"
+    STAGE_REJECTED="Candidate Rejected"
+    # STAGE_SHORTLIST="HR Interview"
+    SHORTLIST="Shortlisted"
+    STAGE_FURTHERREVIEW="Further Review"
+    FURTHERREVIEW="Further Review"
+    SELECTED="Selected"
+    STAGE_SELECTED="Selected"
     
