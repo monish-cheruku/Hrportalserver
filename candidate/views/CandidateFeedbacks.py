@@ -1,9 +1,9 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from CandidateFeedback.models.Candidate_Feedback_Model import Candidate_Feedback
+from candidate.models.Candidate_Feedback_Model import Candidate_Feedback
+from candidate.serializers import CandidateFeedBacksSerializer
 
-from CandidateFeedback.serializers.CandidateFeedBacksSerializer import CandidateFeedBacksSerializer
 class CandidateFeedBacks(APIView):
     def post(self,request,format=None):
         try:

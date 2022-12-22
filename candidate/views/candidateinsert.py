@@ -69,7 +69,7 @@ class CandidateApi(APIView):
             # else:
             #     HRUserName = ""      
             # Finannce Controller
-            HRUserObj =  JobPostUserRolesModel.objects.filter(RoleName = Constants1.Role_HR).first()
+            HRUserObj =  JobPostUserRolesModel.objects.filter(RoleName = Constants1.ROLE_HR).first()
             if HRUserObj is not None:
                 HRUserName = HRUserObj.UserName
             else:

@@ -1,5 +1,5 @@
 from django.db import models
-from managestages.models import Stage
+
 class Feedback_Category(models.Model):
     FeedbackCategoryID=models.AutoField(primary_key=True,db_column='Feedback_Category_ID')
     InterviewType=models.CharField(max_length=40,db_column='Interview_Type')

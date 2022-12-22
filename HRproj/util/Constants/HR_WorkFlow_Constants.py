@@ -12,7 +12,7 @@ class Constants1():
     APP_STATUS_N = 'N'
     STAGE_A = 'Approved'
     STAGE_R = 'Rejected'
-    STAGE_BHA = 'Business Head Approval'
+    STAGE_BHA = 'BH Approval'
     ROLE_BH = 'Business Head'
     STAGE_CANR = 'Candidate Rejected'
     NA = 'N'

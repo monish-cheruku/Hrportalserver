@@ -66,7 +66,6 @@ INSTALLED_APPS = [
     'pdf',
     'Employementtype',
     'Qualification',
-    'CandidateFeedback',
     'Outlook'
 ]
 
@@ -117,7 +116,7 @@ DATABASES = {
         'NAME': 'HR_proj',
         'USER': 'sa',  
         'PASSWORD': 'Belcan@123',
-        'HOST': 'ENG127224',
+        'HOST': 'ENG132076',
         'PORT': '1433',
         'OPTIONS': {"driver": "ODBC Driver 17 for SQL Server", 
         },

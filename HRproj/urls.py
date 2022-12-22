@@ -59,7 +59,7 @@ urlpatterns = [
      path('api/jobpost', include('jobpost.urls')),
      path('api/candidate', include('candidate.urls')),
      path('api/pdf', include('pdf.urls')),
-     path('api/candidateFeedback', include('CandidateFeedback.urls')),
+    #  path('api/candidateFeedback', include('CandidateFeedback.urls')),
      path('api/Employementtype', include('Employementtype.urls')),
      path('api/Qualification', include('Qualification.urls')),
      path('api/Outlook', include('Outlook.urls')),

@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from datetime import datetime
 from HRproj.settings import MEDIA_ROOT, MEDIA_URL
+from candidate.models.Candidate_Feedback_Model import Candidate_Feedback
+from candidate.models.Feedback_Category_Model import Feedback_Category
 from candidate.models.candidateapprovalmodel import CandidateApprovalModel
 from candidate.models.candidatemodel import Candidate
 from jobpost.models.jobpostmodel import JobPost
@@ -25,7 +27,7 @@ class  CandidatePostSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         print("sasas-"+str(validated_data))
-        stage_name = Constants1.Stage_CR
+        stage_name = Constants1.STAGE_CR
         jobp = JobPost.objects.filter(JobPostId=validated_data["Job_Post_ID"]).first()
         print("2323-"+str(jobp.JobCode))
         stage = Stage.objects.filter(StageName=stage_name).first()        
@@ -278,3 +280,28 @@ class CandidateApprovalCommentsSerializer(serializers.ModelSerializer):
     class Meta:
         model=CandidateApprovalModel
         fields=["approvalComments","role_name","stage_name"]
+
+class FeedbackBulkCreateSerializer(serializers.ListSerializer):  
+    def create(self, validated_data):  
+        product_data = [Candidate_Feedback(**item) for item in validated_data]  
+        return Candidate_Feedback.objects.bulk_create(product_data)  
+  
+  
+class AddFeedBackSerializer(serializers.ModelSerializer):  
+    class Meta:  
+        model = Candidate_Feedback  
+        fields ="__all__"
+        # read_only_fields = ['id',]  
+        list_serializer_class = FeedbackBulkCreateSerializer
+
+class CandidateFeedBacksSerializer(serializers.ModelSerializer):
+    interviewtype=serializers.CharField(read_only=True, source="FeedbackCategory.InterviewType")
+    feedbackcategory=serializers.CharField(read_only=True, source="FeedbackCategory.FeedbackCategory")
+    class Meta:
+        model=Candidate_Feedback
+        fields="__all__"  
+              
+class FeedbackFieldsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Feedback_Category
+        fields="__all__"        
