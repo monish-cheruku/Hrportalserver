@@ -35584,3 +35584,49 @@ AttributeError: type object 'Messages1' has no attribute 'Err_app_JP_dtls'
 2022-12-22 13:28:02,567 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
 2022-12-22 13:28:02,568 apscheduler.scheduler INFO     Scheduler started
 2022-12-22 13:28:03,218 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-12-22 13:34:05,766 django.request ERROR    Internal Server Error: /api/candidateFeedback/addfeedback
+Traceback (most recent call last):
+  File "C:\work\HRproj\CandidateFeedback\views\AddFeedBack.py", line 84, in create
+    Stage =  stage
+UnboundLocalError: local variable 'stage' referenced before assignment
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\scheruku\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\scheruku\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\scheruku\AppData\Roaming\Python\Python310\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\scheruku\AppData\Roaming\Python\Python310\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\scheruku\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\scheruku\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\scheruku\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\scheruku\AppData\Roaming\Python\Python310\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\scheruku\AppData\Roaming\Python\Python310\site-packages\rest_framework\generics.py", line 242, in post
+    return self.create(request, *args, **kwargs)
+  File "C:\work\HRproj\CandidateFeedback\views\AddFeedBack.py", line 104, in create
+    return Response(Messages1.Err_app_JP_dtls+str(exp), status=status.HTTP_400_BAD_REQUEST)
+AttributeError: type object 'Messages1' has no attribute 'Err_app_JP_dtls'
+2022-12-22 13:37:08,172 django.utils.autoreload INFO     C:\work\HRproj\HRproj\util\Messages\HR_WorkFlow_Messages.py changed, reloading.
+2022-12-22 13:37:25,279 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-22 13:37:25,298 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-22 13:37:25,299 apscheduler.scheduler INFO     Scheduler started
+2022-12-22 13:37:25,656 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-12-22 13:38:06,548 django.utils.autoreload INFO     C:\work\HRproj\CandidateFeedback\views\AddFeedBack.py changed, reloading.
+2022-12-22 13:38:20,882 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-22 13:38:20,963 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-22 13:38:20,967 apscheduler.scheduler INFO     Scheduler started
+2022-12-22 13:38:21,626 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-12-22 13:38:50,353 django.request WARNING  Bad Request: /api/candidateFeedback/addfeedback
+2022-12-22 13:55:11,011 django.utils.autoreload INFO     C:\work\HRproj\CandidateFeedback\views\AddFeedBack.py changed, reloading.
+2022-12-22 13:55:27,067 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-12-22 13:55:27,090 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2022-12-22 13:55:27,092 apscheduler.scheduler INFO     Scheduler started
+2022-12-22 13:55:27,691 django.utils.autoreload INFO     Watching for file changes with StatReloader

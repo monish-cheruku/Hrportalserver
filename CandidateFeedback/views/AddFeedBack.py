@@ -101,7 +101,7 @@ class AddFeedBack(generics.ListCreateAPIView):
                 serializer.save()
                 return Response(response,status=status.HTTP_200_OK)
         except Exception as exp:
-            return Response(Messages1.Err_app_JP_dtls+str(exp), status=status.HTTP_400_BAD_REQUEST) 
+            return Response(Messages1.ERR_FBK_CAN+str(exp), status=status.HTTP_400_BAD_REQUEST) 
     def insertnewrow(self,candidate1, status):
         success=True
         try:
@@ -132,7 +132,7 @@ class AddFeedBack(generics.ListCreateAPIView):
                 FirstName = HMUser.first_name,
                 LastName = HMUser.last_name,
                 Email = HMUser.email,
-                Stage = HRHoldstage,
+                Stage = HMHoldstage,
                 role = HMrole,
                 approvalStatus = 'N',
                 approvalDate = None,
