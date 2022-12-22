@@ -98,16 +98,26 @@ class CandidateApi(APIView):
             HMrole = Group.objects.filter(name=Constants1.ROLE_HM).first()
 
             HRuser = User.objects.get(username=HRUserName)
-            HRInterviewstage = Stage.objects.filter(StageName=Constants1.Stage_HR_INTERVIEW).first()
-            HRrole = Group.objects.filter(name=Constants1.Role_HR).first()
+            HRInterviewstage = Stage.objects.filter(StageName=Constants1.STAGE_HR_INTERVIEW).first()
+            HRrole = Group.objects.filter(name=Constants1.ROLE_HR).first()
 
-            GMuser = User.objects.get(username=GMUserName)
-            GMApprovalstage = Stage.objects.filter(StageName=Constants1.STAGE_GMA).first()
-            GMrole = Group.objects.filter(name=Constants1.ROLE_GM).first() 
+            # GMuser = User.objects.get(username=GMUserName)
+            # GMApprovalstage = Stage.objects.filter(StageName=Constants1.STAGE_GMA).first()
+            # GMrole = Group.objects.filter(name=Constants1.ROLE_GM).first() 
 
-            FCuser = User.objects.get(username=FCUserName)
-            FCApprovalstage = Stage.objects.filter(StageName=Constants1.STAGE_FCA).first()
-            FCrole = Group.objects.filter(name=Constants1.ROLE_FC).first()                          
+            # FCuser = User.objects.get(username=FCUserName)
+            # FCApprovalstage = Stage.objects.filter(StageName=Constants1.STAGE_FCA).first()
+            # FCrole = Group.objects.filter(name=Constants1.ROLE_FC).first() 
+            #     
+            
+            BHrole = Group.objects.filter(name=Constants1.ROLE_BH).first()
+            BHstage = Stage.objects.filter(StageName=Constants1.STAGE_BHA).first()
+            jobpostapprovalBH = JobPostApproval.objects.filter(jobpost= candidate1.Jobpost, Stage=BHstage, role=BHrole).first()
+            BHName=jobpostapprovalBH.approverName
+
+            BHUser = User.objects.get(username=BHName)
+            BHCandidateApprovalStage = Stage.objects.filter(StageName=Constants1.STAGE_BH_CANDIDATE_APPROVAL).first()
+
 
             if (HMUser is not None and HMCandReviewstage is not None and HMrole is not None):
                 candidatereviewHM = CandidateApprovalModel.objects.filter(Candidate= candidate1, Stage=HMCandReviewstage, role=HMrole).first()
@@ -199,17 +209,73 @@ class CandidateApi(APIView):
                     approvalDate = None,
                     approvalComments = None,
                     CreatedOn = datetime.now())
-            if (GMuser is not None and GMApprovalstage is not None and GMrole is not None):
-                candidateapprovalGM = CandidateApprovalModel.objects.filter(Candidate= candidate1, Stage=GMApprovalstage, role=GMrole).first()
-                if candidateapprovalGM is not None:
-                    CandidateApprovalModel.objects.filter(Candidate= candidate1, Stage=GMApprovalstage, role=GMrole).update(              
+            # if (GMuser is not None and GMApprovalstage is not None and GMrole is not None):
+            #     candidateapprovalGM = CandidateApprovalModel.objects.filter(Candidate= candidate1, Stage=GMApprovalstage, role=GMrole).first()
+            #     if candidateapprovalGM is not None:
+            #         CandidateApprovalModel.objects.filter(Candidate= candidate1, Stage=GMApprovalstage, role=GMrole).update(              
+            #         Candidate = candidate1,
+            #         approverName =  GMuser.username,
+            #         FirstName = GMuser.first_name,
+            #         LastName = GMuser.last_name,
+            #         Email = GMuser.email,
+            #         Stage = GMApprovalstage,
+            #         role = GMrole,
+            #         approvalStatus = Constants1.NA,
+            #         approvalDate = None,
+            #         approvalComments = None,
+            #         CreatedOn = datetime.now())
+            #     else:
+            #         CandidateApprovalModel.objects.create(
+            #         Candidate = candidate1,
+            #         approverName =  GMuser.username,
+            #         FirstName = GMuser.first_name,
+            #         LastName = GMuser.last_name,
+            #         Email = GMuser.email,
+            #         Stage = GMApprovalstage,
+            #         role = GMrole,
+            #         approvalStatus = Constants1.NA,
+            #         approvalDate = None,
+            #         approvalComments = None,
+            #         CreatedOn = datetime.now())
+            # if (FCuser is not None and FCApprovalstage is not None and FCrole is not None):
+            #     candidateapprovalFC = CandidateApprovalModel.objects.filter(Candidate= candidate1, Stage=FCApprovalstage, role=FCrole).first()
+            #     if candidateapprovalGM is not None:
+            #         CandidateApprovalModel.objects.filter(Candidate= candidate1, Stage=FCApprovalstage, role=FCrole).update(              
+            #         Candidate = candidate1,
+            #         approverName =  FCuser.username,
+            #         FirstName = FCuser.first_name,
+            #         LastName = FCuser.last_name,
+            #         Email = FCuser.email,
+            #         Stage = FCApprovalstage,
+            #         role = FCrole,
+            #         approvalStatus = Constants1.NA,
+            #         approvalDate = None,
+            #         approvalComments = None,
+            #         CreatedOn = datetime.now())
+            #     else:
+            #         CandidateApprovalModel.objects.create(
+            #         Candidate = candidate1,
+            #         approverName =  FCuser.username,
+            #         FirstName = FCuser.first_name,
+            #         LastName = FCuser.last_name,
+            #         Email = FCuser.email,
+            #         Stage = FCApprovalstage,
+            #         role = FCrole,
+            #         approvalStatus = Constants1.NA,
+            #         approvalDate = None,
+            #         approvalComments = None,
+            #         CreatedOn = datetime.now())        
+            if (BHUser is not None and BHCandidateApprovalStage is not None and BHrole is not None):
+                CandidateApprovalBH = CandidateApprovalModel.objects.filter(Candidate= candidate1, Stage=BHCandidateApprovalStage, role=BHrole).first()
+                if CandidateApprovalBH is not None:
+                    CandidateApprovalModel.objects.filter(Candidate= candidate1, Stage=BHCandidateApprovalStage, role=BHrole).update(              
                     Candidate = candidate1,
-                    approverName =  GMuser.username,
-                    FirstName = GMuser.first_name,
-                    LastName = GMuser.last_name,
-                    Email = GMuser.email,
-                    Stage = GMApprovalstage,
-                    role = GMrole,
+                    approverName =  BHUser.username,
+                    FirstName = BHUser.first_name,
+                    LastName = BHUser.last_name,
+                    Email = BHUser.email,
+                    Stage = BHCandidateApprovalStage,
+                    role =BHrole,
                     approvalStatus = Constants1.NA,
                     approvalDate = None,
                     approvalComments = None,
@@ -217,44 +283,16 @@ class CandidateApi(APIView):
                 else:
                     CandidateApprovalModel.objects.create(
                     Candidate = candidate1,
-                    approverName =  GMuser.username,
-                    FirstName = GMuser.first_name,
-                    LastName = GMuser.last_name,
-                    Email = GMuser.email,
-                    Stage = GMApprovalstage,
-                    role = GMrole,
+                    approverName =  BHUser.username,
+                    FirstName = BHUser.first_name,
+                    LastName = BHUser.last_name,
+                    Email = BHUser.email,
+                    Stage = BHCandidateApprovalStage,
+                    role =BHrole,
                     approvalStatus = Constants1.NA,
                     approvalDate = None,
                     approvalComments = None,
-                    CreatedOn = datetime.now())
-            if (FCuser is not None and FCApprovalstage is not None and FCrole is not None):
-                candidateapprovalFC = CandidateApprovalModel.objects.filter(Candidate= candidate1, Stage=FCApprovalstage, role=FCrole).first()
-                if candidateapprovalGM is not None:
-                    CandidateApprovalModel.objects.filter(Candidate= candidate1, Stage=FCApprovalstage, role=FCrole).update(              
-                    Candidate = candidate1,
-                    approverName =  FCuser.username,
-                    FirstName = FCuser.first_name,
-                    LastName = FCuser.last_name,
-                    Email = FCuser.email,
-                    Stage = FCApprovalstage,
-                    role = FCrole,
-                    approvalStatus = Constants1.NA,
-                    approvalDate = None,
-                    approvalComments = None,
-                    CreatedOn = datetime.now())
-                else:
-                    CandidateApprovalModel.objects.create(
-                    Candidate = candidate1,
-                    approverName =  FCuser.username,
-                    FirstName = FCuser.first_name,
-                    LastName = FCuser.last_name,
-                    Email = FCuser.email,
-                    Stage = FCApprovalstage,
-                    role = FCrole,
-                    approvalStatus = Constants1.NA,
-                    approvalDate = None,
-                    approvalComments = None,
-                    CreatedOn = datetime.now())                                          
+                    CreatedOn = datetime.now())                    
         except Exception as exp:
             success = False
             raise Exception (Messages1.ERR_SAVE_APP_DATA+str(exp))

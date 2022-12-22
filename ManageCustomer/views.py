@@ -35,7 +35,7 @@ class CustomerApi(APIView):
         customer_serializer = CustomerSerializer(customers, data=request.data)
         if customer_serializer.is_valid():
             customer_serializer.save()
-            return Response(Messages1.UPD_SCFL)
+            return Response(Messages1.UPD_SCFL) 
         return Response(customer_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST)
         #return JsonResponse("Failed To update", safe=False)
     

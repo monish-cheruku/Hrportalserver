@@ -9,13 +9,13 @@ class Constants1():
     STAGE_SL = 'Shortlisted'
     STAGE_GMA = 'General Manager Approval'
     STAGE_FCA = 'Finance Controller Approval'
-    APP_STATUS_N = 'Not Approved'
+    APP_STATUS_N = 'N'
     STAGE_A = 'Approved'
     STAGE_R = 'Rejected'
     STAGE_BHA = 'Business Head Approval'
     ROLE_BH = 'Business Head'
     STAGE_CANR = 'Candidate Rejected'
-    NA = 'Not Approved'
+    NA = 'N'
     STAGE_IP = 'Interview Pending'
     SELECT_FOR_INTERVIEW = 'Select For Interview'
     REJECTED_AT_REVIEW = 'Rejected at Review'
@@ -32,8 +32,14 @@ class Constants1():
     STAGE_REJECTED="Candidate Rejected"
     # STAGE_SHORTLIST="HR Interview"
     SHORTLIST="Shortlisted"
+    HM_SHORTLISTED="HM Shortlisted"
+    HR_SHORTLISTED="HR Shortlisted"
+
+
+
     STAGE_FURTHERREVIEW="Further Review"
     FURTHERREVIEW="Further Review"
     SELECTED="Selected"
     STAGE_SELECTED="Selected"
+    STAGE_BH_CANDIDATE_APPROVAL="BH Candidate Approval"
     
