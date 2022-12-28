@@ -1,6 +1,7 @@
 
 from django.shortcuts import render
 from rest_framework.views import APIView
+from HRproj.util.Mail.HR_Workflow_Emails import EmailUtils
 from jobpost.models.jobpostapprovalmodel import JobPostApproval
 
 from jobpost.models.jobpostmodel import JobPost
@@ -15,6 +16,9 @@ from django.db import transaction
 from managestages.models import Stage
 from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
 from HRproj.util.Constants.HR_WorkFlow_Constants import Constants1
+from django.conf import settings
+from django.template.loader import render_to_string
+from django.core.mail import send_mail, EmailMessage
 
 # Create your views here.
 
@@ -22,19 +26,61 @@ class JobPostApi(APIView):
 
     
 
-    def put(self, request, format=None):         
-        jobpost =  JobPost.objects.get(JobPostId=request.data['JobPostId'])
-        # jobpost.ModifiedBy = ""
-        jobpost.ModifiedOn = datetime.now()
-        jobpost.ModifiedBy = request.data['UserName']
-        JobPostDetailsPost_serializer = JobPostDetailsPostSerializer(jobpost ,data=request.data)
-        if JobPostDetailsPost_serializer.is_valid():
-            jobpost1 = JobPostDetailsPost_serializer.save()
-            if jobpost1 is not None:
-                self.insertorupdatejobpostapproval(jobpost1, request.data)
-            return Response(Messages1.UPD_SCFL)
-        return Response(JobPostDetailsPost_serializer.errors, status=status.HTTP_400_BAD_REQUEST)        
-        
+    def put(self, request, format=None): 
+        try:
+            with transaction.atomic():        
+                jobpost =  JobPost.objects.get(JobPostId=request.data['JobPostId'])
+                # jobpost.ModifiedBy = ""
+                jobpost.ModifiedOn = datetime.now()
+                jobpost.ModifiedBy = request.data['UserName']
+                JobPostDetailsPost_serializer = JobPostDetailsPostSerializer(jobpost ,data=request.data)
+                if JobPostDetailsPost_serializer.is_valid():
+                    jobpost1 = JobPostDetailsPost_serializer.save()
+                    if jobpost1 is not None:
+                        success = self.insertorupdatejobpostapproval(jobpost1, request.data)
+                        if success == True:
+                            # send email to business head.
+
+                            # body = render_to_string('businessheadjobpostapproval_template.html', context)
+                            
+                            BHUserName =  request.data["BH_User_Name"]       
+                            BHuser = User.objects.get(username=BHUserName)
+                            subject = 'Action: Job Post- '+jobpost1.JobCode+' awaiting for approval'
+                            context = {
+                                'jobcode': jobpost1.JobCode,
+                                'hiringmanager' : jobpost1.LastName+", "+jobpost1.FirstName,
+                                'url' : settings.APP_URL,
+                                'approvername' : BHuser.last_name+", "+BHuser.first_name
+                            }
+                            body = EmailUtils.getEmailBody('businessheadjobpostapproval_template.html', context)
+                            print(body)
+                            print(subject)
+                            print(BHuser.email)
+                            print(jobpost1.Email)
+                            # send_mail(
+                            #     subject,
+                            #     message=body,
+                            #     recipient_list=[BHuser.email],
+                            #     from_email=settings.DEFAULT_FROM_EMAIL,
+                            #     fail_silently=False,
+                            # )  
+                            # if settings.SEND_EMAIL:    
+                            #     email = EmailMessage(
+                            #                 subject=subject,
+                            #                 body=body,
+                            #                 from_email=settings.DEFAULT_FROM_EMAIL,
+                            #                 to=[BHuser.email],            
+                            #                 cc=[jobpost1.Email]
+                            #     )
+
+                            #     email.content_subtype = "html"  # set the content subtype to html
+                            #     email.send()   
+                            EmailUtils.sendEmail(subject, body, [BHuser.email], [jobpost1.Email])                               
+                    return Response(Messages1.UPD_SCFL)
+                return Response(JobPostDetailsPost_serializer.errors, status=status.HTTP_400_BAD_REQUEST)        
+        except Exception as exp:
+            # exp.with_traceback()
+            return Response(Messages1.ERR_CRTG_JP+str(exp), status=status.HTTP_400_BAD_REQUEST)        
 
     # @transaction.atomic
     def post(self, request, format=None):
@@ -47,7 +93,43 @@ class JobPostApi(APIView):
                     if jobpost1 is not None:                             
                         success = self.insertorupdatejobpostapproval(jobpost1, request.data)
                         if success == True:
+                            # send email to business head.
 
+                            # body = render_to_string('businessheadjobpostapproval_template.html', context)
+                            
+                            BHUserName =  request.data["BH_User_Name"]       
+                            BHuser = User.objects.get(username=BHUserName)
+                            subject = 'Action: Job Post- '+jobpost1.JobCode+' awaiting for approval'
+                            context = {
+                                'jobcode': jobpost1.JobCode,
+                                'hiringmanager' : jobpost1.LastName+", "+jobpost1.FirstName,
+                                'url' : settings.APP_URL,
+                                'approvername' : BHuser.last_name+", "+BHuser.first_name
+                            }
+                            body = EmailUtils.getEmailBody('businessheadjobpostapproval_template.html', context)
+                            print(body)
+                            print(subject)
+                            print(BHuser.email)
+                            print(jobpost1.Email)
+                            # send_mail(
+                            #     subject,
+                            #     message=body,
+                            #     recipient_list=[BHuser.email],
+                            #     from_email=settings.DEFAULT_FROM_EMAIL,
+                            #     fail_silently=False,
+                            # )  
+                            # if settings.SEND_EMAIL:    
+                            #     email = EmailMessage(
+                            #                 subject=subject,
+                            #                 body=body,
+                            #                 from_email=settings.DEFAULT_FROM_EMAIL,
+                            #                 to=[BHuser.email],            
+                            #                 cc=[jobpost1.Email]
+                            #     )
+
+                            #     email.content_subtype = "html"  # set the content subtype to html
+                            #     email.send()                      
+                            EmailUtils.sendEmail(subject, body, [BHuser.email], [jobpost1.Email])
                     # return Response({"status": "success", "data": company_serializer.data}, status=status.HTTP_200_OK)  
                             return Response(Messages1.JP_CRTD_SCFL, status=status.HTTP_200_OK)
                         else:
