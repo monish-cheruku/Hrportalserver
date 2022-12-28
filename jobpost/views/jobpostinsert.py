@@ -70,7 +70,7 @@ class JobPostApi(APIView):
 
             HRuser = User.objects.get(username=HRUserName)
             HRstage = Stage.objects.filter(StageName=Constants1.STAGE_PP).first()
-            HRrole = Group.objects.filter(name=Constants1.ROLE_HR).first()  
+            HRrole = Group.objects.filter(name=Constants1.ROLE_RECRUITER).first()  
             if (BHuser is not None and BHstage is not None and BHrole is not None):
                 jobpostapprovalBH = JobPostApproval.objects.filter(jobpost= jobpost1, Stage=BHstage, role=BHrole).first()
                 if jobpostapprovalBH is not None:

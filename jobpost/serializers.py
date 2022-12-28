@@ -159,7 +159,7 @@ class  JobPostDetailsPostSerializer(serializers.ModelSerializer):
 
         instance.JobCode = jobcode
         instance.JobTitle=validated_data.get('JobTitle', instance.JobTitle) 
-        instance.Serviceline = serviceline
+        instance.ServiceLine = serviceline
         instance.BusinessUnit = businessUnit
         instance.Customer = customer
         instance.Location = location

@@ -75,22 +75,22 @@ class CandidateApi(APIView):
             else:
                 HRUserName = ""      
             # Finannce Controller
-            FCUserObj =  JobPostUserRolesModel.objects.filter(RoleName = Constants1.ROLE_FC).first()
-            if FCUserObj is not None:
-                FCUserName = FCUserObj.UserName
-            else:
-                FCUserName = ""  
-            # General Manager
-            GMUserObj =  JobPostUserRolesModel.objects.filter(RoleName = Constants1.ROLE_GM).first()
-            if GMUserObj is not None:
-                GMUserName = GMUserObj.UserName
-            else:
-                GMUserName = ""  
+            # FCUserObj =  JobPostUserRolesModel.objects.filter(RoleName = Constants1.ROLE_FC).first()
+            # if FCUserObj is not None:
+            #     FCUserName = FCUserObj.UserName
+            # else:
+            #     FCUserName = ""  
+            # # General Manager
+            # GMUserObj =  JobPostUserRolesModel.objects.filter(RoleName = Constants1.ROLE_GM).first()
+            # if GMUserObj is not None:
+            #     GMUserName = GMUserObj.UserName
+            # else:
+            #     GMUserName = ""  
            
             print("HMUserName Name --"+HMUserName)
             print("HRUserName Name --"+HRUserName)
-            print("FCUserName Name --"+FCUserName)
-            print("GMUserName Name --"+GMUserName)
+            # print("FCUserName Name --"+FCUserName)
+            # print("GMUserName Name --"+GMUserName)
 
             HMUser = User.objects.get(username=HMUserName)
             HMCandReviewstage = Stage.objects.filter(StageName=Constants1.STAGE_CR).first()
@@ -109,7 +109,6 @@ class CandidateApi(APIView):
             # FCApprovalstage = Stage.objects.filter(StageName=Constants1.STAGE_FCA).first()
             # FCrole = Group.objects.filter(name=Constants1.ROLE_FC).first() 
             #     
-            
             BHrole = Group.objects.filter(name=Constants1.ROLE_BH).first()
             BHstage = Stage.objects.filter(StageName=Constants1.STAGE_BHA).first()
             jobpostapprovalBH = JobPostApproval.objects.filter(jobpost= candidate1.Jobpost, Stage=BHstage, role=BHrole).first()
@@ -117,6 +116,7 @@ class CandidateApi(APIView):
 
             BHUser = User.objects.get(username=BHName)
             BHCandidateApprovalStage = Stage.objects.filter(StageName=Constants1.STAGE_BH_CANDIDATE_APPROVAL).first()
+            print("BHName"+BHName)
 
 
             if (HMUser is not None and HMCandReviewstage is not None and HMrole is not None):

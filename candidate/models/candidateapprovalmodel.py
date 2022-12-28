@@ -15,7 +15,7 @@ class CandidateApprovalModel(models.Model):
     Email = models.CharField(max_length=100 ,  null=False, db_column='Email')
     Stage = models.ForeignKey(Stage, null =True, on_delete=models.CASCADE, db_column='Stage_ID')
     role = models.ForeignKey(Group, null =True, on_delete=models.CASCADE, db_column='Role_ID')
-    approvalStatus = models.CharField(max_length=20 ,  null=False, db_column='Approval_Status')
+    approvalStatus = models.CharField(max_length=40 ,  null=False, db_column='Approval_Status')
     approvalDate = models.DateField(db_column='Approval_Date',  null =True, blank=True)
     approvalComments = models.CharField(max_length=1000 , null =True,  db_column='Approval_Comments')
     CreatedOn = models.DateTimeField(db_column='Created_On',  null =True, blank=True)
