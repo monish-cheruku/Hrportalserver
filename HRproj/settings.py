@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ak^vrhhgy3rgmes$4qm50nd_h^dkb71%enp58aqh!e+t184)d%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -217,3 +217,24 @@ SIMPLE_JWT = {
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 ROOT_URL=os.path.join(BASE_DIR,'a')
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.static',
+            ],
+        },
+    },
+]
+
+APP_URL = 'http://localhost:3000/dashboard'
+DEFAULT_FROM_EMAIL = 'sbatchu@belcan.com'
+SEND_EMAIL = True

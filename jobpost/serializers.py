@@ -73,7 +73,7 @@ class  JobPostDetailsPostSerializer(serializers.ModelSerializer):
         return data
 
     def create(self, validated_data):
-        stage_name = Constants1.Stage_BHA
+        stage_name = Constants1.STAGE_BHA
         serviceline = ServiceLine.objects.filter(ServiceLineId=validated_data["ServiceLine"]).first()
         customer = Customer.objects.filter(CustomerId=validated_data["Customer"]).first()
         stage = Stage.objects.filter(StageName=stage_name).first()
@@ -120,9 +120,9 @@ class  JobPostDetailsPostSerializer(serializers.ModelSerializer):
             ServiceLine = serviceline,
             Customer = customer,
             Location = location,
-            MinimumExperiance=validated_data["minimumexperiance"],
-            MaximumExperiance=validated_data["maximumexperiance"],
-            MaximumCTC=validated_data["maximumctc"],
+            MinimumExperiance=validated_data["MinimumExperiance"],
+            MaximumExperiance=validated_data["MaximumExperiance"],
+            MaximumCTC=validated_data["MaximumCTC"],
             EmploymentType = validated_data["EmploymentType"],
             Duration = validated_data["Duration"],
             JobTitle =validated_data["JobTitle"],
