@@ -10,7 +10,7 @@ from managestages.models import Stage
 from candidate.models.candidateactionmodel import CandidateActionModel
 import os
 from HRproj.util.Constants.HR_WorkFlow_Constants import Constants1
-
+from candidate.models.selected_Candidates_Model import Selected_Candidates
 class  CandidatePostSerializer(serializers.ModelSerializer):    
 
     Job_Post_ID = serializers.IntegerField()
@@ -305,3 +305,9 @@ class FeedbackFieldsSerializer(serializers.ModelSerializer):
     class Meta:
         model=Feedback_Category
         fields="__all__"        
+class selectedcandidatesgridviewSerializer(serializers.ModelSerializer):
+    # candidatedetails=Candidate.objects.all()
+    class Meta:
+        model=Selected_Candidates
+        fields="__all__"
+        depth=2

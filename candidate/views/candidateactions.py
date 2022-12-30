@@ -69,7 +69,7 @@ class CandidateAction(ModelViewSet):
                         response = "Business Head  has been Approved Succesfully"
                     elif (Status == Constants1.FC_Approval):
                         stage = Stage.objects.filter(
-                            StageName=Constants1.STATE_GM_Approval).first()
+                            StageName=Constants1.STAGE_GM_Approval).first()
                         response = "Finance Controller  has been Approved Succesfully"
                     elif (Status == Constants1.GM_Approval):
                         stage = Stage.objects.filter(
@@ -109,12 +109,12 @@ class CandidateAction(ModelViewSet):
                     )
                 else:
                     raise Exception
-        #         if feedback is not None:
-        #             print("create bulk insert")
-        #             print(request.data)
-        #             serializer = AddFeedBackSerializer(data=feedback,many=True)
-        #             serializer.is_valid(raise_exception=True)
-        #             serializer.save()
+                if feedback is not None:
+                    print("create bulk insert")
+                    print(request.data)
+                    serializer = AddFeedBackSerializer(data=feedback,many=True)
+                    serializer.is_valid(raise_exception=True)
+                    serializer.save()
                 return Response(response, status=status.HTTP_200_OK)
         except Exception as exp:
             return Response(Messages1.ERR_FBK_CAN+str(exp), status=status.HTTP_400_BAD_REQUEST)

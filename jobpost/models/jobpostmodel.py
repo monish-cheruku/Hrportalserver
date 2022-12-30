@@ -3,6 +3,7 @@ from django.db import models
 from ManageCustomer.models import Customer
 from ManageExperienceLevel.models import Experience
 from ManageLocation.models import Location
+
 from managebusinessunit.models import BusinessUnit
 from managecompany.models import Company
 from manageserviceline.models import ServiceLine
@@ -43,7 +44,7 @@ class JobPost(models.Model):
     CreatedOn = models.DateTimeField(db_column='Created_On',  null =True, blank=True)
     ModifiedBy = models.CharField(max_length=20,  null =True, db_column='Modified_By')
     ModifiedOn = models.DateTimeField(db_column='Modified_On', null =True, blank=True)
-
+    # jobpostapprovals=models.ManyToManyField(JobPostApproval,null=True,related_name="JobPostapprovals")
     class Meta:    
         db_table = 'HW_JobPost_Details'
 

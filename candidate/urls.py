@@ -5,6 +5,7 @@ from candidate.views.candidateinsert import CandidateApi
 from candidate.views.candidatedetails import CandidateDetails
 from candidate.views.FeedbackFeilds import FeedbackFields
 from candidate.views.CandidateFeedbacks import CandidateFeedBacks
+from candidate.views.selectedcandidatesgridview import selectedcandidatesgridview
 urlpatterns=[
      path('/addcandidate', CandidateApi.as_view()),
      path('/gridcandidates', CandidateDetails.as_view({'post': 'candidatedetails'})),
@@ -13,5 +14,6 @@ urlpatterns=[
      path('/candidateworkflowsubmit', CandidateAction.as_view({'post': 'candidateworkflowsubmit'})),
      path('/getfeedbackfields', FeedbackFields.as_view()),
      path('/getcandidatefeedbacks',CandidateFeedBacks.as_view()),
+     path('/getselectedcandidates',selectedcandidatesgridview.as_view()),
 
 ]
