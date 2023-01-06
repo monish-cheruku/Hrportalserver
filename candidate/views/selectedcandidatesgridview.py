@@ -13,10 +13,13 @@ class selectedcandidatesgridview(APIView):
         username=request.data["username"]
         selectedcandidatesarr=[]
         res=[]
+        product_qs=Selected_Candidates.objects.none()
         try:
             if Constants1.ROLE_HR in role: 
                 selectedcandidates = Selected_Candidates.objects.all()
-                res =res+ selectedcandidatesgridviewSerializer(selectedcandidates, many=True).data
+                # res =res+ selectedcandidatesgridviewSerializer(selectedcandidates, many=True).data
+                product_qs=product_qs | selectedcandidatesgridviewSerializer(selectedcandidates, many=True)
+
             if Constants1.ROLE_RECRUITER in role:
                 # queryset = Selected_Candidates.prefetch_related('reading_group', 'reading_group__users', 'reading_group__owner') 
                 # print(Selected_Candidates.Candidate_ID.get_object())
@@ -26,12 +29,12 @@ class selectedcandidatesgridview(APIView):
                 #     if s.candidate.HRUserName==username:
                 #         selectedcandidatesarr.append(s)
                 # print(selectedcandidatesarr)
-                product_qs = Selected_Candidates.objects.filter(candidate__HRUserName=username)
+                product_qs=product_qs.union(Selected_Candidates.objects.filter(candidate__HRUserName=username))
 
 
 
 
-                res = res+ selectedcandidatesgridviewSerializer(product_qs, many=True)
+                res =  selectedcandidatesgridviewSerializer(product_qs, many=True)
             if Constants1.ROLE_HM in role:
                 # queryset = Selected_Candidates.prefetch_related('reading_group', 'reading_group__users', 'reading_group__owner') 
                 # print(Selected_Candidates.Candidate_ID.get_object())
@@ -40,9 +43,12 @@ class selectedcandidatesgridview(APIView):
                 #     if s.candidate.Jobpost.UserName==username:
                 #         selectedcandidatesarr.append(s)
                 # print(selectedcandidatesarr)
-                product_qs = res.append( Selected_Candidates.objects.filter(candidate__Jobpost__UserName=username))
+                # product_qs =Selected_Candidates.objects.filter(candidate__Jobpost__UserName=username)
+                res=product_qs.union(Selected_Candidates.objects.filter(candidate__Jobpost__UserName=username))
+                
 
-                res = res+selectedcandidatesgridviewSerializer(product_qs, many=True)
+
+                # res = res+selectedcandidatesgridviewSerializer(product_qs, many=True).data
             if Constants1.ROLE_BH in role:
                 # queryset = Selected_Candidates.prefetch_related('reading_group', 'reading_group__users', 'reading_group__owner') 
                 # print(Selected_Candidates.Candidate_ID.get_object())
@@ -55,13 +61,14 @@ class selectedcandidatesgridview(APIView):
                 jobpostapprovals=JobPostApproval.objects.filter(approverName=username,Stage_id=1,role_id=2)
                 for jp in jobpostapprovals:
                     jparr.append(jp.jobpost.JobPostId)
-                product_qs = Selected_Candidates.objects.filter(candidate__Jobpost__JobPostId__in=jparr)
+                # product_qs = Selected_Candidates.objects.filter(candidate__Jobpost__JobPostId__in=jparr)
 
-                res =res+ selectedcandidatesgridviewSerializer(product_qs, many=True)
+                res1 =Selected_Candidates.objects.filter(candidate__Jobpost__JobPostId__in=jparr)
+                # res =selectedcandidatesgridviewSerializer(product_qs, many=True).data
+                product_qs=res.union(res1)
 
 
-            
-
-            return Response(res)    
+            # product_qs=product_qs.distinct()
+            return Response(selectedcandidatesgridviewSerializer(product_qs, many=True).data)  
         except Exception as err:
             return Response(str(err)+"error while fetching selcted candidates",status=status.HTTP_400_BAD_REQUEST)

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from candidate.models.candidateactionmodel import CandidateActionModel
-from candidate.serializers import AddFeedBackSerializer, CandidateActionModelSerializer
+from candidate.serializers import AddFeedBackSerializer, AddSelectedCandidatesSerializer, CandidateActionModelSerializer
 from rest_framework.viewsets import ModelViewSet
 from rest_framework import status
 from rest_framework.decorators import action
@@ -15,6 +15,8 @@ from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
 from managestages.models import Stage
 from django.contrib.auth.models import User, Group
 from jobpost.models.jobpostuserrolesmodel import JobPostUserRolesModel
+from candidate.models.selected_Candidates_Model import Selected_Candidates
+
 
 
 class CandidateAction(ModelViewSet):
@@ -36,7 +38,7 @@ class CandidateAction(ModelViewSet):
                 Status = request.data["status"]
                 comments = request.data["comments"]
                 feedback=None
-                # feedback = request.data["feedback"]
+                feedback = request.data["feedback"]
                 response = ''
                 candidateob = Candidate.objects.filter(
                     CandidateId=candidateid).first()
@@ -70,10 +72,12 @@ class CandidateAction(ModelViewSet):
                     elif (Status == Constants1.FC_Approval):
                         stage = Stage.objects.filter(
                             StageName=Constants1.STAGE_GM_Approval).first()
-                        response = "Finance Controller  has been Approved Succesfully"
+                        
+                        response = "General manager  Selected this candidate"
                     elif (Status == Constants1.GM_Approval):
                         stage = Stage.objects.filter(
                             StageName=Constants1.STAGE_SELECTED).first()
+                        self.addselectedcandidate(candidateob)
                         response = "Candidate has been selected"
 
                     elif (Status == Constants1.HR_SHORTLISTED):
@@ -91,6 +95,15 @@ class CandidateAction(ModelViewSet):
                                 "error while creating new row in candidate approval table")
                         else:
                             response = "Candidate has been put on hold"
+                    elif (Status == Constants1.HR_HOLD):
+                        stage = Stage.objects.filter(
+                            StageName=Constants1.STAGE_HR_HOLD).first()
+                        success = self.insertnewrow(candidateob, Status)
+                        if success == False:
+                            raise Exception(
+                                "error while creating new row in candidate approval table")
+                        else:
+                            response = "Candidate has been put on  HR hold"
                     elif (Status == Constants1.REJECTED):
                         stage = Stage.objects.filter(
                             StageName=Constants1.STAGE_REJECTED).first()
@@ -217,6 +230,32 @@ class CandidateAction(ModelViewSet):
                     approvalDate=None,
                     approvalComments=None,
                     CreatedOn=datetime.now())
+            if status == Constants1.BH_CANDIDATE_APPROVAL and GMuser is not None and GMApprovalstage is not None and GMrole is not None:
+                CandidateApprovalModel.objects.create(
+                    Candidate=candidate1,
+                    approverName=GMuser.username,
+                    FirstName=GMuser.first_name,
+                    LastName=GMuser.last_name,
+                    Email=GMuser.email,
+                    Stage=GMApprovalstage,
+                    role=GMrole,
+                    approvalStatus='N',
+                    approvalDate=None,
+                    approvalComments=None,
+                    CreatedOn=datetime.now())
+            if status == Constants1.HR_HOLD and HRuser is not None and HRHoldstage is not None and HRrole is not None:
+                CandidateApprovalModel.objects.create(
+                    Candidate=candidate1,
+                    approverName=HRuser.username,
+                    FirstName=HRuser.first_name,
+                    LastName=HRuser.last_name,
+                    Email=HRuser.email,
+                    Stage=HRHoldstage,
+                    role=HRrole,
+                    approvalStatus='N',
+                    approvalDate=None,
+                    approvalComments=None,
+                    CreatedOn=datetime.now())
             # if status == Constants1.HOLD_AT_HM_INTERVIEW and HMUser is not None and HMHoldstage is not None and HMrole is not None:
             #     CandidateApprovalModel.objects.create(
             #     Candidate = candidate1,
@@ -234,3 +273,42 @@ class CandidateAction(ModelViewSet):
             success = False
             raise Exception(Messages1.ERR_SAVE_APP_DATA+str(exp))
         return success
+    def addselectedcandidate(self,candidateob):
+        print(candidateob)
+        selectedcandidatesvar=Selected_Candidates
+        # addselectedcandidatesserializer=AddSelectedCandidatesSerializer(data=candidateob)
+       
+        try:
+            # res= addselectedcandidatesserializer.save(
+            Selected_Candidates.objects.create(
+                candidate=candidateob,
+                IsOfferAccepted=False,
+                IsJoined=False,
+                HRCID=None,
+                EmployeeID=None,
+                designation=None,
+                subband=None,#foerign key
+                band=None,#foerign key
+                DateOfJoining=None,
+                FixedCTC=0,
+                VariablePercentage=None,
+                MQVariable="N",
+                FinalCTC=0,
+                candidatecategory=None,#foreign key
+                Is_Eligible_annu_Mgnt_Bonus=False,
+                Is_Eligible_Joining_Bonus=False,
+                IS_Eligible_Monthly_Incentive=False,
+                Created_By="",
+                Created_on=datetime.now(),
+                Modified_By=None,
+                Modified_On=None,
+            )
+            
+            # create({
+            #     candidate=candidateob
+            # })
+            # if res==True:
+            #     return
+        except Exception as  e:
+                return Response(str(e))
+

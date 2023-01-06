@@ -16,4 +16,5 @@ urlpatterns=[
      path('/getcandidatefeedbacks',CandidateFeedBacks.as_view()),
      path('/getselectedcandidates',selectedcandidatesgridview.as_view()),
 
+
 ]

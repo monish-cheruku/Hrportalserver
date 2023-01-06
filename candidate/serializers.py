@@ -11,6 +11,7 @@ from candidate.models.candidateactionmodel import CandidateActionModel
 import os
 from HRproj.util.Constants.HR_WorkFlow_Constants import Constants1
 from candidate.models.selected_Candidates_Model import Selected_Candidates
+from jobpost.serializers import JobPostDetailsGridSerializer
 class  CandidatePostSerializer(serializers.ModelSerializer):    
 
     Job_Post_ID = serializers.IntegerField()
@@ -306,8 +307,16 @@ class FeedbackFieldsSerializer(serializers.ModelSerializer):
         model=Feedback_Category
         fields="__all__"        
 class selectedcandidatesgridviewSerializer(serializers.ModelSerializer):
-    # candidatedetails=Candidate.objects.all()
+    jobpost=JobPostDetailsGridSerializer(source="candidate.Jobpost")
+    candidate=CandidateDetailsGridSerializer()
+   
+    
+        
     class Meta:
         model=Selected_Candidates
         fields="__all__"
-        depth=2
+        
+class AddSelectedCandidatesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Selected_Candidates
+        fields=["candidate"]
