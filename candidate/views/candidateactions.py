@@ -230,19 +230,19 @@ class CandidateAction(ModelViewSet):
                     approvalDate=None,
                     approvalComments=None,
                     CreatedOn=datetime.now())
-            if status == Constants1.BH_CANDIDATE_APPROVAL and GMuser is not None and GMApprovalstage is not None and GMrole is not None:
-                CandidateApprovalModel.objects.create(
-                    Candidate=candidate1,
-                    approverName=GMuser.username,
-                    FirstName=GMuser.first_name,
-                    LastName=GMuser.last_name,
-                    Email=GMuser.email,
-                    Stage=GMApprovalstage,
-                    role=GMrole,
-                    approvalStatus='N',
-                    approvalDate=None,
-                    approvalComments=None,
-                    CreatedOn=datetime.now())
+            # if status == Constants1.BH_CANDIDATE_APPROVAL and GMuser is not None and GMApprovalstage is not None and GMrole is not None:
+            #     CandidateApprovalModel.objects.create(
+            #         Candidate=candidate1,
+            #         approverName=GMuser.username,
+            #         FirstName=GMuser.first_name,
+            #         LastName=GMuser.last_name,
+            #         Email=GMuser.email,
+            #         Stage=GMApprovalstage,
+            #         role=GMrole,
+            #         approvalStatus='N',
+            #         approvalDate=None,
+            #         approvalComments=None,
+            #         CreatedOn=datetime.now())
             if status == Constants1.HR_HOLD and HRuser is not None and HRHoldstage is not None and HRrole is not None:
                 CandidateApprovalModel.objects.create(
                     Candidate=candidate1,

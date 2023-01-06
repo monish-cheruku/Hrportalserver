@@ -116,7 +116,7 @@ DATABASES = {
         'NAME': 'HR_proj',
         'USER': 'sa',  
         'PASSWORD': 'Belcan@123',
-        'HOST': 'ENG127224',
+        'HOST': 'ENG132076',
         'PORT': '1433',
         'OPTIONS': {"driver": "ODBC Driver 17 for SQL Server", 
         },
@@ -237,4 +237,4 @@ TEMPLATES = [
 
 APP_URL = 'http://localhost:3000/dashboard'
 DEFAULT_FROM_EMAIL = 'sbatchu@belcan.com'
-SEND_EMAIL = True
+SEND_EMAIL = False
