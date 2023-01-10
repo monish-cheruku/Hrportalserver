@@ -56,6 +56,9 @@ class CandidateActionModel(models.Model):
     experience_Level = models.CharField(max_length=50, db_column='Experience_Level')
     DefAvgApprovedCTC = models.IntegerField(db_column='Avg_Approved_CTC')
     DefAvgBillRate = models.IntegerField(db_column='Avg_Bill_Rate')
+    MinimumExperiance = models.IntegerField(db_column='Minimum_Experiance')
+    MaximumExperiance = models.IntegerField(db_column='Maximum_Experiance')
+    MaximumCTC = models.IntegerField(db_column='Maximum_CTC')
 
     class Meta:   
         managed = False 
