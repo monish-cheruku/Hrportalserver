@@ -12,6 +12,7 @@ from rest_framework import status
 
 from login.serializers import LoginSerializer, UserSerializer
 from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -19,15 +20,21 @@ class LoginApi(APIView):
 
     def post(self, request, format=None): 
         # loginSerializer = LoginSerializer(data=request.data)
-        user = authenticate(username=request.data['User_name'], password =request.data['User_name'] )
-        userserializer =  UserSerializer(user)
-        if user is not None:
-            return Response(userserializer.data, status=status.HTTP_200_OK)
-            # l = user.groups.values_list('name',flat = True) # QuerySet Object
-            # l_as_list = list(l)   
-            # print(l_as_list)
-        else:
-            return Response(Messages1.UNF, status=status.HTTP_403_FORBIDDEN)
+        try:
+            user = User.objects.filter(username= request.data['User_name']).first()
+            # user = authenticate(username=request.data['User_name'], password =request.data['User_name'] )
+            
+            if user is not None:
+                userserializer =  UserSerializer(user)
+                return Response(userserializer.data, status=status.HTTP_200_OK)
+                # l = user.groups.values_list('name',flat = True) # QuerySet Object
+                # l_as_list = list(l)   
+                # print(l_as_list)
+            else:
+                return Response(Messages1.UNF, status=status.HTTP_403_FORBIDDEN)
+        except Exception as ex:
+                return Response(Messages1.UNF, status=status.HTTP_403_FORBIDDEN)
+
 
             
 
