@@ -63,6 +63,7 @@ urlpatterns = [
      path('api/Employementtype', include('Employementtype.urls')),
      path('api/Qualification', include('Qualification.urls')),
      path('api/Outlook', include('Outlook.urls')),
+     path('api/selectedcandidate', include('selectedcandidate.urls')),
 
 
 
