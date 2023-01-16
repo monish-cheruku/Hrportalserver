@@ -116,7 +116,7 @@ DATABASES = {
         'NAME': 'HR_proj',
         'USER': 'sa',  
         'PASSWORD': 'Belcan@123',
-        'HOST': 'ENG132076',
+        'HOST': 'ENG127224',
         'PORT': '1433',
         'OPTIONS': {"driver": "ODBC Driver 17 for SQL Server", 
         },

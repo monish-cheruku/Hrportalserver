@@ -73,7 +73,7 @@ class CandidateAction(ModelViewSet):
                         stage = Stage.objects.filter(
                             StageName=Constants1.STAGE_GM_Approval).first()
                         
-                        response = "General manager  Selected this candidate"
+                        response = "Finance Controller has been Approved Succesfully"
                     elif (Status == Constants1.GM_Approval):
                         stage = Stage.objects.filter(
                             StageName=Constants1.STAGE_SELECTED).first()

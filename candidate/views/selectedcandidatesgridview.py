@@ -6,6 +6,7 @@ from rest_framework import status
 from candidate.models.candidatemodel import Candidate
 from jobpost.models.jobpostapprovalmodel import JobPostApproval
 from candidate.serializers import selectedcandidatesgridviewSerializer
+from rest_framework.decorators import action
 class selectedcandidatesgridview(APIView):
     def post(self,request,format=None):
         role=[]
@@ -36,3 +37,5 @@ class selectedcandidatesgridview(APIView):
             return Response(selectedcandidatesgridviewSerializer(product_qs, many=True).data)  
         except Exception as err:
             return Response(str(err)+"error while fetching selcted candidates",status=status.HTTP_400_BAD_REQUEST)
+ 
+        
