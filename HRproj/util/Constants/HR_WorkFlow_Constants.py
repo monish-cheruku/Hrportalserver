@@ -25,6 +25,7 @@ class Constants1():
     HM_HOLD = "HM Hold"
 
     STAGE_HM_HOLD = "HM Hold"
+    HR_HOLD = "HR Hold"
     STAGE_HR_HOLD = "HR Hold"
     REJECTED = "Rejected"
     STAGE_REJECTED = "Candidate Rejected"

@@ -67,7 +67,7 @@ INSTALLED_APPS = [
     'Employementtype',
     'Qualification',
     'document',
-    'doc'
+    'selectedcandidate'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True

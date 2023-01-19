@@ -13,3 +13,4 @@ class CandidateFeedBacks(APIView):
             return Response(res.data)    
         except:
             return Response("Failed",status=status.HTTP_400_BAD_REQUEST)
+            #prefetch related join tables a and b?

@@ -24,6 +24,7 @@ class  UserSerializer(serializers.ModelSerializer):
     #     model = User    
     #     fields = ['username', 'first_name', 'last_name', 'email', 'groups']
     groups = GroupSerializer(many=True)
+    # groupsarr=
     # def get_groups(self, obj):
     #      return obj.groups.values_list('name', flat=True)
 
