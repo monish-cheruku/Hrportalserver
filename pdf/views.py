@@ -38,6 +38,9 @@ def PDF(request):
     NoOf_Openings = jobpostdata.NoOfPositions
     jobpostdata.OnBoardingDate=datetime.strptime(str(jobpostdata.OnBoardingDate), "%Y-%m-%d").strftime('%m/%d/%Y')
     OnBoarding_Date = jobpostdata.OnBoardingDate
+    # Min_Experience_Range = jobpostdata.MinimumExperiance
+    # Max_Experience_Range = jobpostdata.MaximumExperiance
+    Experience_Range = str(jobpostdata.MinimumExperiance) + '-' + str(jobpostdata.MaximumExperiance)
 
     im = Image(logo, 6*inch, 0.75*inch, hAlign='LEFT')
     Story.append(im) 
@@ -78,6 +81,9 @@ def PDF(request):
     Story.append(Paragraph(ptext, styles["Normal"]))
     Story.append(Spacer(1, 12)) 
    
+    ptext = "<b>" + 'Experience Range:' + "</b>" '%s' % str(Experience_Range) 
+    Story.append(Paragraph(ptext, styles["Normal"]))
+    Story.append(Spacer(1, 12)) 
    
     doc.build(Story)
 

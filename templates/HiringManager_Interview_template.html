@@ -1,0 +1,20 @@
+
+
+{% extends 'email_base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block subject %}
+  Dear {{hiringmanager}}
+{% endblock %}
+
+{% block body %}
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Verdana, Geneva, sans-serif;">
+  Candidate {{CandidateCode}} has been selected for interview. Kindly update the status in the HR Workflow application using below url.   
+</p> 
+
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Verdana, Geneva, sans-serif;">
+ <a href="{{ url}}">{{ url }}</a>.
+</p>
+{% endblock %}

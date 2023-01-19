@@ -3,6 +3,7 @@ from rest_framework.views import APIView
 from django.db import transaction
 from rest_framework.response import Response
 from rest_framework import status
+from HRproj.util.Mail.HR_Workflow_Emails import EmailUtils
 from candidate.models.candidateapprovalmodel import CandidateApprovalModel
 from candidate.models.candidatemodel import Candidate  
 from datetime import datetime
@@ -50,7 +51,9 @@ class CandidateApi(APIView):
         if CandidatePost_serializer.is_valid():
             candidate1 = CandidatePost_serializer.save()
             if candidate1 is not None:
+
                 self.insertorupdatecandidateapproval(candidate1, request.data)
+                
                 return Response(Messages1.UPD_SCFL)
         return Response(CandidatePost_serializer.errors.values(), status=status.HTTP_400_BAD_REQUEST) 
 

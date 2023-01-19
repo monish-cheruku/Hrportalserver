@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
-from django.http.response import JsonResponse
 from rest_framework import status  
 from rest_framework.response import Response
 from jobpost.models.jobpostactionmodel import JobPostActionModel
@@ -16,6 +15,10 @@ from rest_framework.decorators import action
 from rest_framework.viewsets import ModelViewSet
 from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
 from HRproj.util.Constants.HR_WorkFlow_Constants import Constants1
+from HRproj.util.Mail.HR_Workflow_Emails import EmailUtils
+from django.conf import settings
+from jobpost.models.jobpoststakeholders import JobPostStakeHolders
+
 
 # Create your views here.
 
@@ -42,22 +45,76 @@ class JobPostAction(ModelViewSet):
                     approvalComments = approvalComments,
                 )
 
+                jobpost =  JobPost.objects.filter(JobPostId=jobPostId).first()
+                emails = JobPostStakeHolders.objects.filter(JobPostId=jobPostId).first()
                 # JobPostApproval_serializer = JobPostApprovalSerializer(jobPostApproval)
                 # if JobPostApproval_serializer.is_valid():
                 #     jobPostApprovalupdated = JobPostApproval_serializer.save()
                 if jobPostApproval is not None:
-                    if (approvalStatus == Constants1.STAGE_A):
+                    if (approvalStatus == Constants1.STAGE_A):                
                         stage = Stage.objects.filter(StageName=Constants1.STAGE_PP).first()
                         response = Messages1.JP_APP_SCFL 
+
                     elif (approvalStatus == Constants1.STAGE_R):
                         stage = Stage.objects.filter(StageName=Constants1.STAGE_R).first()
                         response = Messages1.JP_RJCTD
+
                     print(stage.StageId)
-                    jobpost =  JobPost.objects.filter(JobPostId=jobPostId).update(
+                    count =  JobPost.objects.filter(JobPostId=jobPostId).update(
                         Stage =  stage   
                     )
-                    print(jobpost)
-                    return Response(response, status=status.HTTP_200_OK)            
+
+                    print(count)
+                    # return Response(response, status=status.HTTP_200_OK)    
+                    
+                if jobPostApproval is not None:
+                    if (approvalStatus == Constants1.STAGE_A):
+
+                        recruitermail = emails.RecruiterEmail
+                        hiringmanagermail = emails.HMemail
+                        businessheadmail = emails.BHemail
+                        subject = 'Action: Job Post with '+jobpost.JobCode+' profile upload'
+                        context = {
+                            'jobcode': jobpost.JobCode,
+                            'recruitername' : emails.RecruiterName,
+                            'hiringmanager' : emails.HMname,
+                            'businesshead' : emails.BHname,
+                            'url' : settings.APP_URL,
+                        }
+                        body = EmailUtils.getEmailBody('HR_ProfilesUpload_template.html', context)
+                        print(body)
+                        print(subject)
+                        print(recruitermail)
+                        print(hiringmanagermail)
+                        print(businessheadmail)  
+                        EmailUtils.sendEmail(subject, body, [recruitermail], [hiringmanagermail, businessheadmail])
+
+                        stage = Stage.objects.filter(StageName=Constants1.STAGE_PP).first()
+                        # response = Messages1.JP_APP_SCFL 
+
+                    elif (approvalStatus == Constants1.STAGE_R):
+                        
+                        recruitermail = emails.RecruiterEmail
+                        hiringmanagermail = emails.HMemail
+                        businessheadmail = emails.BHemail
+                        subject = 'FYI: Job Post '+jobpost.JobCode+' has been rejected'
+                        context = {
+                            'jobcode': jobpost.JobCode,
+                            'hiringmanager' : emails.HMname,
+                            'businesshead' : emails.BHname,
+                            'url' : settings.APP_URL,
+                        }
+                        body = EmailUtils.getEmailBody('BusinessHead_JP_Rejection_template.html', context)
+                        print(body)
+                        print(subject)
+                        print(hiringmanagermail)
+                        print(businessheadmail)  
+                        EmailUtils.sendEmail(subject, body, [hiringmanagermail], [businessheadmail])
+
+                        stage = Stage.objects.filter(StageName=Constants1.STAGE_R).first()
+                        # response = Messages1.JP_RJCTD
+                    return Response(response, status=status.HTTP_200_OK)    
+                            
                 #     jobpost.Stage = stage                
                 #     JobPostDetailsPost_serializer = JobPostDetailsPostSerializer(jobpost)
                 #     if JobPostDetailsPost_serializer.is_valid():

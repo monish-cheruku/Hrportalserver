@@ -1,0 +1,21 @@
+
+
+
+{% extends 'email_base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block subject %}
+  Dear {{recruitername}}
+{% endblock %}
+
+{% block body %}
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Verdana, Geneva, sans-serif;">
+  Candidate {{CandidateCode}} has been put on hold for now in technical interview taken by the {{hiringmanager}}. 
+</p> 
+
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Verdana, Geneva, sans-serif;">
+ <a href="{{ url}}">{{ url }}</a>.
+</p>
+{% endblock %}

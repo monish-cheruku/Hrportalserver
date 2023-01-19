@@ -15,7 +15,9 @@ from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
 from managestages.models import Stage
 from django.contrib.auth.models import User, Group
 from jobpost.models.jobpostuserrolesmodel import JobPostUserRolesModel
-
+from HRproj.util.Mail.HR_Workflow_Emails import EmailUtils
+from django.conf import settings
+from jobpost.models.jobpoststakeholders import JobPostStakeHolders
 
 class CandidateAction(ModelViewSet):
     @action(detail=True, methods=['post'])
@@ -40,23 +42,85 @@ class CandidateAction(ModelViewSet):
                 response = ''
                 candidateob = Candidate.objects.filter(
                     CandidateId=candidateid).first()
+                
                 ca = CandidateApprovalModel.objects.filter(CandidateApprovalId=candidateapprovalid).update(
                     approvalStatus=Status,
                     approvalDate=datetime.now(),
                     approvalComments=comments
                 )
+                
+                # candidate = Candidate.objects.filter(CandidateId=candidateid).first()
+                emails = JobPostStakeHolders.objects.filter(JobPostId=candidateob.Jobpost.JobPostId).first()
+                HRemail,HRname,FCemail,FCname,GMemail,GMname=EmailUtils.getRoles(candidateid=candidateob.CandidateId)
+                
                 if ca is not None:
                     if (Status == Constants1.SELECT_FOR_INTERVIEW):
+                        # EmailUtils.getRoles(candidateid=candidateob.CandidateId)
+
+                        hiringmanagermail = emails.HMemail
+                        recruitermail = emails.RecruiterEmail
+                        subject = 'Candidate'+candidateob.CandidateCode+'selected for interview'
+                        context = {
+                            'CandidateCode': candidateob.CandidateCode,
+                            'hiringmanager' : emails.HMname,
+                            'recruiter' : emails.RecruiterName,
+                            'url' : settings.APP_URL,
+                        }
+                        body = EmailUtils.getEmailBody('HiringManager_Interview_template.html', context)
+                        print(body)
+                        print(subject)
+                        print(hiringmanagermail)
+                        EmailUtils.sendEmail(subject, body, [hiringmanagermail], [recruitermail])
+
+
                         stage = Stage.objects.filter(
                             StageName=Constants1.STAGE_CI).first()
                         response = Messages1.CAN_IP
+
                     elif (Status == Constants1.HM_SHORTLISTED):
+                        
+                        EmailUtils.getRoles(candidateid=candidateob.CandidateId)
+
+                        hiringmanagermail = emails.HMemail
+                        recruitermail = emails.RecruiterEmail
+                        subject = 'Candidate'+candidateob.CandidateCode+'shortlisted in interview'
+                        context = {
+                            'CandidateCode': candidateob.CandidateCode,
+                            'hiringmanager' : emails.HMname,
+                            'recruitername' : emails.RecruiterName,
+                            'url' : settings.APP_URL,
+                        }
+                        body = EmailUtils.getEmailBody('Candidate_ShortlistedforHRInterview_template.html', context)
+                        print(body)
+                        print(subject)
+                        print(recruitermail)
+                        EmailUtils.sendEmail(subject, body, [recruitermail], [hiringmanagermail])
+
                         stage = Stage.objects.filter(
                             StageName=Constants1.STAGE_HR_INTERVIEW).first()
                         response = "Candidate has been shortlisted for HR interview "
 
-
                     elif (Status == Constants1.BH_CANDIDATE_APPROVAL):
+
+                        EmailUtils.getRoles(candidateid=candidateob.CandidateId)
+                        hiringmanagermail = emails.HMemail
+                        businessheadmail = emails.BHemail
+                        HRmail = HRemail
+                        recruitermail = emails.RecruiterEmail
+                        subject = 'Candidate' +candidateob.CandidateCode+ ' approved by BH'
+                        context = {
+                            'CandidateCode': candidateob.CandidateCode,
+                            'businesshead':emails.BHname,
+                            'hiringmanager' : emails.HMname,
+                            'recruitername' : emails.RecruiterName,                                
+                            'url' : settings.APP_URL,
+                        }   
+                        body = EmailUtils.getEmailBody('BusinessHead_Can_Approval_template.html', context)
+                        print(body)
+                        print(subject)
+                        print(businessheadmail)
+                        EmailUtils.sendEmail(subject, body, [businessheadmail], [hiringmanagermail,recruitermail, HRmail])
+
                         stage = Stage.objects.filter(
                             StageName=Constants1.STAGE_FC_Approval).first()
                         success = self.insertnewrow(candidateob, Status)
@@ -66,23 +130,100 @@ class CandidateAction(ModelViewSet):
                         else:
                             response = "Candidate has been put on hold"
 
-                        response = "Business Head  has been Approved Succesfully"
+                        response = "Business Head has been Approved Succesfully"
                     elif (Status == Constants1.FC_Approval):
+
+                        EmailUtils.getRoles(candidateid=candidateob.CandidateId)
+                        hiringmanagermail = emails.HMemail
+                        fincancecontrollermail = FCemail
+                        HRmail = HRemail
+                        recruitermail = emails.RecruiterEmail
+                        subject = 'Candidate' +candidateob.CandidateCode+ ' approved by FC'
+                        context = {
+                            'CandidateCode': candidateob.CandidateCode,
+                            'financecontroller':FCname,
+                            'hiringmanager' : emails.HMname,
+                            'recruitername' : emails.RecruiterName,                                
+                            'url' : settings.APP_URL,
+                        }   
+                        body = EmailUtils.getEmailBody('FC_Can_Approval_template.html', context)
+                        print(body)
+                        print(subject)
+                        print(fincancecontrollermail)
+                        EmailUtils.sendEmail(subject, body, [fincancecontrollermail], [hiringmanagermail,recruitermail,HRemail])
+
                         stage = Stage.objects.filter(
                             StageName=Constants1.STAGE_GM_Approval).first()
-                        response = "Finance Controller  has been Approved Succesfully"
+                        response = "Finance Controller has been Approved Succesfully"
+
                     elif (Status == Constants1.GM_Approval):
+
+                        EmailUtils.getRoles(candidateid=candidateob.CandidateId)
+                        hiringmanagermail = emails.HMemail
+                        generalmanagermail = GMemail
+                        HRmail = HRemail
+                        recruitermail = emails.RecruiterEmail
+                        subject = 'Candidate' +candidateob.CandidateCode+ ' approved by GM'
+                        context = {
+                            'CandidateCode': candidateob.CandidateCode,
+                            'generalmanager': GMname,
+                            'hiringmanager' : emails.HMname,
+                            'recruitername' : emails.RecruiterName,                                
+                            'url' : settings.APP_URL,
+                        }   
+                        body = EmailUtils.getEmailBody('GM_Can_Approval_template.html', context)
+                        print(body)
+                        print(subject)
+                        print(generalmanagermail)
+                        EmailUtils.sendEmail(subject, body, [generalmanagermail], [hiringmanagermail,recruitermail,HRemail])
                         stage = Stage.objects.filter(
                             StageName=Constants1.STAGE_SELECTED).first()
                         response = "Candidate has been selected"
 
                     elif (Status == Constants1.HR_SHORTLISTED):
+
+                        EmailUtils.getRoles(candidateid=candidateob.CandidateId)
+
+                        hiringmanagermail = emails.HMemail
+                        businessheadmail = emails.BHemail
+                        recruitermail = emails.RecruiterEmail
+                        subject = 'Candidate'+candidateob.CandidateCode+'shortlisted in HR interview'
+                        context = {
+                            'CandidateCode': candidateob.CandidateCode,
+                            'businesshead': emails.BHname,
+                            'hiringmanager' : emails.HMname,
+                            'recruitername' : emails.RecruiterName,
+                            'url' : settings.APP_URL,
+                        }
+                        body = EmailUtils.getEmailBody('Candidate_SelectedAt_HR_Interview_template.html', context)
+                        print(body)
+                        print(subject)
+                        print(recruitermail)
+                        EmailUtils.sendEmail(subject, body, [businessheadmail], [recruitermail, hiringmanagermail])
+                        
                         stage = Stage.objects.filter(
                             StageName=Constants1.STAGE_BH_CANDIDATE_APPROVAL).first()
                         response = "HR shortlisted Succesfully"
 
-
                     elif (Status == Constants1.HM_HOLD):
+                        
+                        EmailUtils.getRoles(candidateid=candidateob.CandidateId)
+
+                        hiringmanagermail = emails.HMemail
+                        recruitermail = emails.RecruiterEmail
+                        subject = 'Candidate' +candidateob.CandidateCode+ ' on hold'
+                        context = {
+                            'CandidateCode': candidateob.CandidateCode,
+                            'hiringmanager' : emails.HMname,
+                            'recruitername' : emails.RecruiterName,                                  
+                            'url' : settings.APP_URL,
+                        }   
+                        body = EmailUtils.getEmailBody('Candidate_Hold_at_Interview_template.html', context)
+                        print(body)
+                        print(subject)
+                        print(recruitermail)
+                        EmailUtils.sendEmail(subject, body, [recruitermail], [hiringmanagermail])
+                            
                         stage = Stage.objects.filter(
                             StageName=Constants1.STAGE_HM_HOLD).first()
                         success = self.insertnewrow(candidateob, Status)
@@ -92,10 +233,47 @@ class CandidateAction(ModelViewSet):
                         else:
                             response = "Candidate has been put on hold"
                     elif (Status == Constants1.REJECTED):
+
+                        EmailUtils.getRoles(candidateid=candidateob.CandidateId)
+
+                        hiringmanagermail = emails.HMemail
+                        recruitermail = emails.RecruiterEmail
+                        subject = 'Candidate' +candidateob.CandidateCode+ ' rejected'
+                        context = {
+                            'CandidateCode': candidateob.CandidateCode,
+                            'hiringmanager' : emails.HMname,
+                            'recruitername' : emails.RecruiterName,                                
+                            'url' : settings.APP_URL,
+                        }   
+                        body = EmailUtils.getEmailBody('Candidate_Rejected_at_Interview_template.html', context)
+                        print(body)
+                        print(subject)
+                        print(recruitermail)
+                        EmailUtils.sendEmail(subject, body, [recruitermail], [hiringmanagermail])
+                        
                         stage = Stage.objects.filter(
                             StageName=Constants1.STAGE_REJECTED).first()
                         response = "Candidate has been rejected"
+
                     elif (Status == Constants1.FURTHERREVIEW):
+
+                        EmailUtils.getRoles(candidateid=candidateob.CandidateId)
+
+                        hiringmanagermail = emails.HMemail
+                        recruitermail = emails.RecruiterEmail
+                        subject = 'Candidate' +candidateob.CandidateCode+ ' further review'
+                        context = {
+                            'CandidateCode': candidateob.CandidateCode,
+                            'hiringmanager' : emails.HMname,
+                            'recruitername' : emails.RecruiterName,                                
+                            'url' : settings.APP_URL,
+                        }   
+                        body = EmailUtils.getEmailBody('Candidate_FurtherReviewAtInterview_template.html', context)
+                        print(body)
+                        print(subject)
+                        print(recruitermail)
+                        EmailUtils.sendEmail(subject, body, [recruitermail], [hiringmanagermail])
+                        
                         stage = Stage.objects.filter(
                             StageName=Constants1.STAGE_FURTHERREVIEW).first()
                         success = self.insertnewrow(candidateob, Status)
@@ -162,8 +340,6 @@ class CandidateAction(ModelViewSet):
             FCApprovalstage = Stage.objects.filter(StageName=Constants1.STAGE_FCA).first()
             FCrole = Group.objects.filter(name=Constants1.ROLE_FC).first() 
 
-            
-
 
             if status == Constants1.HM_HOLD and HMUser is not None and HMHoldstage is not None and HMrole is not None:
                 CandidateApprovalModel.objects.create(
@@ -178,6 +354,7 @@ class CandidateAction(ModelViewSet):
                     approvalDate=None,
                     approvalComments=None,
                     CreatedOn=datetime.now())
+            
             if status == Constants1.FURTHERREVIEW and HMUser is not None and HMFurtherReviewstage is not None and HMrole is not None:
                 CandidateApprovalModel.objects.create(
                     Candidate=candidate1,
@@ -191,6 +368,7 @@ class CandidateAction(ModelViewSet):
                     approvalDate=None,
                     approvalComments=None,
                     CreatedOn=datetime.now())
+            
             if status == Constants1.BH_CANDIDATE_APPROVAL and FCuser is not None and FCApprovalstage is not None and FCrole is not None:
                 CandidateApprovalModel.objects.create(
                     Candidate=candidate1,
@@ -204,6 +382,7 @@ class CandidateAction(ModelViewSet):
                     approvalDate=None,
                     approvalComments=None,
                     CreatedOn=datetime.now())
+            
             if status == Constants1.BH_CANDIDATE_APPROVAL and GMuser is not None and GMApprovalstage is not None and GMrole is not None:
                 CandidateApprovalModel.objects.create(
                     Candidate=candidate1,

@@ -41,4 +41,5 @@ class Messages1():
     CAN_RJCTD = 'Candidate has been rejected'
     ERR_APP_CAN_DTLS = 'Exception while approving the candidate details'
     ERR_FBK_CAN = 'Exception while candidate feedback'
+ 
 

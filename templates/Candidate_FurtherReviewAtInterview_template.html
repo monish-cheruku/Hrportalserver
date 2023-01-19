@@ -1,0 +1,19 @@
+{% extends 'email_base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block subject %}
+  Dear {{recruitername}}
+{% endblock %}
+   
+{% block body %}
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Verdana, Geneva, sans-serif;">
+  Candidate with {{CandidateCode}} has been kept for further review in technical interview taken by {{hiringmanager}}
+  Kindly schedule for another technical round using below HR Workflow application url. 
+</p>
+
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Verdana, Geneva, sans-serif;">
+ <a href="{{ url}}">{{ url }}</a>.
+</p>
+{% endblock %}
