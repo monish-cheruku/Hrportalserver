@@ -42,7 +42,7 @@ class updateselectedcandidate(ModelViewSet):
                 Modified_On=datetime.now()
 
             )
-            return  Response("working1",status=status.HTTP_200_OK)
+            return  Response("sending offer letter",status=status.HTTP_200_OK)
         except Exception as e:
             return  Response(e,status=status.HTTP_400_BAD_REQUEST)
 
