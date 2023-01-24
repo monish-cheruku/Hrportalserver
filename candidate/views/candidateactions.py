@@ -40,8 +40,10 @@ class CandidateAction(ModelViewSet):
                 candidateid = request.data["candidateid"]
                 Status = request.data["status"]
                 comments = request.data["comments"]
-                feedback=None
-                feedback = request.data["feedback"]
+                try:
+                    feedback = request.data["feedback"]
+                except:
+                    feedback=None
                 response = ''
                 candidateob = Candidate.objects.filter(
                     CandidateId=candidateid).first()

@@ -4,7 +4,7 @@ from rest_framework import status
 from candidate.models.selected_Candidates_Model import  Selected_Candidates
 from rest_framework.decorators import action
 from rest_framework.viewsets import ModelViewSet
-from selectedcandidate.models import CandidateFamilyDetails
+from selectedcandidate.models.Candidatefamilydetails import CandidateFamilyDetails
 from selectedcandidate.Serializers import candidatefamilydetailgetSerializer
 from selectedcandidate.models import *
 from candidate.models.selected_Candidates_Model import Selected_Candidates
@@ -15,7 +15,7 @@ class familydetailsview(ModelViewSet):
     def createfamilydetail(self,request,format=None):
         try:
             # CandidatePersonalInfo.objects.all()
-            CandidateFamilyDetails.CandidateFamilyDetails.objects.create(
+            CandidateFamilyDetails.objects.create(
             selectedCandidateId=Selected_Candidates.objects.filter(Selected_Candidate_ID=request.data["selectedcandidateid"]).first(),
     FullName=request.data["FullName"],
     Date_Of_Birth=request.data["Date_Of_Birth"],
@@ -36,7 +36,7 @@ class familydetailsview(ModelViewSet):
     def updatefamilydetails(self,request,format=None):
         try:
 
-            CandidateFamilyDetails.CandidateFamilyDetails.objects.filter(id=request.data["id"]).update(
+            CandidateFamilyDetails.objects.filter(id=request.data["id"]).update(
                 selectedCandidateId=Selected_Candidates.objects.filter(Selected_Candidate_ID=request.data["selectedcandidateid"]).first(),
     FullName=request.data["FullName"],
     Date_Of_Birth=request.data["Date_Of_Birth"],
@@ -49,14 +49,14 @@ class familydetailsview(ModelViewSet):
 
 
             )
-            return  Response("personal info ",status=status.HTTP_200_OK)
+            return  Response("personal info updated succesfully",status=status.HTTP_200_OK)
         except Exception as e:
              return  Response(e,status=status.HTTP_400_BAD_REQUEST)
     @action(detail=True,methods=["post"])
     def getfamilydetails(self,request,format=None):
         try:
 
-            fdo=CandidateFamilyDetails.CandidateFamilyDetails.objects.filter(Selected_Candidate_ID_id=request.data["selectedcandidateid"])
+            fdo=CandidateFamilyDetails.objects.filter(selectedCandidateId_id=request.data["selectedcandidateid"])
             fdos=candidatefamilydetailgetSerializer(fdo,many=True).data
             return  Response(fdos,status=status.HTTP_200_OK)
         except Exception as e:
@@ -64,7 +64,7 @@ class familydetailsview(ModelViewSet):
     def deletefamilydetail(self,request,format=None):
         try:
 
-            fdo=CandidateFamilyDetails.CandidateFamilyDetails.objects.filter(id=request.data["id"]).first()
+            fdo=CandidateFamilyDetails.objects.filter(id=request.data["id"]).first()
             fdo.delete()
             return  Response("deleted Sucessfully",status=status.HTTP_200_OK)
         except Exception as e:

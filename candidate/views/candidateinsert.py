@@ -113,7 +113,7 @@ class CandidateApi(APIView):
             # FCrole = Group.objects.filter(name=Constants1.ROLE_FC).first() 
             #     
             BHrole = Group.objects.filter(name=Constants1.ROLE_BH).first()
-            BHstage = Stage.objects.filter(StageName=Constants1.STAGE_BHA).first()
+            BHstage = Stage.objects.filter(StageName=Constants1.STAGE_JP_BHA).first()
             jobpostapprovalBH = JobPostApproval.objects.filter(jobpost= candidate1.Jobpost, Stage=BHstage, role=BHrole).first()
             BHName=jobpostapprovalBH.approverName
 
