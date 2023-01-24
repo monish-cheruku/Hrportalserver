@@ -147,7 +147,7 @@ class JobPostApi(APIView):
             HRUserName =  data["HR_User_Name"]
 
             BHuser = User.objects.get(username=BHUserName)
-            BHstage = Stage.objects.filter(StageName=Constants1.STAGE_BHA).first()
+            BHstage = Stage.objects.filter(StageName=Constants1.STAGE_JP_BHA).first()
             BHrole = Group.objects.filter(name=Constants1.ROLE_BH).first()
 
             HRuser = User.objects.get(username=HRUserName)

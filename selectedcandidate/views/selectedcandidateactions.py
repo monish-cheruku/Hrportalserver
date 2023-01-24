@@ -6,12 +6,6 @@ from rest_framework.response import Response
 from candidate.models.selected_Candidates_Model import Selected_Candidates
 from candidate.serializers import selectedcandidatesgridviewSerializer
 # from selectedcandidate.models.CandidatePersonalInfo import *
-from selectedcandidate.models.CandidatePersonalInfo import * 
-from selectedcandidate.models.CandidateEducationalDetails import * 
-from selectedcandidate.models.CandidateEmployentDetails import * 
-from selectedcandidate.models.CandidateFamilyDetails import * 
-from selectedcandidate.models.CandidateInsuranceDetails import * 
-from selectedcandidate.models.Documentsupload import * 
 
 
 

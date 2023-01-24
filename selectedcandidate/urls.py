@@ -1,4 +1,5 @@
 from django.urls import path
+from selectedcandidate.views.documentuploadview import documentuploadview
 from selectedcandidate.views.educationdetailview import educationdetailsview
 from selectedcandidate.views.employementdetailview import employementdetailsview
 from selectedcandidate.views.familydetailsview import familydetailsview
@@ -29,6 +30,10 @@ urlpatterns=[
      path('/updateemployementdetails', employementdetailsview.as_view({'post': 'updateemployementdetails'})),
      path('/getemployementdetails', employementdetailsview.as_view({'post': 'getemployementdetails'})),
      path('/deleteemployementdetail', employementdetailsview.as_view({'post': 'deleteemployementdetail'})),
+
+     path('/uploaddetaildocument', documentuploadview.as_view({'post': 'createdocument'})),
+     path('/deletedocument', documentuploadview.as_view({'post': 'deletedocument'})),
+     path('/downloaddetaildocuments', documentuploadview.as_view({'post': 'downloaddetaildocuments'})),
 
 
 

@@ -73,7 +73,7 @@ class  JobPostDetailsPostSerializer(serializers.ModelSerializer):
         return data
 
     def create(self, validated_data):
-        stage_name = Constants1.STAGE_BHA
+        stage_name = Constants1.STAGE_JP_BHA
         serviceline = ServiceLine.objects.filter(ServiceLineId=validated_data["ServiceLine"]).first()
         customer = Customer.objects.filter(CustomerId=validated_data["Customer"]).first()
         stage = Stage.objects.filter(StageName=stage_name).first()

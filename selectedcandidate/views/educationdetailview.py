@@ -4,7 +4,7 @@ from rest_framework import status
 from candidate.models.selected_Candidates_Model import  Selected_Candidates
 from rest_framework.decorators import action
 from rest_framework.viewsets import ModelViewSet
-from selectedcandidate.models import CandidateEducationalDetails
+from selectedcandidate.models.Candidatedducationaldetails import CandidateEducationalDetails
 from selectedcandidate.Serializers import candidateeducationdetailgetSerializer
 from selectedcandidate.models import *
 from candidate.models.selected_Candidates_Model import Selected_Candidates
@@ -15,7 +15,7 @@ class educationdetailsview(ModelViewSet):
     def createeducationdetail(self,request,format=None):
         try:
             # CandidatePersonalInfo.objects.all()
-            CandidateEducationalDetails.CandidateEducationalDetails.objects.create(
+            CandidateEducationalDetails.objects.create(
             selectedCandidateId=Selected_Candidates.objects.filter(Selected_Candidate_ID=request.data["selectedcandidateid"]).first(),
     Qualification=request.data["Qualification"],
     Specialization=request.data["Specialization"],
@@ -37,7 +37,7 @@ class educationdetailsview(ModelViewSet):
     def updateeducationdetails(self,request,format=None):
         try:
 
-            CandidateEducationalDetails.CandidateEducationalDetails.objects.filter(id=request.data["id"]).update(
+            CandidateEducationalDetails.objects.filter(id=request.data["id"]).update(
                    selectedCandidateId=Selected_Candidates.objects.filter(Selected_Candidate_ID=request.data["selectedcandidateid"]).first(),
     Qualification=request.data["Qualification"],
     Specialization=request.data["Specialization"],
@@ -59,7 +59,7 @@ class educationdetailsview(ModelViewSet):
     def geteducationdetails(self,request,format=None):
         try:
 
-            edo=CandidateEducationalDetails.CandidateEducationalDetails.objects.filter(selectedCandidateId_id=request.data["selectedcandidateid"])
+            edo=CandidateEducationalDetails.objects.filter(selectedCandidateId_id=request.data["selectedcandidateid"])
             edos=candidateeducationdetailgetSerializer(edo,many=True).data
             return  Response(edos,status=status.HTTP_200_OK)
         except Exception as e:
@@ -67,7 +67,7 @@ class educationdetailsview(ModelViewSet):
     def deleteeducationdetail(self,request,format=None):
         try:
 
-            edo=CandidateEducationalDetails.CandidateEducationalDetails.objects.filter(id=request.data["id"]).first()
+            edo=CandidateEducationalDetails.objects.filter(id=request.data["id"]).first()
             edo.delete()
             return  Response("deleted Sucessfully",status=status.HTTP_200_OK)
         except Exception as e:

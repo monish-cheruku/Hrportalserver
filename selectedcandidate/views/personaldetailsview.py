@@ -14,7 +14,7 @@ from ManageBand.models import Band
 from ManageSubBand.models import SubBand
 from ManageDesignation.models import Designation
 from datetime import datetime
-from selectedcandidate.models import CandidatePersonalInfo
+from selectedcandidate.models.Candidatepersonalinfo import CandidatePersonalInfo
 from selectedcandidate.Serializers import candidatepersonalinfogetSerializer
 from selectedcandidate.models import *
 from candidate.models.selected_Candidates_Model import Selected_Candidates
@@ -25,7 +25,7 @@ class personaldetialsview(ModelViewSet):
     def createpersonaldetails(self,request,format=None):
         try:
             # CandidatePersonalInfo.objects.all()
-            CandidatePersonalInfo.CandidatePersonalInfo.objects.create(
+            CandidatePersonalInfo.objects.create(
             selectedCandidateid=Selected_Candidates.objects.filter(Selected_Candidate_ID=request.data["selectedCandidateid"]).first(),
             Name=request.data["Name"],
             DateOfBirth=request.data["DateOfBirth"],
@@ -58,7 +58,7 @@ class personaldetialsview(ModelViewSet):
     def updatepersonaldetails(self,request,format=None):
         try:
 
-            CandidatePersonalInfo.CandidatePersonalInfo.objects.filter(selectedCandidateid_id=request.data["selectedCandidateid"]).update(
+            CandidatePersonalInfo.objects.filter(selectedCandidateid_id=request.data["selectedCandidateid"]).update(
                  Name=request.data["Name"],
             DateOfBirth=request.data["DateOfBirth"],
             Marital_status=request.data["Marital_status"],
@@ -89,7 +89,7 @@ class personaldetialsview(ModelViewSet):
     def getpersonaldetails(self,request,format=None):
         try:
 
-            cpo=CandidatePersonalInfo.CandidatePersonalInfo.objects.filter(selectedCandidateid_id=request.data["selectedcandidateid"]).first()
+            cpo=CandidatePersonalInfo .objects.filter(selectedCandidateid_id=request.data["selectedcandidateid"]).first()
             cpos=candidatepersonalinfogetSerializer(cpo,many=False).data
             return  Response(cpos,status=status.HTTP_200_OK)
         except Exception as e:
