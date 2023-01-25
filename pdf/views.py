@@ -1,4 +1,5 @@
 from msilib.schema import TextStyle
+import os
 from django.http import HttpResponse
 from django.shortcuts import render
 import io
@@ -11,6 +12,8 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 from reportlab.lib.enums import TA_CENTER
+from HRproj.settings import MEDIA_ROOT
+from candidate.models.selected_Candidates_Model import Selected_Candidates
 from jobpost.models.jobpostmodel import JobPost
 from rest_framework.decorators import api_view
 from datetime import datetime
@@ -20,6 +23,7 @@ from fpdf import FPDF,HTMLMixin
 from docx import Document
 import re
 from docxtpl import DocxTemplate
+from django.core.files.uploadedfile import SimpleUploadedFile
 
 
 # Create your views here.
@@ -197,6 +201,24 @@ class PDFGeneration(ModelViewSet):
         doc.save(buffer)
         buffer.seek(0)
         data = base64.b64encode(buffer.getvalue())
+
+        content_file = SimpleUploadedFile("test1.doc", buffer.getvalue())
+        print(type(content_file))
+        sco =  Selected_Candidates.objects.get(Selected_Candidate_ID=request.data["selectedcandidateid"])
+
+        try:
+            if os.path.exists(os.path.join(MEDIA_ROOT, str(sco.OfferLetter))):
+                os.remove(os.path.join(MEDIA_ROOT, str(sco.OfferLetter)))
+        except Exception as ex:
+            print(ex)
+        finally:
+            print("")
+        sco.OfferLetter= content_file
+        sco.save()
+                                         
+
+            
+        
         return HttpResponse(data)
     # @action(detail=True, methods=['post'])
     # def offerletterpdf(self, request, format=None):
