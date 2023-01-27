@@ -17,6 +17,7 @@ urlpatterns=[
      path('/getcandidatefeedbacks',CandidateFeedBacks.as_view()),
      path('/getselectedcandidates',selectedcandidatesgridview.as_view()),
      path('/updateselectedcandidate',updateselectedcandidate.as_view({'post':"updateselcandidate"})),
+     path('/getAnnexureDetails',updateselectedcandidate.as_view({'post':"getAnnexureDetails"})),
 
 
 ]
