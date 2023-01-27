@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from datetime import timedelta
 import os
 from pathlib import Path
-
+from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -114,12 +114,12 @@ DATABASES = {
     #},
     'default': {
         'ENGINE': 'mssql',
-        'NAME': 'HR_proj',
-        'USER': 'sa',  
-        'PASSWORD': 'Belcan@123',
-        'HOST': 'ENG132076',
+        'NAME':config('DBNAME'),
+        'USER': config('USER'),  
+        'PASSWORD': config("PASSWORD"),
+        'HOST': config("HOST"),
         'PORT': '1433',
-        'OPTIONS': {"driver": "ODBC Driver 11 for SQL Server", 
+        'OPTIONS': {"driver": config("DriverVersion"), 
         },
         
     },
@@ -189,7 +189,7 @@ LOGGING = {
             'class': 'logging.FileHandler',
             'formatter': 'file',
             # 'filename': r'C:\Users\dkanagala\Desktop\Django\HRproj\logging.log'
-            'filename': r'C:\work\HRproj\logging.log'
+            'filename': config("DriverVersion")
         }
     },
     'loggers': {

@@ -28,16 +28,18 @@ class updateselectedcandidate(ModelViewSet):
             sco =  Selected_Candidates.objects.filter(Selected_Candidate_ID=request.data["selectedcandidateid"]).update(
 
 
-                designation= Designation.objects.get(DesignationId=request.data['DesignationId']),
-                band=Band.objects.get(BandId=request.data['BandId']),
-                subband=SubBand.objects.get(SubBandId=request.data['SubBandId']),
+                designation= Designation.objects.get(DesignationId=request.data['designation']),
+                band=Band.objects.get(BandId=request.data['band']),
+                subband=SubBand.objects.get(SubBandId=request.data['subband']),
                 DateOfJoining=request.data["DateOfJoining"],
                 FixedCTC=request.data["FixedCTC"],
-                VariablePercentage=request.data["VariablePercentage"],
+                VariablePay=request.data["VariablePay"],
                 MQVariable=request.data["MQVariable"],
-                Is_Eligible_annu_Mgnt_Bonus=request.data["IS_Eligible_annu_Mgnt_Bonus"],
-                Is_Eligible_Joining_Bonus=request.data["IS_Eligible_Joining_Bonus"],
+                Is_Eligible_annu_Mgnt_Bonus=request.data["Is_Eligible_annu_Mgnt_Bonus"],
+                Is_Eligible_Joining_Bonus=request.data["Is_Eligible_Joining_Bonus"],
                 IS_Eligible_Monthly_Incentive=request.data["IS_Eligible_Monthly_Incentive"],
+                IsVariable=request.data["IsVariable"],
+                FinalCTC=request.data["FinalCTC"],
                 Modified_By=request.data["Modified_By"],
                 Modified_On=datetime.now()
 
@@ -51,3 +53,6 @@ class updateselectedcandidate(ModelViewSet):
 
         # return Response("working",status=status.HTTP_200_OK)
         #terinary operator  in python?
+    @action(detail=True, methods=['post'])
+    def previewannexure(self, request, format=None):
+        return  Response("sending annexure",status=status.HTTP_200_OK)
