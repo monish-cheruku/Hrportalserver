@@ -49,7 +49,7 @@ class familydetailsview(ModelViewSet):
 
 
             )
-            return  Response("personal info updated succesfully",status=status.HTTP_200_OK)
+            return  Response("Family details updated succesfully",status=status.HTTP_200_OK)
         except Exception as e:
              return  Response(e,status=status.HTTP_400_BAD_REQUEST)
     @action(detail=True,methods=["post"])

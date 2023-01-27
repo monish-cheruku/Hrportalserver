@@ -27,9 +27,9 @@ class updateselectedcandidate(ModelViewSet):
     def updateselcandidate(self, request, format=None):
         try:
             selectedcandidate =  Selected_Candidates.objects.get(Selected_Candidate_ID=request.data["selectedcandidateid"])
-            designation= Designation.objects.get(DesignationId=request.data['DesignationId'])
-            band=Band.objects.get(BandId=request.data['BandId'])
-            subband=SubBand.objects.get(SubBandId=request.data['SubBandId'])
+            designation= Designation.objects.get(DesignationId=request.data['designation'])
+            band=Band.objects.get(BandId=request.data['band'])
+            subband=SubBand.objects.get(SubBandId=request.data['subband'])
             DateOfJoining=request.data["DateOfJoining"]
             FixedCTC=request.data["FixedCTC"]
             Isvariable = request.data["isvariable"]
@@ -89,9 +89,9 @@ class updateselectedcandidate(ModelViewSet):
     def getAnnexureDetails(self, request, format=None):
 
         selectedcandidate =  Selected_Candidates.objects.get(Selected_Candidate_ID=request.data["selectedcandidateid"])
-        designation= Designation.objects.get(DesignationId=request.data['DesignationId'])
-        band=Band.objects.get(BandId=request.data['BandId'])
-        subband=SubBand.objects.get(SubBandId=request.data['SubBandId'])
+        designation= Designation.objects.get(DesignationId=request.data['designation'])
+        band=Band.objects.get(BandId=request.data['band'])
+        subband=SubBand.objects.get(SubBandId=request.data['subband'])
         DateOfJoining=request.data["DateOfJoining"]
         FixedCTC=request.data["FixedCTC"]
         Isvariable = request.data["isvariable"]
