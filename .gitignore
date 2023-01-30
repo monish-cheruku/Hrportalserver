@@ -8,6 +8,8 @@ db.sqlite3
 media
 launch.json
 /.vscode
+ODBC Driver 11 for SQL Server
+sh.exe.stackdump
 
 # Backup files # 
 *.bak 
