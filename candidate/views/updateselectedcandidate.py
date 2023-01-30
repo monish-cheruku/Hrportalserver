@@ -32,11 +32,11 @@ class updateselectedcandidate(ModelViewSet):
             subband=SubBand.objects.get(SubBandId=request.data['subband'])
             DateOfJoining=request.data["DateOfJoining"]
             FixedCTC=request.data["FixedCTC"]
-            Isvariable = request.data["isvariable"]
+            Isvariable = request.data["IsVariable"]
             VariablePay = request.data["VariablePay"]
             MQVariable=request.data["MQVariable"]
-            Is_Eligible_annu_Mgnt_Bonus=request.data["IS_Eligible_annu_Mgnt_Bonus"]
-            Is_Eligible_Joining_Bonus=request.data["IS_Eligible_Joining_Bonus"]
+            Is_Eligible_annu_Mgnt_Bonus=request.data["Is_Eligible_annu_Mgnt_Bonus"]
+            Is_Eligible_Joining_Bonus=request.data["Is_Eligible_Joining_Bonus"]
             IS_Eligible_Monthly_Incentive=request.data["IS_Eligible_Monthly_Incentive"]            
             if Isvariable is True:
                 FinalCTC = FixedCTC+VariablePay
@@ -61,23 +61,23 @@ class updateselectedcandidate(ModelViewSet):
             )
             # create offer letter from template
 
-            buffer = io.BytesIO() 
-            doc = DocxTemplate("Belcan_India_Offer_Letter_Template.docx")
-            context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
-                                  FixedCTC, Isvariable, VariablePay, MQVariable, Is_Eligible_annu_Mgnt_Bonus,
-                                  Is_Eligible_Joining_Bonus, IS_Eligible_Monthly_Incentive)
-            doc.render(context)
-            doc.save(buffer)
-            buffer.seek(0)
-            content_file = SimpleUploadedFile(selectedcandidate.candidate.CanLastName+'_'+selectedcandidate.candidate.CanFirstName+'_OfferLetter.docx', buffer.getvalue())
-            print(type(content_file))
-            sco =  Selected_Candidates.objects.get(Selected_Candidate_ID=request.data["selectedcandidateid"])
+            # buffer = io.BytesIO() 
+            # doc = DocxTemplate("Belcan_India_Offer_Letter_Template.docx")
+            # context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+            #                       FixedCTC, Isvariable, VariablePay, MQVariable, Is_Eligible_annu_Mgnt_Bonus,
+            #                       Is_Eligible_Joining_Bonus, IS_Eligible_Monthly_Incentive)
+            # doc.render(context)
+            # doc.save(buffer)
+            # buffer.seek(0)
+            # content_file = SimpleUploadedFile(selectedcandidate.candidate.CanLastName+'_'+selectedcandidate.candidate.CanFirstName+'_OfferLetter.docx', buffer.getvalue())
+            # print(type(content_file))
+            # sco =  Selected_Candidates.objects.get(Selected_Candidate_ID=request.data["selectedcandidateid"])
 
-            if os.path.exists(os.path.join(MEDIA_ROOT, str(sco.OfferLetter))):
-                os.remove(os.path.join(MEDIA_ROOT, str(sco.OfferLetter)))
+            # if os.path.exists(os.path.join(MEDIA_ROOT, str(sco.OfferLetter))):
+            #     os.remove(os.path.join(MEDIA_ROOT, str(sco.OfferLetter)))
 
-            sco.OfferLetter= content_file
-            sco.save()            
+            # sco.OfferLetter= content_file
+            # sco.save()            
 
             return  Response("OfferLetter Created",status=status.HTTP_200_OK)
         except Exception as e:
@@ -94,11 +94,11 @@ class updateselectedcandidate(ModelViewSet):
         subband=SubBand.objects.get(SubBandId=request.data['subband'])
         DateOfJoining=request.data["DateOfJoining"]
         FixedCTC=request.data["FixedCTC"]
-        Isvariable = request.data["isvariable"]
+        Isvariable = request.data["IsVariable"]
         VariablePay = request.data["VariablePay"]
         MQVariable=request.data["MQVariable"]
-        Is_Eligible_annu_Mgnt_Bonus=request.data["IS_Eligible_annu_Mgnt_Bonus"]
-        Is_Eligible_Joining_Bonus=request.data["IS_Eligible_Joining_Bonus"]
+        Is_Eligible_annu_Mgnt_Bonus=request.data["Is_Eligible_annu_Mgnt_Bonus"]
+        Is_Eligible_Joining_Bonus=request.data["Is_Eligible_Joining_Bonus"]
         IS_Eligible_Monthly_Incentive=request.data["IS_Eligible_Monthly_Incentive"]
 
         context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
