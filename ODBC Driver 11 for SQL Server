@@ -1372,3 +1372,2225 @@ Traceback (most recent call last):
   File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
     raise TypeError(f'Object of type {o.__class__.__name__} '
 TypeError: Object of type KeyError is not JSON serializable
+2023-01-30 15:41:39,590 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-30 15:41:39,634 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-30 15:41:39,635 apscheduler.scheduler INFO     Scheduler started
+2023-01-30 15:41:56,385 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-30 15:41:56,412 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-30 15:41:56,413 apscheduler.scheduler INFO     Scheduler started
+2023-01-30 15:41:56,854 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-01-30 17:54:00,298 apscheduler.executors.default INFO     Running job "simulatejob (trigger: cron[day_of_week='mon-sun', hour='17', minute='54'], next run at: 2023-01-31 17:54:00 IST)" (scheduled at 2023-01-30 17:54:00+05:30)
+2023-01-30 17:54:00,319 apscheduler.executors.default INFO     Running job "simulatejob (trigger: cron[day_of_week='mon-sun', hour='17', minute='54'], next run at: 2023-01-31 17:54:00 IST)" (scheduled at 2023-01-30 17:54:00+05:30)
+2023-01-30 17:54:00,309 apscheduler.executors.default INFO     Job "simulatejob (trigger: cron[day_of_week='mon-sun', hour='17', minute='54'], next run at: 2023-01-31 17:54:00 IST)" executed successfully
+2023-01-30 17:54:00,327 apscheduler.executors.default INFO     Job "simulatejob (trigger: cron[day_of_week='mon-sun', hour='17', minute='54'], next run at: 2023-01-31 17:54:00 IST)" executed successfully
+2023-01-30 20:54:17,133 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 92, in getAnnexureDetails
+    designation= Designation.objects.get(DesignationId=request.data['designation'])
+KeyError: 'designation'
+2023-01-30 20:54:23,661 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 92, in getAnnexureDetails
+    designation= Designation.objects.get(DesignationId=request.data['designation'])
+KeyError: 'designation'
+2023-01-30 20:55:37,286 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 100, in getAnnexureDetails
+    Is_Eligible_annu_Mgnt_Bonus=request.data["Is_Eligible_annu_Mgnt_Bonus"]
+KeyError: 'Is_Eligible_annu_Mgnt_Bonus'
+2023-01-30 20:55:56,336 django.request ERROR    Internal Server Error: /api/candidate/updateselectedcandidate
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-01-30 20:57:38,074 django.request ERROR    Internal Server Error: /api/candidate/updateselectedcandidate
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type TypeError is not JSON serializable
+2023-01-31 10:35:49,458 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-31 10:35:49,517 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-31 10:35:49,520 apscheduler.scheduler INFO     Scheduler started
+2023-01-31 10:36:09,023 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-31 10:36:09,048 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-31 10:36:09,049 apscheduler.scheduler INFO     Scheduler started
+2023-01-31 10:36:09,603 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-01-31 11:29:06,688 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 104, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 176, in getContext
+    varTotalMCTC = round(varTotalFixedCTC/12)
+TypeError: unsupported operand type(s) for /: 'str' and 'int'
+2023-01-31 13:06:05,674 django.request ERROR    Internal Server Error: /api/candidate/updateselectedcandidate
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-01-31 13:07:49,421 django.request ERROR    Internal Server Error: /api/candidate/updateselectedcandidate
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-01-31 13:25:18,228 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 104, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 176, in getContext
+    varTotalMCTC = round(varTotalFixedCTC/12)
+TypeError: unsupported operand type(s) for /: 'str' and 'int'
+2023-01-31 13:25:23,726 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 104, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 176, in getContext
+    varTotalMCTC = round(varTotalFixedCTC/12)
+TypeError: unsupported operand type(s) for /: 'str' and 'int'
+2023-01-31 13:25:33,405 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 104, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 176, in getContext
+    varTotalMCTC = round(varTotalFixedCTC/12)
+TypeError: unsupported operand type(s) for /: 'str' and 'int'
+2023-01-31 13:26:23,098 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 104, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 176, in getContext
+    varTotalMCTC = round(varTotalFixedCTC/12)
+TypeError: unsupported operand type(s) for /: 'str' and 'int'
+2023-01-31 13:26:50,842 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 104, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 176, in getContext
+    varTotalMCTC = round(varTotalFixedCTC/12)
+TypeError: unsupported operand type(s) for /: 'str' and 'int'
+2023-01-31 13:39:36,633 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-31 13:39:36,686 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-31 13:39:36,689 apscheduler.scheduler INFO     Scheduler started
+2023-01-31 13:39:56,503 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-31 13:39:56,548 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-31 13:39:56,549 apscheduler.scheduler INFO     Scheduler started
+2023-01-31 13:39:57,183 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-01-31 14:21:33,980 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 104, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 182, in getContext
+    varTotalACTC =  FixedCTC+VariablePay
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 109, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 14:21:58,725 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 104, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 182, in getContext
+    varTotalACTC =  FixedCTC+VariablePay
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 109, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 14:41:27,027 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 104, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 182, in getContext
+    varTotalACTC =  FixedCTC+VariablePay
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 109, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 14:41:31,136 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 104, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 182, in getContext
+    varTotalACTC =  FixedCTC+VariablePay
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 109, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 14:42:04,845 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 104, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 182, in getContext
+    varTotalACTC =  FixedCTC+VariablePay
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 109, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 14:42:05,558 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 104, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 182, in getContext
+    varTotalACTC =  FixedCTC+VariablePay
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 109, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 14:42:06,206 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 104, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 182, in getContext
+    varTotalACTC =  FixedCTC+VariablePay
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 109, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 14:42:06,844 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 104, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 182, in getContext
+    varTotalACTC =  FixedCTC+VariablePay
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 109, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 14:42:07,353 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 104, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 182, in getContext
+    varTotalACTC =  FixedCTC+VariablePay
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 109, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 14:43:11,286 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 104, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 182, in getContext
+    varTotalACTC =  FixedCTC+VariablePay
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 109, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 14:43:11,345 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 104, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 182, in getContext
+    varTotalACTC =  FixedCTC+VariablePay
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 109, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 14:43:11,346 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 104, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 182, in getContext
+    varTotalACTC =  FixedCTC+VariablePay
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 109, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 14:45:57,194 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 104, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 178, in getContext
+    varTotalMCTC = round(varTotalFixedCTC/12)
+TypeError: unsupported operand type(s) for /: 'str' and 'int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 109, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 14:46:59,445 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 104, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 178, in getContext
+    varTotalMCTC = round(varTotalFixedCTC/12)
+TypeError: unsupported operand type(s) for /: 'str' and 'int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 109, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 14:47:23,542 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 104, in getAnnexureDetails
+    # context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 178, in getContext
+    varTotalMCTC = round(varTotalFixedCTC/12)
+TypeError: unsupported operand type(s) for /: 'str' and 'int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 109, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 14:47:25,234 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py changed, reloading.
+2023-01-31 14:47:37,138 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-31 14:47:37,155 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-31 14:47:37,156 apscheduler.scheduler INFO     Scheduler started
+2023-01-31 14:47:37,392 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-01-31 14:48:20,582 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py changed, reloading.
+2023-01-31 14:48:28,379 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-31 14:48:28,417 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-31 14:48:28,419 apscheduler.scheduler INFO     Scheduler started
+2023-01-31 14:48:28,609 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-01-31 15:02:52,209 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py changed, reloading.
+2023-01-31 15:03:06,402 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-31 15:03:06,416 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-31 15:03:06,417 apscheduler.scheduler INFO     Scheduler started
+2023-01-31 15:03:06,618 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-01-31 15:30:58,687 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\Serializers.py changed, reloading.
+2023-01-31 15:31:10,819 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-31 15:31:10,833 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-31 15:31:10,833 apscheduler.scheduler INFO     Scheduler started
+2023-01-31 15:31:11,026 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-01-31 15:31:54,012 django.request WARNING  Bad Request: /api/selectedcandidate/deletedocument
+2023-01-31 15:32:13,613 django.request WARNING  Bad Request: /api/selectedcandidate/deletedocument
+2023-01-31 15:32:15,246 django.request WARNING  Bad Request: /api/selectedcandidate/deletedocument
+2023-01-31 15:33:23,388 django.request WARNING  Bad Request: /api/selectedcandidate/deletedocument
+2023-01-31 15:33:25,806 django.request WARNING  Bad Request: /api/selectedcandidate/deletedocument
+2023-01-31 16:35:50,444 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 103, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 177, in getContext
+    varTotalMCTC = round(varTotalFixedCTC/12)
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 108, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 16:36:04,936 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 103, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 177, in getContext
+    varTotalMCTC = round(varTotalFixedCTC/12)
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 108, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 16:36:24,071 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 103, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 177, in getContext
+    varTotalMCTC = round(varTotalFixedCTC/12)
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 108, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 16:40:45,541 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 103, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 181, in getContext
+    varTotalACTC =  FixedCTC+VariablePay
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 108, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 16:40:50,686 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 103, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 181, in getContext
+    varTotalACTC =  FixedCTC+VariablePay
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 108, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 16:40:57,256 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 103, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 181, in getContext
+    varTotalACTC =  FixedCTC+VariablePay
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 108, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 16:41:03,384 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 103, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 181, in getContext
+    varTotalACTC =  FixedCTC+VariablePay
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 108, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 16:41:43,477 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 103, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 181, in getContext
+    varTotalACTC =  FixedCTC+VariablePay
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 108, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 16:50:31,787 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 103, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 177, in getContext
+    varTotalMCTC = round(varTotalFixedCTC/12)
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 108, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 16:50:39,681 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 103, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 177, in getContext
+    varTotalMCTC = round(varTotalFixedCTC/12)
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 108, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 16:51:15,501 django.request ERROR    Internal Server Error: /api/candidate/getAnnexureDetails
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 103, in getAnnexureDetails
+    context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 177, in getContext
+    varTotalMCTC = round(varTotalFixedCTC/12)
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\candidate\views\updateselectedcandidate.py", line 108, in getAnnexureDetails
+    return Response(context,status=status.HTTP_400_BAD_REQUEST)
+UnboundLocalError: local variable 'context' referenced before assignment
+2023-01-31 17:54:00,026 apscheduler.executors.default INFO     Running job "simulatejob (trigger: cron[day_of_week='mon-sun', hour='17', minute='54'], next run at: 2023-02-01 17:54:00 IST)" (scheduled at 2023-01-31 17:54:00+05:30)
+2023-01-31 17:54:00,029 apscheduler.executors.default INFO     Job "simulatejob (trigger: cron[day_of_week='mon-sun', hour='17', minute='54'], next run at: 2023-02-01 17:54:00 IST)" executed successfully
+2023-01-31 17:54:00,126 apscheduler.executors.default INFO     Running job "simulatejob (trigger: cron[day_of_week='mon-sun', hour='17', minute='54'], next run at: 2023-02-01 17:54:00 IST)" (scheduled at 2023-01-31 17:54:00+05:30)
+2023-01-31 17:54:00,128 apscheduler.executors.default INFO     Job "simulatejob (trigger: cron[day_of_week='mon-sun', hour='17', minute='54'], next run at: 2023-02-01 17:54:00 IST)" executed successfully
+2023-01-31 18:09:37,508 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\Serializers.py changed, reloading.
+2023-01-31 18:11:09,365 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-31 18:11:09,544 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-31 18:11:09,556 apscheduler.scheduler INFO     Scheduler started
+2023-01-31 18:11:11,506 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-01-31 18:13:45,500 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\documentuploadview.py changed, reloading.
+2023-01-31 18:14:13,601 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-31 18:14:13,663 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-31 18:14:13,664 apscheduler.scheduler INFO     Scheduler started
+2023-01-31 18:14:14,431 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-01-31 18:14:55,292 django.request ERROR    Internal Server Error: /api/selectedcandidate/getotherdocuments
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type UnsupportedMediaType is not JSON serializable
+2023-01-31 18:15:11,485 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\documentuploadview.py changed, reloading.
+2023-01-31 18:15:19,638 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-31 18:15:19,649 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-31 18:15:19,650 apscheduler.scheduler INFO     Scheduler started
+2023-01-31 18:15:19,835 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-01-31 18:16:14,639 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\documentuploadview.py changed, reloading.
+2023-01-31 18:16:15,219 django.request ERROR    Internal Server Error: /api/selectedcandidate/getotherdocuments
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type UnsupportedMediaType is not JSON serializable
+2023-01-31 18:16:26,403 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-31 18:16:26,423 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-31 18:16:26,424 apscheduler.scheduler INFO     Scheduler started
+2023-01-31 18:16:26,664 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-01-31 18:17:30,356 django.request ERROR    Internal Server Error: /api/selectedcandidate/getotherdocuments
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type UnsupportedMediaType is not JSON serializable
+2023-01-31 18:17:56,366 django.request ERROR    Internal Server Error: /api/selectedcandidate/getotherdocuments
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type FieldError is not JSON serializable
+2023-01-31 18:17:58,155 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\documentuploadview.py changed, reloading.
+2023-01-31 18:18:09,204 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-31 18:18:09,216 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-31 18:18:09,217 apscheduler.scheduler INFO     Scheduler started
+2023-01-31 18:18:09,408 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-01-31 18:18:23,500 django.request ERROR    Internal Server Error: /api/selectedcandidate/getotherdocuments
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ListSerializer is not JSON serializable
+2023-01-31 18:19:31,633 django.request ERROR    Internal Server Error: /api/selectedcandidate/getotherdocuments
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ListSerializer is not JSON serializable
+2023-01-31 18:19:33,613 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\documentuploadview.py changed, reloading.
+2023-01-31 18:19:42,411 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-31 18:19:42,421 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-31 18:19:42,422 apscheduler.scheduler INFO     Scheduler started
+2023-01-31 18:19:42,610 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-01-31 18:20:01,249 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\documentuploadview.py changed, reloading.
+2023-01-31 18:20:20,331 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-31 18:20:20,341 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-31 18:20:20,342 apscheduler.scheduler INFO     Scheduler started
+2023-01-31 18:20:20,528 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-01-31 18:21:03,697 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\documentuploadview.py changed, reloading.
+2023-01-31 18:21:03,851 django.request ERROR    Internal Server Error: /api/selectedcandidate/getotherdocuments
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type NameError is not JSON serializable
+2023-01-31 18:21:13,655 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-31 18:21:13,665 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-31 18:21:13,666 apscheduler.scheduler INFO     Scheduler started
+2023-01-31 18:21:13,825 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-01-31 18:21:30,427 django.request ERROR    Internal Server Error: /api/selectedcandidate/getotherdocuments
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ListSerializer is not JSON serializable
+2023-01-31 18:21:38,316 django.request ERROR    Internal Server Error: /api/selectedcandidate/getotherdocuments
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ListSerializer is not JSON serializable
+2023-01-31 18:22:21,495 django.request ERROR    Internal Server Error: /api/selectedcandidate/getotherdocuments
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ListSerializer is not JSON serializable
+2023-01-31 18:22:23,340 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\documentuploadview.py changed, reloading.
+2023-01-31 18:22:36,287 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-31 18:22:36,298 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-31 18:22:36,298 apscheduler.scheduler INFO     Scheduler started
+2023-01-31 18:22:36,479 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-01-31 18:23:27,596 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\documentuploadview.py changed, reloading.
+2023-01-31 18:23:37,045 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-31 18:23:37,056 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-31 18:23:37,057 apscheduler.scheduler INFO     Scheduler started
+2023-01-31 18:23:37,229 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-01-31 20:13:56,710 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\models\Documentsupload.py changed, reloading.
+2023-01-31 20:14:12,718 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-31 20:14:12,740 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-31 20:14:12,741 apscheduler.scheduler INFO     Scheduler started
+2023-01-31 20:14:13,039 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-01-31 20:15:01,729 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\models\Documentsupload.py changed, reloading.
+2023-01-31 20:15:20,984 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-01-31 20:15:21,001 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-01-31 20:15:21,002 apscheduler.scheduler INFO     Scheduler started
+2023-01-31 20:15:21,294 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 10:36:30,026 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 10:36:30,047 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 10:36:30,047 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 10:36:37,526 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 10:36:37,539 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 10:36:37,540 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 10:36:37,748 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 10:58:37,546 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 10:58:37,843 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 10:58:37,844 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 10:59:15,670 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 10:59:15,806 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 10:59:15,817 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 10:59:16,945 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 11:01:05,396 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\urls.py changed, reloading.
+2023-02-01 11:01:16,484 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 11:01:16,501 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 11:01:16,502 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 11:01:16,752 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 11:02:29,955 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\urls.py changed, reloading.
+2023-02-01 11:02:40,241 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 11:02:40,253 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 11:02:40,254 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 11:02:40,454 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 11:05:05,463 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\candidateinfoclearance.py changed, reloading.
+2023-02-01 11:05:28,907 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 11:05:28,932 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 11:05:28,933 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 11:05:29,265 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 11:05:39,586 django.request ERROR    Internal Server Error: /api/selectedcandidate/getcandidateinfoclearance
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type AttributeError is not JSON serializable
+2023-02-01 11:06:19,875 django.request ERROR    Internal Server Error: /api/selectedcandidate/getcandidateinfoclearance
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type AttributeError is not JSON serializable
+2023-02-01 11:06:29,918 django.request ERROR    Internal Server Error: /api/selectedcandidate/getcandidateinfoclearance
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type AttributeError is not JSON serializable
+2023-02-01 11:08:21,555 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\candidateinfoclearance.py changed, reloading.
+2023-02-01 11:08:52,787 django.request ERROR    Internal Server Error: /api/selectedcandidate/getcandidateinfoclearance
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type AttributeError is not JSON serializable
+2023-02-01 11:09:01,739 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 11:09:01,753 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 11:09:01,754 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 11:09:01,964 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 11:13:08,217 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\candidateinfoclearance.py changed, reloading.
+2023-02-01 11:13:28,226 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 11:13:28,241 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 11:13:28,242 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 11:13:28,473 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 11:58:08,992 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\candidateinfoclearance.py changed, reloading.
+2023-02-01 11:58:19,817 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 11:58:19,836 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 11:58:19,837 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 11:58:20,091 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 14:07:03,267 django.request ERROR    Internal Server Error: /api/selectedcandidate/deleteeducationdetail
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type AttributeError is not JSON serializable
+2023-02-01 14:07:14,538 django.request ERROR    Internal Server Error: /api/selectedcandidate/deleteeducationdetail
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type AttributeError is not JSON serializable
+2023-02-01 14:11:48,319 django.request ERROR    Internal Server Error: /api/selectedcandidate/deleteeducationdetail
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type AttributeError is not JSON serializable
+2023-02-01 14:18:18,925 django.request WARNING  Bad Request: /api/selectedcandidate/deletedocument
+2023-02-01 14:18:19,065 django.request WARNING  Bad Request: /api/selectedcandidate/deletedocument
+2023-02-01 14:24:01,897 django.request ERROR    Internal Server Error: /api/selectedcandidate/uploaddetaildocument
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type AttributeError is not JSON serializable
+2023-02-01 14:38:35,978 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\models\Documentsupload.py changed, reloading.
+2023-02-01 14:38:38,011 django.request ERROR    Internal Server Error: /api/selectedcandidate/uploaddetaildocument
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type AttributeError is not JSON serializable
+2023-02-01 14:38:52,548 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 14:38:52,563 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 14:38:52,564 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 14:38:52,795 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 16:44:55,994 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\candidateinfoclearance.py changed, reloading.
+2023-02-01 16:45:11,746 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 16:45:11,760 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 16:45:11,761 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 16:45:11,964 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 16:52:54,393 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\candidateinfoclearance.py changed, reloading.
+2023-02-01 16:53:12,698 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 16:53:12,708 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 16:53:12,709 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 16:53:12,889 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 16:54:58,622 django.request ERROR    Internal Server Error: /api/selectedcandidate/getcandidateinfoclearance
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type AttributeError is not JSON serializable
+2023-02-01 16:55:10,842 django.request ERROR    Internal Server Error: /api/selectedcandidate/getcandidateinfoclearance
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type AttributeError is not JSON serializable
+2023-02-01 16:57:09,691 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\candidateinfoclearance.py changed, reloading.
+2023-02-01 16:57:38,339 django.request ERROR    Internal Server Error: /api/selectedcandidate/getcandidateinfoclearance
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type AttributeError is not JSON serializable
+2023-02-01 16:57:38,492 django.request ERROR    Internal Server Error: /api/selectedcandidate/getcandidateinfoclearance
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type AttributeError is not JSON serializable
+2023-02-01 16:57:38,509 django.request ERROR    Internal Server Error: /api/selectedcandidate/getcandidateinfoclearance
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type AttributeError is not JSON serializable
+2023-02-01 16:57:47,973 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 16:57:47,983 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 16:57:47,984 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 16:57:48,156 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 16:59:23,288 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\candidateinfoclearance.py changed, reloading.
+2023-02-01 16:59:41,743 django.request ERROR    Internal Server Error: /api/selectedcandidate/getcandidateinfoclearance
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type AttributeError is not JSON serializable
+2023-02-01 16:59:41,977 django.request ERROR    Internal Server Error: /api/selectedcandidate/getcandidateinfoclearance
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type AttributeError is not JSON serializable
+2023-02-01 16:59:49,259 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 16:59:49,269 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 16:59:49,269 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 16:59:49,427 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 17:00:18,924 django.request ERROR    Internal Server Error: /api/selectedcandidate/getcandidateinfoclearance
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type TypeError is not JSON serializable
+2023-02-01 17:00:46,038 django.request ERROR    Internal Server Error: /api/selectedcandidate/getcandidateinfoclearance
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type TypeError is not JSON serializable
+2023-02-01 17:00:47,927 django.request ERROR    Internal Server Error: /api/selectedcandidate/getcandidateinfoclearance
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type TypeError is not JSON serializable
+2023-02-01 17:00:49,600 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\candidateinfoclearance.py changed, reloading.
+2023-02-01 17:00:58,935 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 17:00:58,945 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 17:00:58,946 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 17:00:59,100 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 17:01:54,308 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\candidateinfoclearance.py changed, reloading.
+2023-02-01 17:01:57,023 django.request ERROR    Internal Server Error: /api/selectedcandidate/getcandidateinfoclearance
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type AttributeError is not JSON serializable
+2023-02-01 17:01:57,357 django.request ERROR    Internal Server Error: /api/selectedcandidate/getcandidateinfoclearance
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type AttributeError is not JSON serializable
+2023-02-01 17:02:04,619 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 17:02:04,629 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 17:02:04,630 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 17:02:04,817 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 17:03:07,278 django.request ERROR    Internal Server Error: /api/selectedcandidate/getcandidateinfoclearance
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type AttributeError is not JSON serializable
+2023-02-01 17:03:09,835 django.request ERROR    Internal Server Error: /api/selectedcandidate/getcandidateinfoclearance
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type AttributeError is not JSON serializable
+2023-02-01 17:03:16,427 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\candidateinfoclearance.py changed, reloading.
+2023-02-01 17:03:23,962 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 17:03:23,973 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 17:03:23,974 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 17:03:24,155 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 17:05:00,767 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\candidateinfoclearance.py changed, reloading.
+2023-02-01 17:05:09,757 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 17:05:09,768 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 17:05:09,769 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 17:05:09,967 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 17:06:06,431 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\candidateinfoclearance.py changed, reloading.
+2023-02-01 17:06:22,375 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 17:06:22,385 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 17:06:22,385 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 17:06:22,554 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 17:34:56,717 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\urls.py changed, reloading.
+2023-02-01 17:35:11,032 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 17:35:11,048 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 17:35:11,049 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 17:35:11,341 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 17:36:51,800 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\acceptofferletter.py changed, reloading.
+2023-02-01 17:36:59,995 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 17:37:00,004 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 17:37:00,005 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 17:37:00,176 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 17:37:34,740 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\acceptofferletter.py changed, reloading.
+2023-02-01 17:37:54,051 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 17:37:54,062 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 17:37:54,063 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 17:37:54,258 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 17:38:23,437 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\acceptofferletter.py changed, reloading.
+2023-02-01 17:38:35,162 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 17:38:35,176 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 17:38:35,177 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 17:38:35,393 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 17:38:44,906 django.request WARNING  Not Found: /api/selectedcandidate/Acceptofferletter
+2023-02-01 17:38:57,079 django.request WARNING  Not Found: /api/selectedcandidate/Acceptofferletter
+2023-02-01 17:39:02,486 django.request WARNING  Not Found: /api/selectedcandidate/Acceptofferletter
+2023-02-01 17:39:27,147 django.request WARNING  Not Found: /api/selectedcandidate/acceptofferletter
+2023-02-01 17:39:40,688 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\urls.py changed, reloading.
+2023-02-01 17:39:50,792 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 17:39:50,803 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 17:39:50,804 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 17:39:50,978 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 17:43:46,041 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\candidate\views\candidateactions.py changed, reloading.
+2023-02-01 17:46:09,819 django.request ERROR    Internal Server Error: /api/selectedcandidate/acceptofferletter
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\acceptofferletter.py", line 12, in acceptofferletter
+    # selcanobj=Selected_Candidates.objects.filter(Selected_Candidate_ID=request.data["selectedcandidateid"]).first()
+AttributeError: 'Selected_Candidates' object has no attribute 'update'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\acceptofferletter.py", line 18, in acceptofferletter
+    except Exception as e:
+NameError: name 'Response' is not defined
+2023-02-01 17:46:19,016 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 17:46:19,027 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 17:46:19,028 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 17:46:19,223 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 17:47:42,841 django.request ERROR    Internal Server Error: /api/selectedcandidate/acceptofferletter
+Traceback (most recent call last):
+  File "C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\acceptofferletter.py", line 17, in acceptofferletter
+    #     )
+NameError: name 'Response' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\acceptofferletter.py", line 19, in acceptofferletter
+    except Exception as e:
+NameError: name 'Response' is not defined
+2023-02-01 17:47:44,584 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\acceptofferletter.py changed, reloading.
+2023-02-01 17:47:53,302 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-01 17:47:53,314 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-01 17:47:53,315 apscheduler.scheduler INFO     Scheduler started
+2023-02-01 17:47:53,514 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-01 17:54:00,020 apscheduler.executors.default INFO     Running job "simulatejob (trigger: cron[day_of_week='mon-sun', hour='17', minute='54'], next run at: 2023-02-02 17:54:00 IST)" (scheduled at 2023-02-01 17:54:00+05:30)
+2023-02-01 17:54:00,022 apscheduler.executors.default INFO     Job "simulatejob (trigger: cron[day_of_week='mon-sun', hour='17', minute='54'], next run at: 2023-02-02 17:54:00 IST)" executed successfully
+2023-02-01 17:54:00,250 apscheduler.executors.default INFO     Running job "simulatejob (trigger: cron[day_of_week='mon-sun', hour='17', minute='54'], next run at: 2023-02-02 17:54:00 IST)" (scheduled at 2023-02-01 17:54:00+05:30)
+2023-02-01 17:54:00,254 apscheduler.executors.default INFO     Job "simulatejob (trigger: cron[day_of_week='mon-sun', hour='17', minute='54'], next run at: 2023-02-02 17:54:00 IST)" executed successfully
+2023-02-02 11:10:37,996 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-02 11:10:38,019 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-02 11:10:38,019 apscheduler.scheduler INFO     Scheduler started
+2023-02-02 11:10:56,580 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-02 11:10:56,615 apscheduler.scheduler INFO     Added job "simulatejob" to job store "default"
+2023-02-02 11:10:56,618 apscheduler.scheduler INFO     Scheduler started
+2023-02-02 11:10:57,091 django.utils.autoreload INFO     Watching for file changes with StatReloader

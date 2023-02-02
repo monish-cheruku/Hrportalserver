@@ -6,6 +6,8 @@ from selectedcandidate.views.familydetailsview import familydetailsview
 from selectedcandidate.views.personaldetailsview import personaldetialsview
 
 from selectedcandidate.views.selectedcandidateactions import SelectedCandidateAction
+from selectedcandidate.views.candidateinfoclearance import Candidateinfoclearance
+from selectedcandidate.views.acceptofferletter import Acceptofferletter
 
 urlpatterns=[
 
@@ -34,6 +36,11 @@ urlpatterns=[
      path('/uploaddetaildocument', documentuploadview.as_view({'post': 'createdocument'})),
      path('/deletedocument', documentuploadview.as_view({'post': 'deletedocument'})),
      path('/downloaddetaildocuments', documentuploadview.as_view({'post': 'downloaddetaildocuments'})),
+     path('/getotherdocuments', documentuploadview.as_view({'post': 'getotherdocuments'})),
+
+
+     path('/getcandidateinfoclearance', Candidateinfoclearance.as_view({'post': 'getallcandidateinfoclearance'})),
+     path('/acceptofferletter', Acceptofferletter.as_view({'post': 'acceptofferletter'})),
 
 
 
