@@ -307,8 +307,12 @@ class FeedbackFieldsSerializer(serializers.ModelSerializer):
         model=Feedback_Category
         fields="__all__"        
 class selectedcandidatesgridviewSerializer(serializers.ModelSerializer):
+    designation_name = serializers.CharField(read_only=True, source="designation.DesignationName")
+    band_name = serializers.CharField(read_only=True, source="band.BandName")
+    subband_name = serializers.CharField(read_only=True, source="subband.SubBandName")
     jobpost=JobPostDetailsGridSerializer(source="candidate.Jobpost")
     candidate=CandidateDetailsGridSerializer()
+
    
     
         

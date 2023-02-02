@@ -8,8 +8,7 @@ from candidate.models.CandidatecategoryModel import candidatecategorymodel
 from ManageDesignation.models import Designation
 class Selected_Candidates(models.Model):
     def get_upload_path(instance, filename):
-        return os.path.join("Selected_Candidates",
-        str(instance.Selected_Candidate_ID), 'OfferLetter',filename)     
+        return os.path.join(str(instance.candidate.Jobpost.JobCode),str(instance.candidate.CandidateCode), 'OfferLetter',filename)     
     Selected_Candidate_ID=models.AutoField(primary_key=True)
     candidate=models.ForeignKey(Candidate,null=True,on_delete=models.DO_NOTHING,db_column="Candidate_ID")
     IsOfferAccepted=models.BooleanField(null=False,default=False,db_column="Is_Offer_Accepted")

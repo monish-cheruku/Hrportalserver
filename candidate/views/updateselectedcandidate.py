@@ -1,3 +1,4 @@
+
 import decimal
 import io
 import os
@@ -21,6 +22,11 @@ from datetime import datetime
 from docxtpl import DocxTemplate
 from django.core.files.uploadedfile import SimpleUploadedFile
 from HRproj.settings import MEDIA_ROOT
+from docx2pdf import convert
+import random
+import string
+from django.contrib.auth.models import Group, User
+from django.contrib.auth.hashers import SHA1PasswordHasher
 
 class updateselectedcandidate(ModelViewSet):
     @action(detail=True, methods=['post'])
@@ -61,30 +67,62 @@ class updateselectedcandidate(ModelViewSet):
             )
             # create offer letter from template
 
-            # buffer = io.BytesIO() 
-            # doc = DocxTemplate("Belcan_India_Offer_Letter_Template.docx")
-            # context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
-            #                       FixedCTC, Isvariable, VariablePay, MQVariable, Is_Eligible_annu_Mgnt_Bonus,
-            #                       Is_Eligible_Joining_Bonus, IS_Eligible_Monthly_Incentive)
-            # doc.render(context)
-            # doc.save(buffer)
-            # buffer.seek(0)
-            # content_file = SimpleUploadedFile(selectedcandidate.candidate.CanLastName+'_'+selectedcandidate.candidate.CanFirstName+'_OfferLetter.docx', buffer.getvalue())
-            # print(type(content_file))
-            # sco =  Selected_Candidates.objects.get(Selected_Candidate_ID=request.data["selectedcandidateid"])
+            buffer = io.BytesIO() 
+            if Isvariable is True:
+                doc = DocxTemplate("Belcan_India_Offer_Letter_Variable_Pay_Template.docx")
+            else:    
+                doc = DocxTemplate("Belcan_India_Offer_Letter_Template.docx")
+            context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+                                  FixedCTC, Isvariable, VariablePay, MQVariable, Is_Eligible_annu_Mgnt_Bonus,
+                                  Is_Eligible_Joining_Bonus, IS_Eligible_Monthly_Incentive)
+            doc.render(context)
+            doc.save(buffer)
+            buffer.seek(0)
+            content_file = SimpleUploadedFile(selectedcandidate.candidate.CanLastName+'_'+selectedcandidate.candidate.CanFirstName+'_OfferLetter.docx', buffer.getvalue())
+            print(type(content_file))
+            sco =  Selected_Candidates.objects.get(Selected_Candidate_ID=request.data["selectedcandidateid"])
 
-            # if os.path.exists(os.path.join(MEDIA_ROOT, str(sco.OfferLetter))):
-            #     os.remove(os.path.join(MEDIA_ROOT, str(sco.OfferLetter)))
+            if os.path.exists(os.path.join(MEDIA_ROOT, str(sco.OfferLetter))):
+                os.remove(os.path.join(MEDIA_ROOT, str(sco.OfferLetter)))
 
-            # sco.OfferLetter= content_file
-            # sco.save()            
+            sco.OfferLetter= content_file
+            sco.save()    
+            # convert(os.path.join(MEDIA_ROOT, str(sco.OfferLetter)))            
 
-            return  Response("OfferLetter Created",status=status.HTTP_200_OK)
+            return  Response("OfferLetter generated sucessfully",status=status.HTTP_200_OK)
         except Exception as e:
-            return  Response(e,status=status.HTTP_400_BAD_REQUEST)
+            return  Response(str(e),status=status.HTTP_400_BAD_REQUEST)
 
+    @action(detail=True, methods=['post'])
+    def sendOfferLetter(self, request, format=None):
+        try:
+            selectedcandidate =  Selected_Candidates.objects.get(Selected_Candidate_ID=request.data["selectedcandidateid"])
+            if selectedcandidate is not None:
+                # create user and assign candidate role 
+                canlastname = selectedcandidate.candidate.CanLastName
+                canfirstname = selectedcandidate.candidate.CanFirstName
+                canemail = selectedcandidate.candidate.Email
+                user1 = User.objects.filter(first_name=canfirstname, last_name=canlastname, email=canemail).first()
+                if user1 is None:
+                    username = canfirstname[0:1]+canlastname
+                    password = self.get_random_password()
+                    user = User.objects.create_user(username, canemail, password)
+                    user.first_name = canfirstname
+                    user.last_name = canlastname  
+                    user.save()
+                    g = Group.objects.get(name = 'Candidate')
+                    g.user_set.add(user)
+                # else:
+                #     username = user1.username
+                #     sha = SHA1PasswordHasher()
+                #     password = sha.decode(user1.password)  
+                # Convert Offerletter doc to PDF
+                if os.path.exists(os.path.join(MEDIA_ROOT, str(selectedcandidate.OfferLetter))):
+                    convert(os.path.join(MEDIA_ROOT, str(selectedcandidate.OfferLetter)))
+            return  Response("User Created and PDF created ",status=status.HTTP_200_OK)     
 
-
+        except Exception as ex:
+            return  Response("Exception while sending the offerletter"+str(ex),status=status.HTTP_400_BAD_REQUEST)  
     @action(detail=True, methods=['post'])
     def getAnnexureDetails(self, request, format=None):
         try:
@@ -283,4 +321,23 @@ class updateselectedcandidate(ModelViewSet):
         pivot = max([key for key in above_100.keys() if key <= num])
 
         return self.num2words(num // pivot) + ' ' + above_100[pivot] + ('' if num % pivot==0 else ' ' + self.num2words(num % pivot))
-      
+    def get_random_password(self):
+        random_source = string.ascii_letters + string.digits + string.punctuation
+        # select 1 lowercase
+        password = random.choice(string.ascii_lowercase)
+        # select 1 uppercase
+        password += random.choice(string.ascii_uppercase)
+        # select 1 digit
+        password += random.choice(string.digits)
+        # select 1 special symbol
+        password += random.choice(string.punctuation)
+
+        # generate other characters
+        for i in range(6):
+            password += random.choice(random_source)
+
+        password_list = list(password)
+        # shuffle all characters
+        random.SystemRandom().shuffle(password_list)
+        password = ''.join(password_list)
+        return password
