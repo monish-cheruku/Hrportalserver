@@ -12,7 +12,7 @@ from rest_framework import status
 
 from login.serializers import LoginSerializer, UserSerializer
 from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 
 # Create your views here.
 
@@ -25,6 +25,14 @@ class LoginApi(APIView):
             # user = authenticate(username=request.data['User_name'], password =request.data['User_name'] )
             
             if user is not None:
+                groupsdetails =user.groups.all()
+                if groupsdetails.contains(Group.objects.filter(name = 'Candidate').first() ):
+                    user = authenticate(username=request.data['User_name'], password =request.data['password'] )
+                    if user is None:
+                        return Response(Messages1.UNF, status=status.HTTP_403_FORBIDDEN)          
+                # else:
+                   # Active directory validation
+                   #    
                 userserializer =  UserSerializer(user)
                 return Response(userserializer.data, status=status.HTTP_200_OK)
                 # l = user.groups.values_list('name',flat = True) # QuerySet Object

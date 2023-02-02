@@ -8,7 +8,7 @@ import os
 class Candidate(models.Model):
     def get_upload_path(instance, filename):
         return os.path.join(
-        instance.Jobpost.JobCode,  instance.CandidateCode, filename) 
+        instance.Jobpost.JobCode,  instance.CandidateCode, 'Resume', filename) 
     CandidateId = models.AutoField(primary_key=True, db_column='Candidate_ID')
     CandidateCode = models.CharField(max_length=20 ,  unique = True, null=False, db_column='Candidate_Code')
     Jobpost = models.ForeignKey(JobPost, null =True, on_delete=models.CASCADE, db_column='Job_Post_ID')

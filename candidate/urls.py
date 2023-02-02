@@ -19,6 +19,7 @@ urlpatterns=[
      path('/getselectedcandidates',selectedcandidatesgridview.as_view()),
      path('/updateselectedcandidate',updateselectedcandidate.as_view({'post':"updateselcandidate"})),
      path('/getAnnexureDetails',updateselectedcandidate.as_view({'post':"getAnnexureDetails"})),
+     path('/sendOfferLetter',updateselectedcandidate.as_view({'post':"sendOfferLetter"})),                                                            
 
 
 ]
