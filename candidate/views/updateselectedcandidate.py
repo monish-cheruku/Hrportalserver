@@ -2,6 +2,7 @@
 import decimal
 import io
 import os
+from HRproj.util.Mail.HR_Workflow_Emails import EmailUtils
 from ManageInsurance.models import Insurance
 from candidate.models.selected_Candidates_Model import Selected_Candidates
 from HRproj.util.Constants.HR_WorkFlow_Constants import Constants1
@@ -26,7 +27,10 @@ from docx2pdf import convert
 import random
 import string
 from django.contrib.auth.models import Group, User
-from django.contrib.auth.hashers import SHA1PasswordHasher
+from django.conf import settings
+import locale
+
+
 
 class updateselectedcandidate(ModelViewSet):
     @action(detail=True, methods=['post'])
@@ -36,7 +40,7 @@ class updateselectedcandidate(ModelViewSet):
             designation= Designation.objects.get(DesignationId=request.data['designation'])
             band=Band.objects.get(BandId=request.data['band'])
             subband=SubBand.objects.get(SubBandId=request.data['subband'])
-            DateOfJoining=request.data["DateOfJoining"]
+            DateOfJoining=request.data["doj"]
             FixedCTC=request.data["FixedCTC"]
             Isvariable = request.data["IsVariable"]
             VariablePay = request.data["VariablePay"]
@@ -82,12 +86,13 @@ class updateselectedcandidate(ModelViewSet):
             print(type(content_file))
             sco =  Selected_Candidates.objects.get(Selected_Candidate_ID=request.data["selectedcandidateid"])
 
-            if os.path.exists(os.path.join(MEDIA_ROOT, str(sco.OfferLetter))):
+            if sco.OfferLetter.__bool__()  and os.path.exists(os.path.join(MEDIA_ROOT, str(sco.OfferLetter))):
                 os.remove(os.path.join(MEDIA_ROOT, str(sco.OfferLetter)))
 
             sco.OfferLetter= content_file
-            sco.save()    
-            # convert(os.path.join(MEDIA_ROOT, str(sco.OfferLetter)))            
+            sco.save()
+            # covert document to PDF 
+            convert(os.path.join(MEDIA_ROOT, str(sco.OfferLetter)))            
 
             return  Response("OfferLetter generated sucessfully",status=status.HTTP_200_OK)
         except Exception as e:
@@ -102,6 +107,9 @@ class updateselectedcandidate(ModelViewSet):
                 canlastname = selectedcandidate.candidate.CanLastName
                 canfirstname = selectedcandidate.candidate.CanFirstName
                 canemail = selectedcandidate.candidate.Email
+                dateofjoin = selectedcandidate.DateOfJoining
+                dateofjoining = dateofjoin.strftime("%B %d" + self.suffix1(dateofjoin.day)+",%Y")
+                # dateofjoining = dateofjoin.strftime("%B")+" "+dateofjoin.strftime("%d")+
                 user1 = User.objects.filter(first_name=canfirstname, last_name=canlastname, email=canemail).first()
                 if user1 is None:
                     username = canfirstname[0:1]+canlastname
@@ -112,14 +120,39 @@ class updateselectedcandidate(ModelViewSet):
                     user.save()
                     g = Group.objects.get(name = 'Candidate')
                     g.user_set.add(user)
+                else:
+                    username =  user1.username
+                    password = self.get_random_password() 
+                    user1.set_password(password)
+                    user1.save()  
                 # else:
                 #     username = user1.username
                 #     sha = SHA1PasswordHasher()
                 #     password = sha.decode(user1.password)  
                 # Convert Offerletter doc to PDF
-                if os.path.exists(os.path.join(MEDIA_ROOT, str(selectedcandidate.OfferLetter))):
-                    convert(os.path.join(MEDIA_ROOT, str(selectedcandidate.OfferLetter)))
-            return  Response("User Created and PDF created ",status=status.HTTP_200_OK)     
+                # if os.path.exists(os.path.join(MEDIA_ROOT, str(selectedcandidate.OfferLetter))):
+                #     convert(os.path.join(MEDIA_ROOT, str(selectedcandidate.OfferLetter)))
+                # send email to candidate with offerletter attachment.
+                subject = 'Belcan India Offer Letter-'+canfirstname+" "+canlastname
+                print('candidatename--'+canfirstname+" "+canlastname)
+                print('url--'+settings.APP_URL)
+                print('dateofjoining--'+dateofjoining)
+                print('username--'+username)
+                print('password--'+password)
+                context = {
+                    'candidatename': canfirstname+" "+canlastname,                    
+                    'url' : settings.APP_URL,
+                    'dateofjoining' : dateofjoining,
+                    'username' : username,
+                    'password' : password
+                }
+                body = EmailUtils.getEmailBody('Offer_letter_template.html', context)
+                print('body--'+body)
+                print('subject--'+subject)
+                print(canemail)
+                # print(jobpost1.Email)                 
+                EmailUtils.sendEmail(subject, body, [canemail], None)    
+            return  Response("Offer letter send succesfully",status=status.HTTP_200_OK)     
 
         except Exception as ex:
             return  Response("Exception while sending the offerletter"+str(ex),status=status.HTTP_400_BAD_REQUEST)  
@@ -144,8 +177,8 @@ class updateselectedcandidate(ModelViewSet):
                                   Is_Eligible_Joining_Bonus, IS_Eligible_Monthly_Incentive)
         return Response(context,status=status.HTTP_200_OK)
     
-    def getContext(self,selectedcandidate, designation, band, subband, DateOfJoining,
-                                  FixedCTC, Isvariable, VariablePay, MQVariable, Is_Eligible_annu_Mgnt_Bonus,
+    def getContext(self,selectedcandidate, designation, band, subband, DateOfJoining, 
+                                  FixedCTC, Isvariable, VariablePay, MQVariable,                                                                             Is_Eligible_annu_Mgnt_Bonus,
                                   Is_Eligible_Joining_Bonus, IS_Eligible_Monthly_Incentive):
         
         varDOJ = None
@@ -185,30 +218,38 @@ class updateselectedcandidate(ModelViewSet):
         varVariablePay = None
         varFixedPayPerc = None
         varVariablePayPerc = None
+        locale.setlocale(locale.LC_ALL, 'en_IN')
+        dt = datetime.now().date()
+        varDate = dt.strftime("%B %d"+self.suffix1(dt.day)+", %Y")
 
-
-     
-
-        varDate = datetime.now()
+        DateOfJoining=datetime.strptime(DateOfJoining,'%Y-%m-%d')
+        DateOfJoining=DateOfJoining.strftime("%d"+self.suffix1(DateOfJoining.day)+" %B, %Y")
+        # # DateOfJoining = DateOfJoining.strftime("%B %d, %Y")
         varDOJ = DateOfJoining
+
         if designation is not None:
             varDesignation = designation.DesignationName
         if selectedcandidate is not None: 
-            varName =  selectedcandidate.candidate.CanLastName+', '+selectedcandidate.candidate.CanFirstName
+            varName =  selectedcandidate.candidate.CanLastName+' '+selectedcandidate.candidate.CanFirstName
             varLocation = selectedcandidate.candidate.Jobpost.Location.LocationName
             businessunitname = selectedcandidate.candidate.Jobpost.BusinessUnit.BusinessUnitName
+        
         if  band is not None:
             varBand = band.BandName
             insurance = Insurance.objects.filter(BandId = band.BandId).first()
-            if insurance is not None:                
-                varGMI = round(insurance.InsuranceLimit)
-                varGPA = round(insurance.AccidentLimit)
+            if insurance is not None: 
+                
+                varGMI = locale.format("%.0f", insurance.InsuranceLimit, grouping=True)
+                varGPA = locale.format("%.0f", insurance.AccidentLimit, grouping=True)
+    
         if  subband is not None:
             varSubBand = subband.SubBandName
         iSMngtBonus = Is_Eligible_annu_Mgnt_Bonus
         iSVariablePay = Isvariable
         iSJoinBonus = Is_Eligible_Joining_Bonus
         iSMonthIncentive = IS_Eligible_Monthly_Incentive 
+
+        
 
         varTotalFixedCTC = FixedCTC
         varTotalMCTC = round(varTotalFixedCTC/12)
@@ -222,7 +263,7 @@ class updateselectedcandidate(ModelViewSet):
             varTotalACTC = FixedCTC
 
         if varTotalACTC is not None:
-           varSalary = varTotalACTC
+           varSalary = locale.format("%.0f", varTotalACTC, grouping=True)
            varSalaryWords = self.num2words(varTotalACTC)
            
 
@@ -256,6 +297,7 @@ class updateselectedcandidate(ModelViewSet):
              varAFBP = round(varAFBP- varAShiftAllow)
         if varAFBP is not None:
             varMFBP = round(varAFBP/12)
+
 
         context = {
                     "varDate" :varDate,
@@ -340,3 +382,11 @@ class updateselectedcandidate(ModelViewSet):
         random.SystemRandom().shuffle(password_list)
         password = ''.join(password_list)
         return password
+    
+    def suffix1(self,day):
+        suffix = ""
+        if 4 <= day <= 20 or 24 <= day <= 30:
+            suffix = "th"
+        else:
+            suffix = ["st", "nd", "rd"][day % 10 - 1]
+        return suffix

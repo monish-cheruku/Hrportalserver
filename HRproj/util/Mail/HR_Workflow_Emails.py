@@ -75,6 +75,7 @@ class EmailUtils():
                 )
 
                 email.content_subtype = "html"  # set the content subtype to html
+                email.attach_file
                 email.send()   
         except Exception as ex:
             raise Exception("Exception while sending emails- "+str(ex))            

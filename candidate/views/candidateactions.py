@@ -472,8 +472,9 @@ class CandidateAction(ModelViewSet):
                 band=None,#foerign key
                 DateOfJoining=None,
                 FixedCTC=0,
-                VariablePercentage=None,
-                MQVariable="N",
+                VariablePay=None,
+                OfferLetter = None,
+                MQVariable=None,
                 FinalCTC=0,
                 candidatecategory=None,#foreign key
                 Is_Eligible_annu_Mgnt_Bonus=False,
