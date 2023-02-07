@@ -8,7 +8,11 @@ from selectedcandidate.models.Candidatedducationaldetails import CandidateEducat
 from selectedcandidate.Serializers import candidateeducationdetailgetSerializer
 from selectedcandidate.models import *
 from candidate.models.selected_Candidates_Model import Selected_Candidates
+from selectedcandidate.models.Documentsupload import CandidateDocumentsUpload
 
+import os
+from django.db import transaction
+from HRproj.settings import MEDIA_ROOT, MEDIA_URL, BASE_DIR
 
 class educationdetailsview(ModelViewSet):
     @action(detail=True,methods=["post"])
@@ -66,9 +70,31 @@ class educationdetailsview(ModelViewSet):
              return  Response(e,status=status.HTTP_400_BAD_REQUEST)
     def deleteeducationdetail(self,request,format=None):
         try:
+            with transaction.atomic():
+                edo=CandidateEducationalDetails.objects.filter(id=request.data["id"]).first()
+                edo.delete()
+                candidatedocob=CandidateDocumentsUpload.objects.filter(detailtype="Education",detailtypeId=request.data["id"])
 
-            edo=CandidateEducationalDetails.objects.filter(id=request.data["id"]).first()
-            edo.delete()
-            return  Response("deleted Sucessfully",status=status.HTTP_200_OK)
+                for i in candidatedocob:
+                
+                    filename =i.file
+                    filename = os.path.join(MEDIA_ROOT, str(filename))
+                    filename = filename.replace("/", "\\")
+                    if os.path.exists(filename):
+                        os.remove(filename)
+                    
+                    else:
+                        print("no file exist")
+
+
+
+
+
+                candidatedocob.delete()
+
+
+
+
+                return  Response("deleted Sucessfully",status=status.HTTP_200_OK)
         except Exception as e:
              return  Response(e,status=status.HTTP_400_BAD_REQUEST)

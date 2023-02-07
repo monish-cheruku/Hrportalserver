@@ -5,10 +5,13 @@ from candidate.models.selected_Candidates_Model import  Selected_Candidates
 from rest_framework.decorators import action
 from rest_framework.viewsets import ModelViewSet
 from selectedcandidate.models.Candidateemployementdetails import CandidateEmployementDetials
+from selectedcandidate.models.Documentsupload import CandidateDocumentsUpload
 from selectedcandidate.Serializers import candidateemployementdetailgetSerializer
 from selectedcandidate.models import *
 from candidate.models.selected_Candidates_Model import Selected_Candidates
-
+import os
+from django.db import transaction
+from HRproj.settings import MEDIA_ROOT, MEDIA_URL, BASE_DIR
 
 class employementdetailsview(ModelViewSet):
     @action(detail=True,methods=["post"])
@@ -67,9 +70,30 @@ class employementdetailsview(ModelViewSet):
              return  Response(e,status=status.HTTP_400_BAD_REQUEST)
     def deleteemployementdetail(self,request,format=None):
         try:
+            with transaction.atomic():
+                empdo=CandidateEmployementDetials.objects.filter(id=request.data["id"]).first()
+                empdo.delete()
+                candidatedocob=CandidateDocumentsUpload.objects.filter(detailtype="Employment",detailtypeId=request.data["id"])
 
-            empdo=CandidateEmployementDetials.objects.filter(id=request.data["id"]).first()
-            empdo.delete()
-            return  Response("deleted Sucessfully",status=status.HTTP_200_OK)
+                for i in candidatedocob:
+                
+                    filename =i.file
+                    filename = os.path.join(MEDIA_ROOT, str(filename))
+                    filename = filename.replace("/", "\\")
+                    if os.path.exists(filename):
+                        os.remove(filename)
+                    
+                    else:
+                        print("no file exist")
+
+
+
+
+
+                candidatedocob.delete()
+
+
+
+                return  Response("deleted Sucessfully",status=status.HTTP_200_OK)
         except Exception as e:
              return  Response(e,status=status.HTTP_400_BAD_REQUEST)

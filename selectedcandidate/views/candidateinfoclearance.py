@@ -43,9 +43,9 @@ class Candidateinfoclearance(ModelViewSet):
                 res["validation"]=False
                 res["messages"].append("Please Upload Your Aadhar")
 
-            if otherdocsob.filter(detailtype="Passport").__len__()<1:
-                res["validation"]=False
-                res["messages"].append("Please Upload Your Passport")
+            # if otherdocsob.filter(detailtype="Passport").__len__()<1:
+            #     res["validation"]=False
+            #     res["messages"].append("Please Upload Your Passport")
         
 
 

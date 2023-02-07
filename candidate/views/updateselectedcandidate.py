@@ -82,12 +82,12 @@ class updateselectedcandidate(ModelViewSet):
             print(type(content_file))
             sco =  Selected_Candidates.objects.get(Selected_Candidate_ID=request.data["selectedcandidateid"])
 
-            if os.path.exists(os.path.join(MEDIA_ROOT, str(sco.OfferLetter))):
+            if sco.OfferLetter.__bool__()  and  os.path.exists(os.path.join(MEDIA_ROOT, str(sco.OfferLetter))):
                 os.remove(os.path.join(MEDIA_ROOT, str(sco.OfferLetter)))
 
             sco.OfferLetter= content_file
             sco.save()    
-            # convert(os.path.join(MEDIA_ROOT, str(sco.OfferLetter)))            
+            convert(os.path.join(MEDIA_ROOT, str(sco.OfferLetter)))            
 
             return  Response("OfferLetter generated sucessfully",status=status.HTTP_200_OK)
         except Exception as e:
