@@ -47,7 +47,7 @@ class candidateemployementdetailgetSerializer(serializers.ModelSerializer):
     
     def get_files(self,employementob):
      
-        candidatedocob=CandidateDocumentsUpload.objects.filter(detailtype="Employement",detailtypeId=employementob.id,selectedcandidate_id=employementob.selectedCandidateId_id)
+        candidatedocob=CandidateDocumentsUpload.objects.filter(detailtype="Employment",detailtypeId=employementob.id,selectedcandidate_id=employementob.selectedCandidateId_id)
         serializer = CandidatedocumentsSerializer(instance=candidatedocob, many=True)
         return serializer.data 
     class Meta:

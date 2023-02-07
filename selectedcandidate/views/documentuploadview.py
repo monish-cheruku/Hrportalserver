@@ -10,6 +10,7 @@ from rest_framework.viewsets import ModelViewSet
 from selectedcandidate.models.Candidatedducationaldetails import CandidateEducationalDetails
 from selectedcandidate.models.Documentsupload import CandidateDocumentsUpload
 from selectedcandidate.Serializers import Documentuploadserializer
+from selectedcandidate.Serializers import CandidatedocumentsSerializer
 from selectedcandidate.models import *
 from candidate.models.selected_Candidates_Model import Selected_Candidates
 from HRproj.settings import MEDIA_ROOT, MEDIA_URL, BASE_DIR
@@ -31,13 +32,14 @@ class documentuploadview(ModelViewSet):
             # exp.with_traceback()
             return Response(exp, status=status.HTTP_400_BAD_REQUEST)
 
-    # @action(detail=True,methods=["post"])
-    # def getdocumentss(self,request,format=None):
-    #     try:
-
-    #         return  Response(edos,status=status.HTTP_200_OK)
-    #     except Exception as e:
-    #          return  Response(e,status=status.HTTP_400_BAD_REQUEST)
+    
+    def getotherdocuments(self,request,format=None):
+        try:
+            alldocsobj=CandidateDocumentsUpload.objects.filter(selectedcandidate_id=request.data["selectedcandidateid"],detailtypeId=0)
+            serializeddata=CandidatedocumentsSerializer(alldocsobj,many=True).data
+            return  Response(serializeddata,status=status.HTTP_200_OK)
+        except Exception as e:
+             return  Response(e,status=status.HTTP_400_BAD_REQUEST)
     def downloaddetaildocuments(self, request, format=None):
         try:
             file = request.data["file"]

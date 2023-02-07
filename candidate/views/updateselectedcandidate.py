@@ -158,24 +158,25 @@ class updateselectedcandidate(ModelViewSet):
             return  Response("Exception while sending the offerletter"+str(ex),status=status.HTTP_400_BAD_REQUEST)  
     @action(detail=True, methods=['post'])
     def getAnnexureDetails(self, request, format=None):
-
-        selectedcandidate =  Selected_Candidates.objects.get(Selected_Candidate_ID=request.data["selectedcandidateid"])
-        designation= Designation.objects.get(DesignationId=request.data['designation'])
-        band=Band.objects.get(BandId=request.data['band'])
-        subband=SubBand.objects.get(SubBandId=request.data['subband'])
-        DateOfJoining=request.data["DateOfJoining"]
-        FixedCTC=request.data["FixedCTC"]
-        Isvariable = request.data["IsVariable"]
-        VariablePay = request.data["VariablePay"]
-        MQVariable=request.data["MQVariable"]
-        Is_Eligible_annu_Mgnt_Bonus=request.data["Is_Eligible_annu_Mgnt_Bonus"]
-        Is_Eligible_Joining_Bonus=request.data["Is_Eligible_Joining_Bonus"]
-        IS_Eligible_Monthly_Incentive=request.data["IS_Eligible_Monthly_Incentive"]
-
-        context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
-                                  FixedCTC, Isvariable, VariablePay, MQVariable, Is_Eligible_annu_Mgnt_Bonus,
-                                  Is_Eligible_Joining_Bonus, IS_Eligible_Monthly_Incentive)
-        return Response(context,status=status.HTTP_200_OK)
+        try:
+            selectedcandidate =  Selected_Candidates.objects.get(Selected_Candidate_ID=request.data["selectedcandidateid"])
+            designation= Designation.objects.get(DesignationId=request.data['designation'])
+            band=Band.objects.get(BandId=request.data['band'])
+            subband=SubBand.objects.get(SubBandId=request.data['subband'])
+            DateOfJoining=request.data["DateOfJoining"]
+            FixedCTC=request.data["FixedCTC"]
+            Isvariable = request.data["IsVariable"]
+            VariablePay = request.data["VariablePay"]
+            MQVariable=request.data["MQVariable"]
+            Is_Eligible_annu_Mgnt_Bonus=request.data["Is_Eligible_annu_Mgnt_Bonus"]
+            Is_Eligible_Joining_Bonus=request.data["Is_Eligible_Joining_Bonus"]
+            IS_Eligible_Monthly_Incentive=request.data["IS_Eligible_Monthly_Incentive"]
+            context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
+                                    FixedCTC, Isvariable, VariablePay, MQVariable, Is_Eligible_annu_Mgnt_Bonus,
+                                    Is_Eligible_Joining_Bonus, IS_Eligible_Monthly_Incentive)
+            return Response(context,status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response(context,status=status.HTTP_400_BAD_REQUEST)
     
     def getContext(self,selectedcandidate, designation, band, subband, DateOfJoining, 
                                   FixedCTC, Isvariable, VariablePay, MQVariable,                                                                             Is_Eligible_annu_Mgnt_Bonus,
