@@ -50,7 +50,7 @@ class personaldetialsview(ModelViewSet):
 
 
             )
-            return  Response("personal info created",status=status.HTTP_200_OK)
+            return  Response("personal info saved succesfully",status=status.HTTP_200_OK)
         except Exception as e:
             print(e)
             return  Response(e,status=status.HTTP_400_BAD_REQUEST)
@@ -82,7 +82,7 @@ class personaldetialsview(ModelViewSet):
 
 
             )
-            return  Response("personal info ",status=status.HTTP_200_OK)
+            return  Response("personal info updated Succesfully ",status=status.HTTP_200_OK)
         except Exception as e:
              return  Response(e,status=status.HTTP_400_BAD_REQUEST)
     @action(detail=True,methods=["post"])

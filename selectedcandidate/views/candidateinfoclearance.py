@@ -26,7 +26,7 @@ class Candidateinfoclearance(ModelViewSet):
           
             cfamilyob=CandidateFamilyDetails.objects.filter(selectedCandidateId_id=request.data["selectedcandidateid"])
            
-            if ceduob.__len__()==0:
+            if cfamilyob.__len__()==0:
                 res["validation"]=False
                 res["messages"].append("Please Complete Family Details Section")
 
