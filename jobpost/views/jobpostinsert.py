@@ -52,7 +52,7 @@ class JobPostApi(APIView):
                                 'url' : settings.APP_URL,
                                 'approvername' : BHuser.last_name+", "+BHuser.first_name
                             }
-                            body = EmailUtils.getEmailBody('businessheadjobpostapproval_template.html', context)
+                            body = EmailUtils.getEmailBody('BusinessHead_JP_Submit_template.html', context)
                             print(body)
                             print(subject)
                             print(BHuser.email)

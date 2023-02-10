@@ -41,17 +41,23 @@ class updateselectedcandidate(ModelViewSet):
             band=Band.objects.get(BandId=request.data['band'])
             subband=SubBand.objects.get(SubBandId=request.data['subband'])
             DateOfJoining=request.data["doj"]
-            FixedCTC=request.data["FixedCTC"]
+            FinalCTC=request.data["FinalCTC"]  
+             
+            ShiftAllowance = request.data["ShiftAllowance"] if request.data["ShiftAllowance"] is not None else 0         
             Isvariable = request.data["IsVariable"]
-            VariablePay = request.data["VariablePay"]
+            VariablePerc = request.data["VariablePerc"]
+            # VariablePay = request.data["VariablePay"]
             MQVariable=request.data["MQVariable"]
             Is_Eligible_annu_Mgnt_Bonus=request.data["Is_Eligible_annu_Mgnt_Bonus"]
-            Is_Eligible_Joining_Bonus=request.data["Is_Eligible_Joining_Bonus"]
-            IS_Eligible_Monthly_Incentive=request.data["IS_Eligible_Monthly_Incentive"]            
-            if Isvariable is True:
-                FinalCTC = FixedCTC+VariablePay
+            Is_Eligible_Joining_Bonus=request.data["Is_Eligible_Joining_Bonus"]  
+            JoiningBonus = request.data["JoiningBonus"]            
+            IS_Eligible_Monthly_Incentive=request.data["IS_Eligible_Monthly_Incentive"]          
+            if Isvariable is True:       
+                VariablePay = round((FinalCTC * VariablePerc)/(100+VariablePerc))   
+                FixedCTC = FinalCTC-VariablePay
+
             elif Isvariable is False:
-                FinalCTC =  FixedCTC  
+                FixedCTC =  FinalCTC  
             sco =  Selected_Candidates.objects.filter(Selected_Candidate_ID=request.data["selectedcandidateid"]).update(
                 designation= designation,
                 band=band,
@@ -59,11 +65,14 @@ class updateselectedcandidate(ModelViewSet):
                 DateOfJoining=DateOfJoining,
                 FixedCTC=FixedCTC,
                 IsVariable = Isvariable,
+                VariablePerc = VariablePerc,
                 VariablePay=VariablePay,
                 FinalCTC = FinalCTC,
+                ShiftAllowance = ShiftAllowance,
                 MQVariable=MQVariable,
                 Is_Eligible_annu_Mgnt_Bonus=Is_Eligible_annu_Mgnt_Bonus,
                 Is_Eligible_Joining_Bonus=Is_Eligible_Joining_Bonus,
+                JoiningBonus = JoiningBonus,
                 IS_Eligible_Monthly_Incentive=IS_Eligible_Monthly_Incentive,
                 Modified_By=request.data["Modified_By"],
                 Modified_On=datetime.now(),
@@ -77,8 +86,8 @@ class updateselectedcandidate(ModelViewSet):
             else:    
                 doc = DocxTemplate("Belcan_India_Offer_Letter_Template.docx")
             context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
-                                  FixedCTC, Isvariable, VariablePay, MQVariable, Is_Eligible_annu_Mgnt_Bonus,
-                                  Is_Eligible_Joining_Bonus, IS_Eligible_Monthly_Incentive)
+                                    FinalCTC, ShiftAllowance,Isvariable, VariablePerc, MQVariable, Is_Eligible_annu_Mgnt_Bonus,
+                                    Is_Eligible_Joining_Bonus, IS_Eligible_Monthly_Incentive)
             doc.render(context)
             doc.save(buffer)
             buffer.seek(0)
@@ -164,22 +173,27 @@ class updateselectedcandidate(ModelViewSet):
             band=Band.objects.get(BandId=request.data['band'])
             subband=SubBand.objects.get(SubBandId=request.data['subband'])
             DateOfJoining=request.data["DateOfJoining"]
-            FixedCTC=request.data["FixedCTC"]
+            # FixedCTC=request.data["FixedCTC"]
+            FinalCTC=request.data["FinalCTC"]  
+             
+            ShiftAllowance = request.data["ShiftAllowance"] if request.data["ShiftAllowance"] is not None else 0         
             Isvariable = request.data["IsVariable"]
-            VariablePay = request.data["VariablePay"]
+            VariablePerc = request.data["VariablePerc"]
+            # VariablePay = request.data["VariablePay"]
             MQVariable=request.data["MQVariable"]
             Is_Eligible_annu_Mgnt_Bonus=request.data["Is_Eligible_annu_Mgnt_Bonus"]
-            Is_Eligible_Joining_Bonus=request.data["Is_Eligible_Joining_Bonus"]
+            Is_Eligible_Joining_Bonus=request.data["Is_Eligible_Joining_Bonus"]  
+            JoiningBonus = request.data["JoiningBonus"]            
             IS_Eligible_Monthly_Incentive=request.data["IS_Eligible_Monthly_Incentive"]
             context = self.getContext(selectedcandidate, designation, band, subband, DateOfJoining,
-                                    FixedCTC, Isvariable, VariablePay, MQVariable, Is_Eligible_annu_Mgnt_Bonus,
+                                    FinalCTC, ShiftAllowance,Isvariable, VariablePerc, MQVariable, Is_Eligible_annu_Mgnt_Bonus,
                                     Is_Eligible_Joining_Bonus, IS_Eligible_Monthly_Incentive)
             return Response(context,status=status.HTTP_200_OK)
         except Exception as e:
             return Response(context,status=status.HTTP_400_BAD_REQUEST)
     
     def getContext(self,selectedcandidate, designation, band, subband, DateOfJoining, 
-                                  FixedCTC, Isvariable, VariablePay, MQVariable,                                                                             Is_Eligible_annu_Mgnt_Bonus,
+                                  FinalCTC, ShiftAllowance,Isvariable, VariablePerc, MQVariable,                                                                             Is_Eligible_annu_Mgnt_Bonus,
                                   Is_Eligible_Joining_Bonus, IS_Eligible_Monthly_Incentive):
         
         varDOJ = None
@@ -219,6 +233,8 @@ class updateselectedcandidate(ModelViewSet):
         varVariablePay = None
         varFixedPayPerc = None
         varVariablePayPerc = None
+        varMQVariable = None
+
         locale.setlocale(locale.LC_ALL, 'en_IN')
         dt = datetime.now().date()
         varDate = dt.strftime("%B %d"+self.suffix1(dt.day)+", %Y")
@@ -252,16 +268,20 @@ class updateselectedcandidate(ModelViewSet):
 
         
 
-        varTotalFixedCTC = FixedCTC
-        varTotalMCTC = round(varTotalFixedCTC/12)
+        varTotalACTC = FinalCTC
 
         if Isvariable == True:
-           varVariablePay = VariablePay
-           varTotalACTC =  FixedCTC+VariablePay
-           varFixedPayPerc = round((FixedCTC/(FixedCTC+VariablePay)) * 100)
-           varVariablePayPerc = round((VariablePay/(FixedCTC+VariablePay)) * 100)
+           varVariablePayPerc = VariablePerc
+           varVariablePay = round((varTotalACTC * varVariablePayPerc)/(100+varVariablePayPerc))
+           varFixedPayPerc = 100-varVariablePayPerc
+           varTotalFixedCTC = varTotalACTC-varVariablePay
+           varTotalMCTC = round(varTotalFixedCTC/12)
+           varMQVariable = MQVariable
+           
+
         elif Isvariable == False:
-            varTotalACTC = FixedCTC
+            varTotalFixedCTC =  varTotalACTC           
+            varTotalMCTC = round(varTotalACTC/12)
 
         if varTotalACTC is not None:
            varSalary = locale.format("%.0f", varTotalACTC, grouping=True)
@@ -287,9 +307,9 @@ class updateselectedcandidate(ModelViewSet):
 
         if businessunitname is not None and businessunitname == "Workforce Solutions":
             iSShiftAllow = True
-            varMShiftAllow = 3000
+            varMShiftAllow = ShiftAllowance
             varAShiftAllow = round(varMShiftAllow * 12)
-        if varTotalACTC is not None and varABasic is not None and varAHRA is not None and varAPF is not None:
+        if varTotalFixedCTC is not None and varABasic is not None and varAHRA is not None and varAPF is not None:
             
             varAFBP = round(varTotalFixedCTC-(varABasic+varAHRA+varAPF))
         if iSBonus is True:
@@ -335,7 +355,8 @@ class updateselectedcandidate(ModelViewSet):
                     "iSVariablePay" : iSVariablePay,
                     "varVariablePay": varVariablePay,
                     "varFixedPayPerc" : varFixedPayPerc,
-                    "varVariablePayPerc" :varVariablePayPerc
+                    "varVariablePayPerc" :varVariablePayPerc,
+                    "varMQVariable" : varMQVariable
 
 
                  }
