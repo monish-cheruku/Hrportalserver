@@ -13,7 +13,10 @@ from rest_framework import status
 from login.serializers import LoginSerializer, UserSerializer
 from HRproj.util.Messages.HR_WorkFlow_Messages import Messages1
 from django.contrib.auth.models import User, Group
+from   . import ldapfun
+from Scheduler.Task1 import ManageADUsers
 
+from decouple import config
 # Create your views here.
 
 class LoginApi(APIView):
@@ -21,7 +24,7 @@ class LoginApi(APIView):
     def post(self, request, format=None): 
         # loginSerializer = LoginSerializer(data=request.data)
         try:
-            user = User.objects.filter(username= request.data['User_name']).first()
+            user = User.objects.filter(username= request.data['User_name'],is_active=True).first()
             # user = authenticate(username=request.data['User_name'], password =request.data['User_name'] )
             
             if user is not None:
@@ -30,9 +33,17 @@ class LoginApi(APIView):
                     user = authenticate(username=request.data['User_name'], password =request.data['password'] )
                     if user is None:
                         return Response(Messages1.UNF, status=status.HTTP_403_FORBIDDEN)          
-                # else:
-                   # Active directory validation
-                   #    
+                else:
+                    if config("AD_AUTHENTICATION"):
+                    #    Active directory validation
+                        print("executing ldap fun")
+                        res=ldapfun.connecttoad(user.email,request.data['password'] )
+                        if res==True:
+                            print("")
+                        else:
+                            return Response("User Not Found", status=status.HTTP_403_FORBIDDEN)
+                        # ManageADUsers()
+                      
                 userserializer =  UserSerializer(user)
                 return Response(userserializer.data, status=status.HTTP_200_OK)
                 # l = user.groups.values_list('name',flat = True) # QuerySet Object
