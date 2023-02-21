@@ -34,7 +34,7 @@ class LoginApi(APIView):
                     if user is None:
                         return Response(Messages1.UNF, status=status.HTTP_403_FORBIDDEN)          
                 else:
-                    if config("AD_AUTHENTICATION"):
+                    if config("AD_AUTHENTICATION")=="True":
                     #    Active directory validation
                         print("executing ldap fun")
                         res=ldapfun.connecttoad(user.email,request.data['password'] )

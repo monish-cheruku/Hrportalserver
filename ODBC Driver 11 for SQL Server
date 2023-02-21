@@ -8966,3 +8966,70 @@ TypeError: Object of type LDAPBindError is not JSON serializable
 2023-02-21 11:42:30,391 django.utils.autoreload INFO     Watching for file changes with StatReloader
 2023-02-21 12:26:00,313 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-21 13:26:00 IST)" (scheduled at 2023-02-21 12:26:00+05:30)
 2023-02-21 12:26:13,778 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-21 13:26:00 IST)" executed successfully
+2023-02-21 12:34:00,059 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='34'], next run at: 2023-02-21 13:34:00 IST)" (scheduled at 2023-02-21 12:34:00+05:30)
+2023-02-21 12:34:08,704 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='34'], next run at: 2023-02-21 13:34:00 IST)" executed successfully
+2023-02-21 12:42:44,607 django.request WARNING  Forbidden: /api/login
+2023-02-21 12:51:03,846 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\candidate\models\candidatemodel.py changed, reloading.
+2023-02-21 12:51:24,594 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-21 12:51:24,673 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-21 12:51:24,674 apscheduler.scheduler INFO     Scheduler started
+2023-02-21 12:51:25,057 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-21 12:51:58,949 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\candidate\models\candidatemodel.py changed, reloading.
+2023-02-21 12:52:37,786 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-21 12:52:37,882 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-21 12:52:37,902 apscheduler.scheduler INFO     Scheduler started
+2023-02-21 12:52:38,982 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-21 13:12:55,371 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\candidate\models\candidatemodel.py changed, reloading.
+2023-02-21 13:13:26,349 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-21 13:13:26,360 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-21 13:13:26,360 apscheduler.scheduler INFO     Scheduler started
+2023-02-21 13:13:26,826 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-21 13:13:26,841 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-21 13:13:26,843 apscheduler.scheduler INFO     Scheduler started
+2023-02-21 13:13:27,125 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-21 13:14:15,338 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\candidate\models\candidatemodel.py changed, reloading.
+2023-02-21 13:14:31,984 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-21 13:14:31,990 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-21 13:14:31,990 apscheduler.scheduler INFO     Scheduler started
+2023-02-21 13:14:34,433 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-21 13:14:34,449 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-21 13:14:34,450 apscheduler.scheduler INFO     Scheduler started
+2023-02-21 13:14:34,712 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-21 13:15:28,445 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\candidate\models\candidatemodel.py changed, reloading.
+2023-02-21 13:15:54,666 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-21 13:15:54,681 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-21 13:15:54,681 apscheduler.scheduler INFO     Scheduler started
+2023-02-21 13:15:57,713 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-21 13:15:57,729 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-21 13:15:57,730 apscheduler.scheduler INFO     Scheduler started
+2023-02-21 13:15:58,014 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-21 13:16:31,713 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-21 13:16:31,726 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-21 13:16:31,726 apscheduler.scheduler INFO     Scheduler started
+2023-02-21 13:18:30,954 django.request WARNING  Forbidden: /api/login
+2023-02-21 13:20:09,840 django.request WARNING  Forbidden: /api/login
+2023-02-21 13:20:36,921 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\login\views.py changed, reloading.
+2023-02-21 13:21:17,233 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-21 13:21:17,294 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-21 13:21:17,297 apscheduler.scheduler INFO     Scheduler started
+2023-02-21 13:21:18,047 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-21 13:23:38,571 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\login\views.py changed, reloading.
+2023-02-21 13:24:35,675 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-21 13:24:35,696 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-21 13:24:35,697 apscheduler.scheduler INFO     Scheduler started
+2023-02-21 13:24:36,069 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-21 13:25:23,779 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\login\views.py changed, reloading.
+2023-02-21 13:26:00,022 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-21 14:26:00 IST)" (scheduled at 2023-02-21 13:26:00+05:30)
+2023-02-21 13:26:07,016 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-21 14:26:00 IST)" executed successfully
+2023-02-21 13:26:23,393 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-21 13:26:23,414 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-21 13:26:23,415 apscheduler.scheduler INFO     Scheduler started
+2023-02-21 13:26:23,756 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-21 13:26:46,100 django.request WARNING  Forbidden: /api/login
+2023-02-21 13:27:52,969 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\login\views.py changed, reloading.
+2023-02-21 13:27:54,335 django.request WARNING  Forbidden: /api/login
+2023-02-21 13:27:54,455 django.request WARNING  Forbidden: /api/login
+2023-02-21 13:28:16,645 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-21 13:28:16,664 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-21 13:28:16,665 apscheduler.scheduler INFO     Scheduler started
+2023-02-21 13:28:16,934 django.utils.autoreload INFO     Watching for file changes with StatReloader
