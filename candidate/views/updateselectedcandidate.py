@@ -134,13 +134,15 @@ class updateselectedcandidate(ModelViewSet):
                     password = self.get_random_password() 
                     user1.set_password(password)
                     user1.save()  
-                # else:
-                #     username = user1.username
-                #     sha = SHA1PasswordHasher()
-                #     password = sha.decode(user1.password)  
+ 
                 # Convert Offerletter doc to PDF
                 # if os.path.exists(os.path.join(MEDIA_ROOT, str(selectedcandidate.OfferLetter))):
                 #     convert(os.path.join(MEDIA_ROOT, str(selectedcandidate.OfferLetter)))
+                docpath = os.path.join(MEDIA_ROOT, str(selectedcandidate.OfferLetter)) 
+                pdfpath = docpath.replace(".docx", ".pdf")
+                # with open(pdfpath, 'r') as f:
+                    # file = f
+
                 # send email to candidate with offerletter attachment.
                 subject = 'Belcan India Offer Letter-'+canfirstname+" "+canlastname
                 print('candidatename--'+canfirstname+" "+canlastname)
@@ -160,7 +162,7 @@ class updateselectedcandidate(ModelViewSet):
                 print('subject--'+subject)
                 print(canemail)
                 # print(jobpost1.Email)                 
-                EmailUtils.sendEmail(subject, body, [canemail], None)    
+                EmailUtils.sendEmailWithAttachments(subject, body, [canemail], None, pdfpath)    
             return  Response("Offer letter send succesfully",status=status.HTTP_200_OK)     
 
         except Exception as ex:
@@ -237,10 +239,14 @@ class updateselectedcandidate(ModelViewSet):
 
         locale.setlocale(locale.LC_ALL, 'en_IN')
         dt = datetime.now().date()
-        varDate = dt.strftime("%B %d"+self.suffix1(dt.day)+", %Y")
+        suff = self.suffix1(dt.day)
+        # varDate = dt.strftime("%B %d"+day+", %Y")
+        varDate = dt.strftime("%B")+" "+dt.strftime("%d")+suff+", "+dt.strftime("%Y")
 
         DateOfJoining=datetime.strptime(DateOfJoining,'%Y-%m-%d')
-        DateOfJoining=DateOfJoining.strftime("%d"+self.suffix1(DateOfJoining.day)+" %B, %Y")
+        suff1 = self.suffix1(DateOfJoining.day)
+        DateOfJoining = DateOfJoining.strftime("%d")+suff1+" "+dt.strftime("%B")+", "+dt.strftime("%Y")
+        # DateOfJoining=DateOfJoining.strftime("%d"+self.suffix1(DateOfJoining.day)+" %B, %Y")
         # # DateOfJoining = DateOfJoining.strftime("%B %d, %Y")
         varDOJ = DateOfJoining
 
@@ -272,7 +278,7 @@ class updateselectedcandidate(ModelViewSet):
 
         if Isvariable == True:
            varVariablePayPerc = VariablePerc
-           varVariablePay = round((varTotalACTC * varVariablePayPerc)/(100+varVariablePayPerc))
+           varVariablePay = round((varTotalACTC * varVariablePayPerc)/100)
            varFixedPayPerc = 100-varVariablePayPerc
            varTotalFixedCTC = varTotalACTC-varVariablePay
            varTotalMCTC = round(varTotalFixedCTC/12)
@@ -411,4 +417,12 @@ class updateselectedcandidate(ModelViewSet):
             suffix = "th"
         else:
             suffix = ["st", "nd", "rd"][day % 10 - 1]
+        if (suffix != ""):
+            suffix =self.get_super(suffix)    
         return suffix
+
+    def get_super(self,x):
+        normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-=()"
+        super_s = "ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾQᴿˢᵀᵁⱽᵂˣʸᶻᵃᵇᶜᵈᵉᶠᵍʰᶦʲᵏˡᵐⁿᵒᵖ۹ʳˢᵗᵘᵛʷˣʸᶻ⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾"
+        res = x.maketrans(''.join(normal), ''.join(super_s))
+        return x.translate(res)    

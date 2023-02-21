@@ -75,7 +75,25 @@ class EmailUtils():
                 )
 
                 email.content_subtype = "html"  # set the content subtype to html
-                email.attach_file
                 email.send()   
         except Exception as ex:
-            raise Exception("Exception while sending emails- "+str(ex))            
+            raise Exception("Exception while sending emails- "+str(ex))
+
+    def sendEmailWithAttachments(subject, body, to, cc, filepath):
+        try:
+            if settings.SEND_EMAIL:    
+                email = EmailMessage(
+                    subject=subject,
+                    body=body,
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    to=to,            
+                    cc=cc,
+                 
+                )
+
+                email.content_subtype = "html"  # set the content subtype to html
+                email.attach_file(filepath, "application/pdf")
+                email.send()   
+        except Exception as ex:
+            print(ex)
+            raise Exception("Exception while sending emails- "+str(ex))                     
