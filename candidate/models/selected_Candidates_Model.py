@@ -39,5 +39,9 @@ class Selected_Candidates(models.Model):
     VerificationStatus = models.CharField(max_length=20,null=True,default=None,db_column="Verification_Status")
     VerificationComments = models.CharField(max_length=500,null=True,default=None,db_column="Verification_Comments")
     BGVStatus = models.CharField(max_length=20,null=True,default=None,db_column="BGV_Status")
+    EndDate=models.DateTimeField(db_column='EndDate', null =True, blank=True)
+    NoOfHours=models.IntegerField(null=True)
+    Duration = models.IntegerField(null=True, db_column='Duration')
+
     class Meta:  
         db_table="Selected_Candidates"

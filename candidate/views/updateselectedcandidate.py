@@ -58,6 +58,7 @@ class updateselectedcandidate(ModelViewSet):
 
             elif Isvariable is False:
                 FixedCTC =  FinalCTC  
+                VariablePay = 0 
             sco =  Selected_Candidates.objects.filter(Selected_Candidate_ID=request.data["selectedcandidateid"]).update(
                 designation= designation,
                 band=band,
@@ -101,7 +102,7 @@ class updateselectedcandidate(ModelViewSet):
             sco.OfferLetter= content_file
             sco.save()
             # covert document to PDF 
-            convert(os.path.join(MEDIA_ROOT, str(sco.OfferLetter)))            
+            # convert(os.path.join(MEDIA_ROOT, str(sco.OfferLetter)))            
 
             return  Response("OfferLetter generated sucessfully",status=status.HTTP_200_OK)
         except Exception as e:
@@ -166,7 +167,7 @@ class updateselectedcandidate(ModelViewSet):
             return  Response("Offer letter send succesfully",status=status.HTTP_200_OK)     
 
         except Exception as ex:
-            return  Response("Exception while sending the offerletter"+str(ex),status=status.HTTP_400_BAD_REQUEST)  
+            return  Response("Exception while sending the offerletter "+str(ex),status=status.HTTP_400_BAD_REQUEST)  
     @action(detail=True, methods=['post'])
     def getAnnexureDetails(self, request, format=None):
         try:
