@@ -18,6 +18,8 @@ urlpatterns=[
      path('/getcandidatefeedbacks',CandidateFeedBacks.as_view()),
      path('/getselectedcandidates',selectedcandidatesgridview.as_view()),
      path('/updateselectedcandidate',updateselectedcandidate.as_view({'post':"updateselcandidate"})),
+     path('/updateselcontractcandidate',updateselectedcandidate.as_view({'post':"updateselcontractcandidate"})), 
+     path('/updateselinterncandidate',updateselectedcandidate.as_view({'post':"updateselinterncandidate"})),    
      path('/getAnnexureDetails',updateselectedcandidate.as_view({'post':"getAnnexureDetails"})),
      path('/sendOfferLetter',updateselectedcandidate.as_view({'post':"sendOfferLetter"})),                                                            
 
