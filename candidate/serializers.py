@@ -256,8 +256,10 @@ class  CandidateDetailsGridSerializer(serializers.ModelSerializer):
     stage_name = serializers.CharField(read_only=True, source="Stage.StageDesc")
     Job_Code = serializers.CharField(read_only=True, source="Jobpost.JobCode")
     approversDetails = serializers.SerializerMethodField()     
+    candidatefullname=serializers.SerializerMethodField()
 
-
+    def get_candidatefullname(self,Candidate1):
+        return Candidate1.CanLastName+", "+Candidate1.CanFirstName
     def get_approversDetails(self, Candidate1):
         qs = CandidateApprovalModel.objects.filter(Candidate=Candidate1)
         serializer = CandidateApprovalSerializer(instance=qs, many=True)
