@@ -12,6 +12,8 @@ from selectedcandidate.views.insurancedetailview import insurancedetailsview
 from selectedcandidate.views.bankdetailsview import bankdetailsview
 from selectedcandidate.views.pfdetailsview import PFdetailsview
 
+from selectedcandidate.views.verifydocument import Verifydocument
+from selectedcandidate.views.verifycandidate import Verifycandidate
 
 urlpatterns=[
 
@@ -45,6 +47,8 @@ urlpatterns=[
 
      path('/getcandidateinfoclearance', Candidateinfoclearance.as_view({'post': 'getallcandidateinfoclearance'})),
      path('/acceptofferletter', Acceptofferletter.as_view({'post': 'acceptofferletter'})),
+     path('/verifydocument', Verifydocument.as_view({'post': 'Verifydocument'})),
+     path('/verifycandidate', Verifycandidate.as_view({'post': 'Verifycandidate'})),
 
 
      path('/createinsurancedetail', insurancedetailsview.as_view({'post': 'createinsurancedetail'})),

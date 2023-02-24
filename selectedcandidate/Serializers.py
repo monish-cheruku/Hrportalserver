@@ -101,9 +101,11 @@ class Documentuploadserializer(serializers.ModelSerializer):
             CandidateDocumentsUpload.objects.create(
             # selectedCandidateId =  sco,
             selectedcandidate = validated_data["selectedcandidate"],
-    detailtypeId=validated_data["detailtypeId"],
-    detailtype=validated_data["detailtype"],
-    file=i,
+            detailtypeId=validated_data["detailtypeId"],
+            detailtype=validated_data["detailtype"],
+            file=i,
+            verified=validated_data["verified"]
+    
         )
 
 

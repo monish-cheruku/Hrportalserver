@@ -8,7 +8,9 @@ from candidate.models.CandidatecategoryModel import candidatecategorymodel
 from ManageDesignation.models import Designation
 class Selected_Candidates(models.Model):
     def get_upload_path(instance, filename):
-        return os.path.join(str(instance.candidate.Jobpost.JobCode),str(instance.candidate.CandidateCode), 'OfferLetter',filename)     
+        return os.path.join(str(instance.candidate.Jobpost.JobCode),str(instance.candidate.CandidateCode), 'OfferLetter',filename)
+    def get_upload_path1(instance, filename):
+        return os.path.join(str(instance.candidate.Jobpost.JobCode),str(instance.candidate.CandidateCode), 'JoiningBonusLetter',filename)        
     Selected_Candidate_ID=models.AutoField(primary_key=True)
     candidate=models.ForeignKey(Candidate,null=True,on_delete=models.DO_NOTHING,db_column="Candidate_ID")
     IsOfferAccepted=models.BooleanField(null=False,default=False,db_column="Is_Offer_Accepted")
@@ -39,5 +41,10 @@ class Selected_Candidates(models.Model):
     VerificationStatus = models.CharField(max_length=20,null=True,default=None,db_column="Verification_Status")
     VerificationComments = models.CharField(max_length=500,null=True,default=None,db_column="Verification_Comments")
     BGVStatus = models.CharField(max_length=20,null=True,default=None,db_column="BGV_Status")
+    EndDate=models.DateTimeField(db_column='EndDate', default=None,null =True, blank=True)
+    NoOfHours=models.IntegerField(null=True, default=None)
+    Duration = models.IntegerField(null=True, default=None,db_column='Duration')
+    JoiningBonusLetter = models.FileField(upload_to=get_upload_path1,null=True,default=None,db_column="JoiningBonus_Letter")
+
     class Meta:  
         db_table="Selected_Candidates"

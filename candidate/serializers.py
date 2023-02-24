@@ -57,6 +57,9 @@ class  CandidatePostSerializer(serializers.ModelSerializer):
             OverallExpMonth = validated_data["OverallExpMonth"],
             ReleventExpYear = validated_data["ReleventExpYear"],
             ReleventExpMonth = validated_data["ReleventExpMonth"],
+            EmploymentType = validated_data["EmploymentType"],
+            Duration = validated_data["Duration"],
+            Location = validated_data["Location"],
             CurrentCTC = validated_data["CurrentCTC"],
             ExpectedCTC = validated_data["ExpectedCTC"],
             NegotiatedCTC = validated_data["NegotiatedCTC"],
@@ -76,7 +79,7 @@ class  CandidatePostSerializer(serializers.ModelSerializer):
             Comments = validated_data["Comments"],
         )
         return candidate
-    
+    #dead code
     def update(self, instance, validated_data):
         # stage_name = "BH Approval"
         # cancode=Candidate.objects.filter(CandidateId=validated_data["CandidateId"]).first()
@@ -95,6 +98,9 @@ class  CandidatePostSerializer(serializers.ModelSerializer):
         instance.OverallExpMonth = validated_data.get('OverallExpMonth', instance.OverallExpMonth) 
         instance.ReleventExpYear = validated_data.get('ReleventExpYear', instance.ReleventExpYear) 
         instance.ReleventExpMonth = validated_data.get('ReleventExpMonth', instance.ReleventExpMonth) 
+
+        instance.EmploymentType = validated_data.get('EmploymentType', instance.EmploymentType) 
+        instance.Location = validated_data.get('Location', instance.Location) 
         instance.CurrentCTC = validated_data.get('CurrentCTC', instance.CurrentCTC) 
         instance.ExpectedCTC = validated_data.get('ExpectedCTC', instance.ExpectedCTC) 
         instance.NegotiatedCTC = validated_data.get('NegotiatedCTC', instance.NegotiatedCTC) 
@@ -140,6 +146,9 @@ class  CandidatePostSerializer(serializers.ModelSerializer):
             "OverallExpMonth",
             "ReleventExpYear",
             "ReleventExpMonth",
+             "EmploymentType",
+             "Duration",
+            "Location",
             "CurrentCTC",
             "ExpectedCTC",
             "NegotiatedCTC",
@@ -191,6 +200,9 @@ class  CandidatePutSerializer(serializers.ModelSerializer):
         instance.OverallExpMonth = validated_data.get('OverallExpMonth', instance.OverallExpMonth) 
         instance.ReleventExpYear = validated_data.get('ReleventExpYear', instance.ReleventExpYear) 
         instance.ReleventExpMonth = validated_data.get('ReleventExpMonth', instance.ReleventExpMonth) 
+        instance.EmploymentType = validated_data.get('EmploymentType', instance.EmploymentType) 
+        instance.Duration = validated_data.get('Duration', instance.Duration) 
+        instance.Location = validated_data.get('Location', instance.Location) 
         instance.CurrentCTC = validated_data.get('CurrentCTC', instance.CurrentCTC) 
         instance.ExpectedCTC = validated_data.get('ExpectedCTC', instance.ExpectedCTC) 
         instance.NegotiatedCTC = validated_data.get('NegotiatedCTC', instance.NegotiatedCTC) 
@@ -221,6 +233,9 @@ class  CandidatePutSerializer(serializers.ModelSerializer):
             "OverallExpMonth",
             "ReleventExpYear",
             "ReleventExpMonth",
+            "EmploymentType",
+            "Duration",
+            "Location",
             "CurrentCTC",
             "ExpectedCTC",
             "NegotiatedCTC",
@@ -243,8 +258,10 @@ class  CandidateDetailsGridSerializer(serializers.ModelSerializer):
     stage_name = serializers.CharField(read_only=True, source="Stage.StageDesc")
     Job_Code = serializers.CharField(read_only=True, source="Jobpost.JobCode")
     approversDetails = serializers.SerializerMethodField()     
+    candidatefullname=serializers.SerializerMethodField()
 
-
+    def get_candidatefullname(self,Candidate1):
+        return Candidate1.CanLastName+", "+Candidate1.CanFirstName
     def get_approversDetails(self, Candidate1):
         qs = CandidateApprovalModel.objects.filter(Candidate=Candidate1)
         serializer = CandidateApprovalSerializer(instance=qs, many=True)

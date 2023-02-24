@@ -39,7 +39,7 @@ class CandidateAction(ModelViewSet):
                 candidateapprovalid = request.data["candidateapprovalid"]
                 candidateid = request.data["candidateid"]
                 Status = request.data["status"]
-                comments = request.data["comments"]
+                comments ="" if request.data["comments"] is None else request.data["comments"] 
                 try:
                     feedback = request.data["feedback"]
                 except:

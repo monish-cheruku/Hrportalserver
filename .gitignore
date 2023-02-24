@@ -7,7 +7,15 @@ __pycache__
 db.sqlite3
 media
 launch.json
+*/launch.json
+.idea
+/.idea
+.vs
+/.vs
+.vscode
 /.vscode
+.vscode/
+**/ODBC Driver 11 for SQL Server
 ODBC Driver 11 for SQL Server
 sh.exe.stackdump
 
@@ -140,3 +148,4 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+.vscode/launch.json

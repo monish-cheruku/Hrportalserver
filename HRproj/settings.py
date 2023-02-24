@@ -60,7 +60,6 @@ INSTALLED_APPS = [
     'jobpost',
     "ManageUserRoles",
     "login",
-    'Scheduler',
     'drf_yasg',
     'candidate',
     'pdf',
@@ -69,7 +68,8 @@ INSTALLED_APPS = [
     'document',
     'selectedcandidate',
     'zipfiles',
-    'DepartmentInfo'
+    'DepartmentInfo',
+    'Scheduler',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -241,3 +241,4 @@ TEMPLATES = [
 APP_URL = 'http://localhost:3000/dashboard'
 DEFAULT_FROM_EMAIL = 'sbatchu@belcan.com'
 SEND_EMAIL = False
+

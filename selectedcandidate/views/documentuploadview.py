@@ -21,10 +21,12 @@ class documentuploadview(ModelViewSet):
     @action(detail=True, methods=["post"])
     def createdocument(self, request, format=None):
         try:
+            
 
             documentuploadserializer = Documentuploadserializer(
                 data=request.data, context=request.FILES)
             if documentuploadserializer.is_valid():
+               
                 duo = documentuploadserializer.save()
 
             return Response("success", status=status.HTTP_200_OK)

@@ -3,6 +3,7 @@ from django.db import models
 from jobpost.models.jobpostmodel import JobPost
 from managestages.models import Stage
 import os
+from ManageLocation.models import Location
 
 
 class Candidate(models.Model):
@@ -38,6 +39,9 @@ class Candidate(models.Model):
     ModifiedBy = models.CharField(max_length=20,  null =True, db_column='Modified_By')
     ModifiedOn = models.DateTimeField(db_column='Modified_On', null =True, blank=True)
     Comments=models.CharField(max_length=500,db_column="Comments",null=True,blank=True)
+    Location = models.ForeignKey(Location, null =True, on_delete=models.CASCADE, db_column='Location_ID')
+    EmploymentType = models.CharField(null=True,max_length=30  , db_column='Employment_Type')
+    Duration = models.IntegerField(null=True, db_column='Duration')
    
     class Meta:    
         db_table = 'HW_Candidate_Details'
