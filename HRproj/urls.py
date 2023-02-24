@@ -65,7 +65,9 @@ urlpatterns = [
         
      path('api/Docx', include('document.urls')),
      path('api/selectedcandidate', include('selectedcandidate.urls')),
-
+         path('api/zip', include('zipfiles.urls')),
+#  path('api/bank', include('bankdetails.urls')),
+ path('api/info', include('DepartmentInfo.urls')),
 
 
 

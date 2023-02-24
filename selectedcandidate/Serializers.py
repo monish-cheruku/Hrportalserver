@@ -17,13 +17,51 @@ from selectedcandidate.models.Candidatefamilydetails import CandidateFamilyDetai
 from selectedcandidate.models.Candidatedducationaldetails import CandidateEducationalDetails
 from selectedcandidate.models.Candidateemployementdetails import CandidateEmployementDetials
 from selectedcandidate.models.Documentsupload import CandidateDocumentsUpload
-
-
-
-
+from selectedcandidate.models.Candidateinsurancedetails import CandidateInsuranceDetails
+from selectedcandidate.models.Candidatebankdetails import CandidateBankDetails
+from selectedcandidate.models.Candidatepfdetails import CandidatePfDetails
 class candidatepersonalinfogetSerializer(serializers.ModelSerializer):
     class Meta:
         model = CandidatePersonalInfo
+        fields="__all__"
+
+class candidateinsurancedetailgetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CandidateInsuranceDetails
+        fields="__all__"
+
+class candidatePFdetailgetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CandidatePfDetails
+        fields="__all__"
+
+class candidatebankdetailgetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CandidateBankDetails
+        fields="__all__"
+class bankdetailupdaeSerializer(serializers.ModelSerializer):
+
+    def update(self,instance,validated_data):
+        print("calling update function")
+
+        instance.Id=validated_data.get("Id",instance.Id)
+        instance.BankName=validated_data.get("BankName",instance.BankName)
+        instance.AccountNumber=validated_data.get("AccountNumber",instance.AccountNumber)
+        instance.BranchName=validated_data.get("BranchName",instance.BranchName)
+        instance.IFSCcode=validated_data.get("IFSCcode",instance.IFSCcode)
+        print("after instance")
+        try:
+            if validated_data["BankPassbook"] is not None:
+                os.remove(os.path.join(MEDIA_ROOT,str(instance.BankPassbook)))
+        except:
+            print("file not found")
+        finally:
+            if validated_data["BankPassbook"] is not None:
+                instance.BankPassbook=validated_data.get("BankPassbook",instance.BankPassbook)
+        instance.save()
+        return instance
+    class Meta:
+        model = CandidateBankDetails
         fields="__all__"
 
 

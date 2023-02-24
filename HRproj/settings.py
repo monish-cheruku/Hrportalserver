@@ -67,7 +67,9 @@ INSTALLED_APPS = [
     'Employementtype',
     'Qualification',
     'document',
-    'selectedcandidate'
+    'selectedcandidate',
+    'zipfiles',
+    'DepartmentInfo'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True

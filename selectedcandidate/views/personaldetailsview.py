@@ -39,7 +39,7 @@ class personaldetialsview(ModelViewSet):
             EmergencycontactName=request.data["EmergencycontactName"],
             EmergencycontactRelation=request.data["EmergencycontactRelation"],
             EmergencycontactNumber=request.data["EmergencycontactNumber"],
-            Passport=request.data["Passport"],
+            PassportNumber=request.data["PassportNumber"],
             PassportValidFrom=request.data["PassportValidFrom"],
             PassportValidTo=request.data["PassportValidTo"],
             Address=request.data["Address"],
@@ -71,7 +71,7 @@ class personaldetialsview(ModelViewSet):
             EmergencycontactName=request.data["EmergencycontactName"],
             EmergencycontactRelation=request.data["EmergencycontactRelation"],
             EmergencycontactNumber=request.data["EmergencycontactNumber"],
-            Passport=request.data["Passport"],
+            PassportNumber=request.data["PassportNumber"],
             PassportValidFrom=request.data["PassportValidFrom"],
             PassportValidTo=request.data["PassportValidTo"],
             Address=request.data["Address"],
@@ -89,7 +89,7 @@ class personaldetialsview(ModelViewSet):
     def getpersonaldetails(self,request,format=None):
         try:
 
-            cpo=CandidatePersonalInfo .objects.filter(selectedCandidateid_id=request.data["selectedcandidateid"]).first()
+            cpo=CandidatePersonalInfo.objects.filter(selectedCandidateid_id=request.data["selectedCandidateid"]).first()
             cpos=candidatepersonalinfogetSerializer(cpo,many=False).data
             return  Response(cpos,status=status.HTTP_200_OK)
         except Exception as e:

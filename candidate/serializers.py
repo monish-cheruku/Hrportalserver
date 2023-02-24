@@ -12,6 +12,9 @@ import os
 from HRproj.util.Constants.HR_WorkFlow_Constants import Constants1
 from candidate.models.selected_Candidates_Model import Selected_Candidates
 from jobpost.serializers import JobPostDetailsGridSerializer
+from selectedcandidate.Serializers import candidatepersonalinfogetSerializer
+from selectedcandidate.Serializers import candidatebankdetailgetSerializer
+
 class  CandidatePostSerializer(serializers.ModelSerializer):    
 
     Job_Post_ID = serializers.IntegerField()
@@ -312,8 +315,8 @@ class selectedcandidatesgridviewSerializer(serializers.ModelSerializer):
     subband_name = serializers.CharField(read_only=True, source="subband.SubBandName")
     jobpost=JobPostDetailsGridSerializer(source="candidate.Jobpost")
     candidate=CandidateDetailsGridSerializer()
-
-   
+    personalinfo = candidatepersonalinfogetSerializer(source='candidatepersonalinfo_set', many=True)
+    bankdetails = candidatebankdetailgetSerializer(source = 'candidatebankdetails_set', many=True)
     
         
     class Meta:

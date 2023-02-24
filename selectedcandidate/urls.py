@@ -8,6 +8,10 @@ from selectedcandidate.views.personaldetailsview import personaldetialsview
 from selectedcandidate.views.selectedcandidateactions import SelectedCandidateAction
 from selectedcandidate.views.candidateinfoclearance import Candidateinfoclearance
 from selectedcandidate.views.acceptofferletter import Acceptofferletter
+from selectedcandidate.views.insurancedetailview import insurancedetailsview
+from selectedcandidate.views.bankdetailsview import bankdetailsview
+from selectedcandidate.views.pfdetailsview import PFdetailsview
+
 
 urlpatterns=[
 
@@ -43,6 +47,19 @@ urlpatterns=[
      path('/acceptofferletter', Acceptofferletter.as_view({'post': 'acceptofferletter'})),
 
 
+     path('/createinsurancedetail', insurancedetailsview.as_view({'post': 'createinsurancedetail'})),
+     path('/updateinsurancedetail', insurancedetailsview.as_view({'post': 'updateinsurancedetail'})),
+     path('/getinsurancedetails', insurancedetailsview.as_view({'post': 'getinsurancedetails'})),
+     path('/deleteinsurancedetail', insurancedetailsview.as_view({'post': 'deleteinsurancedetail'})),
 
+     path('/createbankdetail', bankdetailsview.as_view({'post': 'createbankdetail'})),
+     path('/updatebankdetail', bankdetailsview.as_view({'post': 'updatebankdetail'})),
+     path('/getbankdetails', bankdetailsview.as_view({'post': 'getbankdetails'})),
+     path('/deletebankdetail', bankdetailsview.as_view({'post': 'deletebankdetail'})),
+
+     path('/createPFdetail', PFdetailsview.as_view({'post': 'createPFdetail'})),
+     path('/updatePFdetail', PFdetailsview.as_view({'post': 'updatePFdetail'})),
+     path('/getPFdetails', PFdetailsview.as_view({'post': 'getPFdetails'})),
+     path('/deletePFdetail', PFdetailsview.as_view({'post': 'deletePFdetail'})),
 
 ]
