@@ -59,6 +59,7 @@ class CandidateActionModel(models.Model):
     MinimumExperiance = models.IntegerField(db_column='Minimum_Experiance')
     MaximumExperiance = models.IntegerField(db_column='Maximum_Experiance')
     MaximumCTC = models.IntegerField(db_column='Maximum_CTC')
+    Location=models.IntegerField(db_column="Can_Location_ID")
 
     class Meta:   
         managed = False 
