@@ -22,12 +22,12 @@ class Verifydocument(ModelViewSet):
         # do = CandidateDocumentsUpload.objects.filter(
         #     id=request.data["fileid"]).update(verified=request.data["verified"])
         candidatedocob= CandidateDocumentsUpload.objects.get(id=request.data["fileid"])
-        if request.data["verified"]==True:
-            candidatedocob.verified=True
+        if request.data["verified"]=='verified':
+            candidatedocob.verified="verified"
             candidatedocob.verificationcomments=""
             candidatedocob.save()
         else:
-            candidatedocob.verified=False
+            candidatedocob.verified="rejected"
             candidatedocob.verificationcomments=request.data["verificationcomments"]
             candidatedocob.save()
 

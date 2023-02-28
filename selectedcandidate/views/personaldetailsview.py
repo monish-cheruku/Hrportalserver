@@ -89,7 +89,7 @@ class personaldetialsview(ModelViewSet):
     def getpersonaldetails(self,request,format=None):
         try:
 
-            cpo=CandidatePersonalInfo.objects.filter(selectedCandidateid_id=request.data["selectedCandidateid"]).first()
+            cpo=CandidatePersonalInfo.objects.filter(selectedCandidateid_id=request.data["selectedcandidateid"]).first()
             cpos=candidatepersonalinfogetSerializer(cpo,many=False).data
             return  Response(cpos,status=status.HTTP_200_OK)
         except Exception as e:
