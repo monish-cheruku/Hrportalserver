@@ -15016,3 +15016,772 @@ Traceback (most recent call last):
   File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
     raise TypeError(f'Object of type {o.__class__.__name__} '
 TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 14:47:51,769 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 14:47:51,778 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 14:47:51,779 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 14:47:59,148 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 14:47:59,159 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 14:47:59,161 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 14:47:59,341 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-27 15:03:31,987 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 15:03:31,990 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 15:03:31,991 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 15:04:42,329 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 15:04:42,334 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 15:04:42,335 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 15:05:23,391 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 15:05:23,396 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 15:05:23,397 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 15:05:29,873 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\migrations\__init__.py changed, reloading.
+2023-02-27 15:05:39,545 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 15:05:39,556 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 15:05:39,557 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 15:05:39,727 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-27 15:06:14,019 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 15:06:14,033 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 15:06:14,036 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 15:07:34,289 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 15:07:34,312 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 15:07:34,314 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 15:07:40,933 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 15:07:40,942 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 15:07:40,943 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 15:07:41,104 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-27 15:08:12,539 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 15:08:12,546 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 15:08:12,547 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 15:08:17,083 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 15:08:17,093 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 15:08:17,094 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 15:08:17,237 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-27 15:09:34,196 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 15:09:34,219 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 15:09:34,223 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 15:09:44,616 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 15:09:44,627 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 15:09:44,629 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 15:09:44,800 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-27 15:10:13,185 django.request ERROR    Internal Server Error: /api/selectedcandidate/getpersonaldetailsdata
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 15:10:15,325 django.request ERROR    Internal Server Error: /api/selectedcandidate/getpersonaldetailsdata
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 15:10:37,225 django.request ERROR    Internal Server Error: /api/selectedcandidate/getpersonaldetailsdata
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 15:10:46,758 django.request ERROR    Internal Server Error: /api/selectedcandidate/getpersonaldetailsdata
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 15:11:27,295 django.request ERROR    Internal Server Error: /api/selectedcandidate/getpersonaldetailsdata
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 15:11:31,216 django.request ERROR    Internal Server Error: /api/selectedcandidate/getpersonaldetailsdata
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 15:11:45,367 django.request ERROR    Internal Server Error: /api/selectedcandidate/getpersonaldetailsdata
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 15:11:46,412 django.request ERROR    Internal Server Error: /api/selectedcandidate/getpersonaldetailsdata
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 15:12:55,910 django.request ERROR    Internal Server Error: /api/selectedcandidate/getpersonaldetailsdata
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 15:13:00,223 django.request ERROR    Internal Server Error: /api/selectedcandidate/getpersonaldetailsdata
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 15:13:36,118 django.request ERROR    Internal Server Error: /api/selectedcandidate/getpersonaldetailsdata
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 15:19:34,601 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\personaldetailsview.py changed, reloading.
+2023-02-27 15:19:36,868 django.request ERROR    Internal Server Error: /api/selectedcandidate/getpersonaldetailsdata
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 15:19:36,904 django.request ERROR    Internal Server Error: /api/selectedcandidate/getpersonaldetailsdata
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 15:19:50,140 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 15:19:50,157 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 15:19:50,159 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 15:19:50,538 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-27 15:20:17,126 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\personaldetailsview.py changed, reloading.
+2023-02-27 15:20:25,810 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 15:20:25,820 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 15:20:25,821 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 15:20:26,002 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-27 15:26:00,025 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 16:26:00 IST)" (scheduled at 2023-02-27 15:26:00+05:30)
+2023-02-27 15:26:00,026 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 16:26:00 IST)" (scheduled at 2023-02-27 15:26:00+05:30)
+2023-02-27 15:26:10,051 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 16:26:00 IST)" executed successfully
+2023-02-27 15:26:10,729 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 16:26:00 IST)" executed successfully
+2023-02-27 15:30:33,189 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\models\Documentsupload.py changed, reloading.
+2023-02-27 15:30:53,979 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 15:30:54,045 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 15:30:54,046 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 15:30:54,697 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-27 15:32:03,594 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 15:32:03,597 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 15:32:03,597 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 15:32:15,154 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 15:32:15,157 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 15:32:15,157 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 15:32:50,971 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 15:32:50,974 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 15:32:50,974 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 15:33:09,844 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 15:33:09,847 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 15:33:09,847 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 15:33:26,146 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 15:33:26,150 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 15:33:26,150 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 15:50:38,355 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\acceptofferletter.py changed, reloading.
+2023-02-27 15:50:50,749 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 15:50:50,769 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 15:50:50,772 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 15:50:51,097 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-27 16:26:00,045 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 17:26:00 IST)" (scheduled at 2023-02-27 16:26:00+05:30)
+2023-02-27 16:26:00,058 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 17:26:00 IST)" (scheduled at 2023-02-27 16:26:00+05:30)
+2023-02-27 16:26:08,072 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 17:26:00 IST)" executed successfully
+2023-02-27 16:26:09,826 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 17:26:00 IST)" executed successfully
+2023-02-27 16:39:47,343 django.request WARNING  Bad Request: /api/selectedcandidate/createpersonaldetails
+2023-02-27 16:56:40,746 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\verifydocument.py changed, reloading.
+2023-02-27 16:56:48,281 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 16:56:48,292 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 16:56:48,293 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 16:56:48,511 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-27 17:26:00,033 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 18:26:00 IST)" (scheduled at 2023-02-27 17:26:00+05:30)
+2023-02-27 17:26:00,079 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 18:26:00 IST)" (scheduled at 2023-02-27 17:26:00+05:30)
+2023-02-27 17:26:08,111 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 18:26:00 IST)" executed successfully
+2023-02-27 17:26:08,164 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 18:26:00 IST)" executed successfully
+2023-02-27 17:46:05,770 django.request ERROR    Internal Server Error: /api/selectedcandidate/uploaddetaildocument
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 17:46:31,148 django.request ERROR    Internal Server Error: /api/selectedcandidate/uploaddetaildocument
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 17:46:39,800 django.request ERROR    Internal Server Error: /api/selectedcandidate/uploaddetaildocument
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 17:46:52,903 django.request ERROR    Internal Server Error: /api/selectedcandidate/uploaddetaildocument
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 17:47:34,152 django.request ERROR    Internal Server Error: /api/selectedcandidate/uploaddetaildocument
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 17:47:50,355 django.request ERROR    Internal Server Error: /api/selectedcandidate/uploaddetaildocument
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 17:48:00,904 django.request ERROR    Internal Server Error: /api/selectedcandidate/uploaddetaildocument
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 18:22:46,750 django.utils.autoreload INFO     C:\work\serveron12dec\Hrportalserver\selectedcandidate\views\documentuploadview.py changed, reloading.
+2023-02-27 18:22:48,175 django.request ERROR    Internal Server Error: /api/selectedcandidate/uploaddetaildocument
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 18:22:58,173 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-27 18:22:58,184 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-27 18:22:58,186 apscheduler.scheduler INFO     Scheduler started
+2023-02-27 18:22:58,402 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-02-27 18:25:26,126 django.request ERROR    Internal Server Error: /api/selectedcandidate/uploaddetaildocument
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 18:26:00,081 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 19:26:00 IST)" (scheduled at 2023-02-27 18:26:00+05:30)
+2023-02-27 18:26:00,115 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 19:26:00 IST)" (scheduled at 2023-02-27 18:26:00+05:30)
+2023-02-27 18:26:10,639 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 19:26:00 IST)" executed successfully
+2023-02-27 18:26:11,617 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 19:26:00 IST)" executed successfully
+2023-02-27 18:27:12,781 django.request ERROR    Internal Server Error: /api/selectedcandidate/uploaddetaildocument
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 18:27:14,347 django.request ERROR    Internal Server Error: /api/selectedcandidate/uploaddetaildocument
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 18:47:20,645 django.request WARNING  Bad Request: /api/selectedcandidate/deletedocument
+2023-02-27 18:47:20,994 django.request WARNING  Bad Request: /api/selectedcandidate/deletedocument
+2023-02-27 18:47:21,562 django.request WARNING  Bad Request: /api/selectedcandidate/deletedocument
+2023-02-27 19:26:00,054 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 20:26:00 IST)" (scheduled at 2023-02-27 19:26:00+05:30)
+2023-02-27 19:26:00,061 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 20:26:00 IST)" (scheduled at 2023-02-27 19:26:00+05:30)
+2023-02-27 19:26:47,075 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 20:26:00 IST)" executed successfully
+2023-02-27 19:26:48,084 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 20:26:00 IST)" executed successfully
+2023-02-27 20:03:38,833 django.request WARNING  Bad Request: /api/selectedcandidate/deletedocument
+2023-02-27 20:26:00,052 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 21:26:00 IST)" (scheduled at 2023-02-27 20:26:00+05:30)
+2023-02-27 20:26:00,058 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 21:26:00 IST)" (scheduled at 2023-02-27 20:26:00+05:30)
+2023-02-27 20:26:41,294 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 21:26:00 IST)" executed successfully
+2023-02-27 20:26:46,110 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 21:26:00 IST)" executed successfully
+2023-02-27 21:21:58,535 django.request WARNING  Bad Request: /api/selectedcandidate/downloaddetaildocuments
+2023-02-27 21:26:00,047 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 22:26:00 IST)" (scheduled at 2023-02-27 21:26:00+05:30)
+2023-02-27 21:26:00,101 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 22:26:00 IST)" (scheduled at 2023-02-27 21:26:00+05:30)
+2023-02-27 21:26:27,742 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 22:26:00 IST)" executed successfully
+2023-02-27 21:26:32,925 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 22:26:00 IST)" executed successfully
+2023-02-27 22:26:00,047 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 23:26:00 IST)" (scheduled at 2023-02-27 22:26:00+05:30)
+2023-02-27 22:26:00,107 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 23:26:00 IST)" (scheduled at 2023-02-27 22:26:00+05:30)
+2023-02-27 22:26:36,043 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 23:26:00 IST)" executed successfully
+2023-02-27 22:26:38,705 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-27 23:26:00 IST)" executed successfully
+2023-02-27 22:38:36,465 django.request WARNING  Bad Request: /api/selectedcandidate/deletedocument
+2023-02-27 23:22:27,216 django.request ERROR    Internal Server Error: /api/selectedcandidate/uploaddetaildocument
+Traceback (most recent call last):
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\work\serveron12dec\Hrportalserver\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\Python310\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type KeyError is not JSON serializable
+2023-02-27 23:26:00,034 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-28 00:26:00 IST)" (scheduled at 2023-02-27 23:26:00+05:30)
+2023-02-27 23:26:00,067 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-28 00:26:00 IST)" (scheduled at 2023-02-27 23:26:00+05:30)
+2023-02-27 23:26:09,932 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-28 00:26:00 IST)" executed successfully
+2023-02-27 23:26:09,958 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-28 00:26:00 IST)" executed successfully
+2023-02-28 00:26:00,070 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-28 01:26:00 IST)" (scheduled at 2023-02-28 00:26:00+05:30)
+2023-02-28 00:26:00,090 apscheduler.executors.default INFO     Running job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-28 01:26:00 IST)" (scheduled at 2023-02-28 00:26:00+05:30)
+2023-02-28 00:26:09,002 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-28 01:26:00 IST)" executed successfully
+2023-02-28 00:26:09,663 apscheduler.executors.default INFO     Job "ManageADUsers (trigger: cron[day_of_week='mon-sun', hour='*', minute='26'], next run at: 2023-02-28 01:26:00 IST)" executed successfully
+2023-02-28 10:16:42,781 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-28 10:16:42,830 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-28 10:16:42,836 apscheduler.scheduler INFO     Scheduler started
+2023-02-28 10:16:53,891 apscheduler.scheduler INFO     Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-02-28 10:16:53,905 apscheduler.scheduler INFO     Added job "ManageADUsers" to job store "default"
+2023-02-28 10:16:53,906 apscheduler.scheduler INFO     Scheduler started
+2023-02-28 10:16:54,168 django.utils.autoreload INFO     Watching for file changes with StatReloader

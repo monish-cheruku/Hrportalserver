@@ -30,6 +30,7 @@ class documentuploadview(ModelViewSet):
                 duo = documentuploadserializer.save()
 
             return Response("success", status=status.HTTP_200_OK)
+            
         except Exception as exp:
             # exp.with_traceback()
             return Response(exp, status=status.HTTP_400_BAD_REQUEST)

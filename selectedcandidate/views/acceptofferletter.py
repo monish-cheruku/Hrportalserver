@@ -16,7 +16,7 @@ class Acceptofferletter(ModelViewSet):
             #     selcanobj.update(
             #         IsOfferAccepted=True
             #     )
-            selectedcandidatedocsobarr=CandidateDocumentsUpload.objects.filter(selectedcandidate=request.data["selectedcandidateid"],verified=None).update(verified=False)
+            selectedcandidatedocsobarr=CandidateDocumentsUpload.objects.filter(selectedcandidate=request.data["selectedcandidateid"],verified=None).update(verified='pending')
             # for i in selectedcandidatedocsobarr:
             #     print(i.file)
             #     if i.verified is None:
