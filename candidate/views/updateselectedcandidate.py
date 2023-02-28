@@ -73,7 +73,7 @@ class updateselectedcandidate(ModelViewSet):
             sco.OfferLetter= content_file
             sco.save()
             # covert document to PDF 
-            # convert(os.path.join(MEDIA_ROOT, str(sco.OfferLetter)))            
+            convert(os.path.join(MEDIA_ROOT, str(sco.OfferLetter)))            
 
             return  Response("Internship Letter generated sucessfully",status=status.HTTP_200_OK)
         except Exception as e:
@@ -121,7 +121,7 @@ class updateselectedcandidate(ModelViewSet):
             sco.OfferLetter= content_file
             sco.save()
             # covert document to PDF 
-            # convert(os.path.join(MEDIA_ROOT, str(sco.OfferLetter)))            
+            convert(os.path.join(MEDIA_ROOT, str(sco.OfferLetter)))            
 
             return  Response("Contract Agreement generated sucessfully",status=status.HTTP_200_OK)
         except Exception as e:
@@ -192,8 +192,13 @@ class updateselectedcandidate(ModelViewSet):
             if sco.OfferLetter.__bool__()  and os.path.exists(os.path.join(MEDIA_ROOT, str(sco.OfferLetter))):
                 os.remove(os.path.join(MEDIA_ROOT, str(sco.OfferLetter)))
 
+ 
+
             sco.OfferLetter= content_file
             sco.save()
+
+            # covert document to PDF 
+            convert(os.path.join(MEDIA_ROOT, str(sco.OfferLetter))) 
 
             if Is_Eligible_Joining_Bonus is True:
                 buffer1 = io.BytesIO()    
@@ -209,9 +214,17 @@ class updateselectedcandidate(ModelViewSet):
                     os.remove(os.path.join(MEDIA_ROOT, str(sco1.JoiningBonusLetter)))
 
                 sco.JoiningBonusLetter= content_file1
-                sco.save()                
+                sco.save()    
+                 # covert document to PDF    
+                convert(os.path.join(MEDIA_ROOT, str(sco1.JoiningBonusLetter)))          
 
             else:
+                
+                if sco.JoiningBonusLetter.__bool__():
+                    strpdf = str(sco.OfferLetter).replace(".docx", ".pdf")
+                    if os.path.exists(os.path.join(MEDIA_ROOT, strpdf)):
+                        os.remove(os.path.join(MEDIA_ROOT, strpdf))  
+
                 sco1 =  Selected_Candidates.objects.get(Selected_Candidate_ID=request.data["selectedcandidateid"])
 
                 if sco1.JoiningBonusLetter.__bool__()  and os.path.exists(os.path.join(MEDIA_ROOT, str(sco1.JoiningBonusLetter))):
@@ -220,8 +233,8 @@ class updateselectedcandidate(ModelViewSet):
                 sco.JoiningBonusLetter= None
                 sco.save()  
 
-            # covert document to PDF 
-            # convert(os.path.join(MEDIA_ROOT, str(sco.OfferLetter)))            
+  
+                      
 
             return  Response("OfferLetter generated sucessfully",status=status.HTTP_200_OK)
         except Exception as e:
