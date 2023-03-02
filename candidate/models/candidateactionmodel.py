@@ -28,7 +28,7 @@ class CandidateActionModel(models.Model):
     Qualification = models.CharField(max_length=100, db_column='High_Qualification')
     AvgApprovedCTC = models.IntegerField(db_column='Can_Avg_Approved_CTC')
     AvgBillRate = models.IntegerField(db_column='Can_Avg_Bill_Rate')
-    
+
     # JobPostApprovalID = models.BigIntegerField(db_column='Job_Post_Approval_ID')
     JobPostID = models.BigIntegerField(db_column='Job_Post_ID')
     JobCode = models.CharField(max_length=100, db_column='Job_Code')

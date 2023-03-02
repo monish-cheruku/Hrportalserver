@@ -23,6 +23,6 @@ class Acceptofferletter(ModelViewSet):
             #         i.objects.update(
             #             verified=False
             #         )
-            return  Response("Offer Letter Accepted",status=status.HTTP_200_OK)
+            return  Response("Details has been saved successfully",status=status.HTTP_200_OK)
         except Exception as e:
              return  Response(e,status=status.HTTP_400_BAD_REQUEST)
