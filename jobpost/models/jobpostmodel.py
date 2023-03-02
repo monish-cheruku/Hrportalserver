@@ -35,7 +35,6 @@ class JobPost(models.Model):
     MinimumExperiance=models.IntegerField(db_column="Minimum_Experiance",null=False,default=0,)
     MaximumExperiance=models.IntegerField(db_column="Maximum_Experiance",null=False,default=0,)
     MaximumCTC=models.IntegerField(db_column="Maximum_CTC",null=False,default=0,)
-
     ExperianceLevel = models.ForeignKey(Experience, null =True, on_delete=models.CASCADE, db_column='Experience_Level_ID')
     Qualification = models.CharField(max_length=10  , null =True,db_column='Qualification')
     OnBoardingDate = models.DateField(db_column='OnBoarding_Date')

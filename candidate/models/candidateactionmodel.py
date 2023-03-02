@@ -28,7 +28,6 @@ class CandidateActionModel(models.Model):
     Qualification = models.CharField(max_length=100, db_column='High_Qualification')
     AvgApprovedCTC = models.IntegerField(db_column='Can_Avg_Approved_CTC')
     AvgBillRate = models.IntegerField(db_column='Can_Avg_Bill_Rate')
-    
     # JobPostApprovalID = models.BigIntegerField(db_column='Job_Post_Approval_ID')
     JobPostID = models.BigIntegerField(db_column='Job_Post_ID')
     JobCode = models.CharField(max_length=100, db_column='Job_Code')
@@ -60,7 +59,9 @@ class CandidateActionModel(models.Model):
     MaximumExperiance = models.IntegerField(db_column='Maximum_Experiance')
     MaximumCTC = models.IntegerField(db_column='Maximum_CTC')
     Location=models.IntegerField(db_column="Can_Location_ID")
-
+    CanJobLocation = models.CharField(max_length=50, db_column='Can_Location_Name')
+    CanEmploymentType = models.CharField(max_length=50, db_column='Can_Employment_Type')
+    CanDuration = models.IntegerField(db_column='Can_Duration')
     class Meta:   
         managed = False 
         db_table = 'view_candidateaction'
