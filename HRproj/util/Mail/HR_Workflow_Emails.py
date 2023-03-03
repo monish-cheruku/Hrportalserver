@@ -79,7 +79,7 @@ class EmailUtils():
         except Exception as ex:
             raise Exception("Exception while sending emails- "+str(ex))
 
-    def sendEmailWithAttachments(subject, body, to, cc, filepath):
+    def sendEmailWithAttachments(subject, body, to, cc, filepath1, filepath2):
         try:
             if settings.SEND_EMAIL:    
                 email = EmailMessage(
@@ -92,7 +92,12 @@ class EmailUtils():
                 )
 
                 email.content_subtype = "html"  # set the content subtype to html
-                email.attach_file(filepath, "application/pdf")
+
+                # email.attach_file(filepath, "application/pdf")
+                if filepath1 is not None:
+                    email.attachments.append(filepath1)
+                if filepath2 is not None:
+                    email.attachments.append(filepath2)  
                 email.send()   
         except Exception as ex:
             print(ex)

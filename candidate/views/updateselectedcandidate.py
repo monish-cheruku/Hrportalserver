@@ -243,6 +243,7 @@ class updateselectedcandidate(ModelViewSet):
     @action(detail=True, methods=['post'])
     def sendOfferLetter(self, request, format=None):
         try:
+            joiningbonuspdfpath = None
             selectedcandidate =  Selected_Candidates.objects.get(Selected_Candidate_ID=request.data["selectedcandidateid"])
             if selectedcandidate is not None:
                 # create user and assign candidate role 
@@ -278,6 +279,11 @@ class updateselectedcandidate(ModelViewSet):
                 #     convert(os.path.join(MEDIA_ROOT, str(selectedcandidate.OfferLetter)))
                 docpath = os.path.join(MEDIA_ROOT, str(selectedcandidate.OfferLetter)) 
                 pdfpath = docpath.replace(".docx", ".pdf")
+
+
+                if selectedcandidate.JoiningBonusLetter.__bool__()  and os.path.exists(os.path.join(MEDIA_ROOT, str(selectedcandidate.JoiningBonusLetter))):
+                    joiningbonusdocpath = os.path.join(MEDIA_ROOT, str(selectedcandidate.JoiningBonusLetter))
+                    joiningbonuspdfpath = joiningbonusdocpath.replace(".docx", ".pdf")
                 # with open(pdfpath, 'r') as f:
                     # file = f
 
@@ -300,8 +306,8 @@ class updateselectedcandidate(ModelViewSet):
                 print('subject--'+subject)
                 print(canemail)
                 # print(jobpost1.Email)                 
-                EmailUtils.sendEmailWithAttachments(subject, body, [canemail], None, pdfpath)    
-            return  Response("Offer letter send succesfully",status=status.HTTP_200_OK)     
+                EmailUtils.sendEmailWithAttachments(subject, body, [canemail], None, pdfpath, joiningbonuspdfpath)    
+            return  Response("Documents has been sent succesfully",status=status.HTTP_200_OK)     
 
         except Exception as ex:
             return  Response("Exception while sending the offerletter "+str(ex),status=status.HTTP_400_BAD_REQUEST)  

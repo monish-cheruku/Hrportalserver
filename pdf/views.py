@@ -19,7 +19,6 @@ from rest_framework.decorators import api_view
 from datetime import datetime
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.decorators import action
-from fpdf import FPDF,HTMLMixin
 from docx import Document
 import re
 from docxtpl import DocxTemplate

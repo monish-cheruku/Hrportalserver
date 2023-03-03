@@ -31,6 +31,12 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
+EMAIL_USE_TLS = False  
+EMAIL_HOST = config('SMTPHOST')  
+EMAIL_PORT = config('SMTPPORT')  
+# EMAIL_HOST_USER = 'irfan.iit003@gmail.com'  
+# EMAIL_HOST_PASSWORD = '*********'  
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

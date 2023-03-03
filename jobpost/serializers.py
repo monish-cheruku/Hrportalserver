@@ -27,8 +27,11 @@ class  JobPostDetailsGridSerializer(serializers.ModelSerializer):
     customer_name = serializers.CharField(read_only=True, source="Customer.CustomerName")
     location_name = serializers.CharField(read_only=True, source="Location.LocationName")  
     experience_Level = serializers.CharField(read_only=True, source="ExperianceLevel.ExperienceLevel")
-    approversDetails = serializers.SerializerMethodField()     
+    approversDetails = serializers.SerializerMethodField()  
+    experiencerange =  serializers.SerializerMethodField()  
 
+    def get_experiencerange(self, jobpost1):
+        return str(jobpost1.MinimumExperiance)+"-"+str(jobpost1.MaximumExperiance)+" Years"
 
     def get_approversDetails(self, jobpost1):
         qs = JobPostApproval.objects.filter(jobpost=jobpost1)

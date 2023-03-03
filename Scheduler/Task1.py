@@ -1,7 +1,24 @@
 #windowsAD ip
+from datetime import datetime, date,timedelta
 from ldap3 import Connection,SUBTREE
 from decouple import config
 
+
+
+
+
+def sendAccountCreationEmail():
+    try:
+        from candidate.models.selected_Candidates_Model import Selected_Candidates
+        from DepartmentInfo.models import DepartmentInformation
+
+        selectedcandidates = Selected_Candidates.objects.filter(DateOfJoining = date.today()+timedelta(days=7))
+
+        hrdepartmentInformation = DepartmentInformation.objects.filter(Department = "Belcan US HR").first()
+        # if hrdepartmentInformation is not None:
+
+    except Exception as e:
+        print("Account creation email request failed "+str(e)  )
 
 def ManageADUsers():
     try:
