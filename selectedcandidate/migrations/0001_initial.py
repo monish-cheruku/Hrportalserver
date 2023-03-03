@@ -2,7 +2,6 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
-import selectedcandidate.models.Candidatebankdetails
 import selectedcandidate.models.Documentsupload
 
 
@@ -11,46 +10,10 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('candidate', '0018_alter_selected_candidates_duration_and_more'),
+        ('candidate', '0015_remove_selected_candidates_candidatecategory_and_more'),
     ]
 
     operations = [
-        migrations.CreateModel(
-            name='CandidatePfDetails',
-            fields=[
-                ('Id', models.AutoField(db_column='ID', primary_key=True, serialize=False)),
-                ('PreviousCompanyUAN', models.CharField(db_column='Prev_Company_UAN', max_length=50)),
-                ('PreviousMemberId', models.CharField(db_column='Prev_Mem_ID', max_length=50)),
-                ('MemberNameAsPerAadhar', models.CharField(db_column='Member_Name_As_Per_Aadhar', max_length=50)),
-                ('AADHAR', models.CharField(db_column='AADHAR', max_length=20, null=True)),
-                ('DateOfBirth', models.CharField(db_column='DateOfBirth', max_length=20, null=True)),
-                ('Date_Of_Joining', models.CharField(db_column='Date_Of_Joining', max_length=20, null=True)),
-                ('Gender', models.CharField(db_column='Gender', max_length=20, null=True)),
-                ('FatherOrHusbandName', models.CharField(db_column='Father/Husband Name', max_length=100)),
-                ('Relation', models.CharField(db_column='Relation', max_length=50)),
-                ('Marital_status', models.CharField(db_column='Marital_status', max_length=20, null=True)),
-                ('InternationalWorker', models.BooleanField(db_column='International_Worker', default=False)),
-                ('ContactNumber', models.CharField(db_column='ContactNumber', max_length=20, null=True)),
-                ('Email', models.CharField(db_column='Email', max_length=20, null=True)),
-                ('Nationality', models.CharField(db_column='Nationality', max_length=100)),
-                ('wages', models.CharField(db_column='Wages', max_length=50)),
-                ('Qualification', models.CharField(db_column='Qualification', max_length=20, null=True)),
-                ('CountryOfOrigin', models.CharField(db_column='Country_Of_Origin', max_length=100)),
-                ('PassportNumber', models.CharField(db_column='PassportNumber', max_length=20, null=True)),
-                ('PassportValidFrom', models.CharField(db_column='PassportValidFrom', max_length=20, null=True)),
-                ('PassportValidTill', models.CharField(db_column='PassportValidTo', max_length=20, null=True)),
-                ('PhysicalHadicap', models.BooleanField(db_column='Physical_Hadicap', default=False)),
-                ('AccountNumber', models.CharField(db_column='Account_Number', max_length=20, null=True)),
-                ('IFSCcode', models.CharField(db_column='IFSC_Code', max_length=20, null=True)),
-                ('NameAsPerBank', models.CharField(db_column='Name_As_Per_Bank', max_length=100)),
-                ('PAN', models.CharField(db_column='PAN', max_length=20, null=True)),
-                ('NameAsPerPan', models.CharField(db_column='Name_As_Per_Pan', max_length=100)),
-                ('selectedcandidateid', models.ForeignKey(db_column='Selected_Candidate_ID', null=True, on_delete=django.db.models.deletion.DO_NOTHING, to='candidate.selected_candidates')),
-            ],
-            options={
-                'db_table': 'Candidate_PF_Details',
-            },
-        ),
         migrations.CreateModel(
             name='CandidatePersonalInfo',
             fields=[

@@ -257,6 +257,10 @@ class  CandidatePutSerializer(serializers.ModelSerializer):
 class  CandidateDetailsGridSerializer(serializers.ModelSerializer):
     stage_name = serializers.CharField(read_only=True, source="Stage.StageDesc")
     Job_Code = serializers.CharField(read_only=True, source="Jobpost.JobCode")
+    CanJobLocation = serializers.CharField(read_only=True, source="Location.LocationName")
+    CanEmploymentType = serializers.CharField(read_only=True, source="EmploymentType")
+    CanDuration = serializers.CharField(read_only=True, source="Duration")
+    
     approversDetails = serializers.SerializerMethodField()     
     candidatefullname=serializers.SerializerMethodField()
 

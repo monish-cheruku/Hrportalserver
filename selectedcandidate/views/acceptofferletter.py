@@ -16,13 +16,13 @@ class Acceptofferletter(ModelViewSet):
             #     selcanobj.update(
             #         IsOfferAccepted=True
             #     )
-            selectedcandidatedocsobarr=CandidateDocumentsUpload.objects.filter(selectedcandidate=request.data["selectedcandidateid"],verified=None).update(verified=False)
+            selectedcandidatedocsobarr=CandidateDocumentsUpload.objects.filter(selectedcandidate=request.data["selectedcandidateid"],verified=None).update(verified='pending')
             # for i in selectedcandidatedocsobarr:
             #     print(i.file)
             #     if i.verified is None:
             #         i.objects.update(
             #             verified=False
             #         )
-            return  Response("Offer Letter Accepted",status=status.HTTP_200_OK)
+            return  Response("Details has been saved successfully",status=status.HTTP_200_OK)
         except Exception as e:
              return  Response(e,status=status.HTTP_400_BAD_REQUEST)

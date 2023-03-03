@@ -37,11 +37,14 @@ class Candidateinfoclearance(ModelViewSet):
 
             if otherdocsob.filter(detailtype="Pan").__len__()<1:
                 res["validation"]=False
-                res["messages"].append("Please Upload Your Pan")
+                res["messages"].append("Please Upload Your PAN")
 
             if otherdocsob.filter(detailtype="Aadhar").__len__()<1:
                 res["validation"]=False
                 res["messages"].append("Please Upload Your Aadhar")
+            if otherdocsob.filter(detailtype="Signedofferletter").__len__()<1:
+                res["validation"]=False        
+                res["messages"].append("Please Upload Your Signed Offer Letter")    
 
             # if otherdocsob.filter(detailtype="Passport").__len__()<1:
             #     res["validation"]=False
