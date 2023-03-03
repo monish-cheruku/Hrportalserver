@@ -58,7 +58,7 @@ class  JobPostDetailsPostSerializer(serializers.ModelSerializer):
     ServiceLine = serializers.IntegerField()
     Customer = serializers.IntegerField()
     Location = serializers.IntegerField()
-    ExperianceLevel = serializers.IntegerField()
+    # ExperianceLevel = serializers.IntegerField()
     Industry = serializers.IntegerField()
     BH_User_Name = serializers.CharField()
     HR_User_Name = serializers.CharField()
@@ -81,7 +81,7 @@ class  JobPostDetailsPostSerializer(serializers.ModelSerializer):
         company = Company.objects.filter(CompanyId=validated_data["Company"]).first()
         businessUnit = BusinessUnit.objects.filter(BusinessUnitId=validated_data["BusinessUnit"]).first()
         location = Location.objects.filter(LocationId=validated_data["Location"]).first()
-        experience = Experience.objects.filter(ExperienceLevelId=validated_data["ExperianceLevel"]).first()
+        # experience = Experience.objects.filter(ExperienceLevelId=validated_data["ExperianceLevel"]).first()
         user = User.objects.get(username=validated_data["UserName"])
         max =  JobPost.objects.all().aggregate(Max('JobPostId'))
         count = JobPost.objects.count()
@@ -128,7 +128,7 @@ class  JobPostDetailsPostSerializer(serializers.ModelSerializer):
             JobTitle =validated_data["JobTitle"],
             JobDesc =validated_data["JobDesc"],
             NoOfPositions = validated_data["NoOfPositions"],
-            ExperianceLevel = experience,
+            # ExperianceLevel = experience,
             Qualification = validated_data["Qualification"],
             OnBoardingDate = validated_data["OnBoardingDate"],
             POReference = validated_data["POReference"],
@@ -148,7 +148,7 @@ class  JobPostDetailsPostSerializer(serializers.ModelSerializer):
         company = Company.objects.filter(CompanyId=validated_data["Company"]).first()
         businessUnit = BusinessUnit.objects.filter(BusinessUnitId=validated_data["BusinessUnit"]).first()
         location = Location.objects.filter(LocationId=validated_data["Location"]).first()
-        experience = Experience.objects.filter(ExperienceLevelId=validated_data["ExperianceLevel"]).first()
+        # experience = Experience.objects.filter(ExperienceLevelId=validated_data["ExperianceLevel"]).first()
         user = User.objects.get(username=validated_data["UserName"])
 
         substr = instance.JobCode.split("-")[2]
@@ -167,7 +167,7 @@ class  JobPostDetailsPostSerializer(serializers.ModelSerializer):
         instance.Duration =validated_data.get('Duration', instance.Duration)
         instance.JobDesc =validated_data.get('JobDesc', instance.JobDesc)
         instance.NoOfPositions =validated_data.get('NoOfPositions', instance.NoOfPositions)
-        instance.ExperianceLevel = experience
+        # instance.ExperianceLevel = experience
         instance.Qualification = validated_data.get('Qualification', instance.Qualification) 
         instance.OnBoardingDate =validated_data.get('OnBoardingDate', instance.OnBoardingDate)
         instance.POReference = validated_data.get('POReference', instance.POReference)
@@ -212,7 +212,7 @@ class  JobPostDetailsPostSerializer(serializers.ModelSerializer):
             "MinimumExperiance",
             "MaximumExperiance",
             "MaximumCTC",
-            "ExperianceLevel" ,     
+            # "ExperianceLevel" ,     
             # "CreatedBy",
             # "ModifiedBy",
             "BH_User_Name",
