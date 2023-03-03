@@ -4,12 +4,15 @@
 {% endblock %}
 
 {% block subject %}
-  Dear {{businesshead}}
+  Dear {{HR}}
 {% endblock %}
-   
-{% block body %} 
+
+{% block body %}
 <p style="font-size: 0.9rem; font-weight: lighter; font-family: Verdana, Geneva, sans-serif;">
-  Candidate with {{CandidateCode}} has been selected HR interview taken by {{recruitername}} 
+  Candidate {{CandidateCode}} has been approved by {{generalmanager}}.
+</p> 
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Verdana, Geneva, sans-serif;"> 
+  Kindly generate offer letter and login credentials to the Candidate using below HR Workflow application url. 
 </p>
 
 <p style="font-size: 0.9rem; font-weight: lighter; font-family: Verdana, Geneva, sans-serif;">

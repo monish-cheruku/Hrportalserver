@@ -22,6 +22,7 @@ class Verifydocument(ModelViewSet):
         # do = CandidateDocumentsUpload.objects.filter(
         #     id=request.data["fileid"]).update(verified=request.data["verified"])
         candidatedocob= CandidateDocumentsUpload.objects.get(id=request.data["fileid"])
+        selcanid=candidatedocob.selectedcandidate_id
         if request.data["verified"]=='verified':
             candidatedocob.verified="verified"
             candidatedocob.verificationcomments=""
@@ -30,6 +31,15 @@ class Verifydocument(ModelViewSet):
             candidatedocob.verified="rejected"
             candidatedocob.verificationcomments=request.data["verificationcomments"]
             candidatedocob.save()
+
+        #check all other documents for candidate and update verification status in selected candidate table
+        # alldocs=CandidateDocumentsUpload.objects.filter(selectedcandidate=selcanid)
+        # for i in alldocs:
+        #     i.se
+
+
+        
+        #prev pending curent verified status trigger mail
 
         return Response("document verification updated", status=status.HTTP_200_OK)
     except Exception as e:

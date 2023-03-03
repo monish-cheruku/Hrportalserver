@@ -4,6 +4,7 @@ from jobpost.models.jobpostmodel import JobPost
 from managestages.models import Stage
 import os
 from ManageLocation.models import Location
+from ManageExperienceLevel.models import Experience
 
 
 class Candidate(models.Model):
@@ -42,6 +43,8 @@ class Candidate(models.Model):
     Location = models.ForeignKey(Location, null =True, on_delete=models.CASCADE, db_column='Location_ID')
     EmploymentType = models.CharField(null=True,max_length=30  , db_column='Employment_Type')
     Duration = models.IntegerField(null=True, db_column='Duration')
+    ExperianceLevel = models.ForeignKey(Experience, null =True, on_delete=models.CASCADE, db_column='Experience_Level_ID')
+
    
     class Meta:    
         db_table = 'HW_Candidate_Details'

@@ -39,7 +39,7 @@ class JobPostActionModel(models.Model):
     customer_name = models.CharField(max_length=50, db_column='Customer_Name')
     Location_ID=models.IntegerField(db_column="Location_ID")
     location_name = models.CharField(max_length=50, db_column='Location_Name')
-    experience_Level = models.CharField(max_length=50, db_column='Experience_Level')
+    # experience_Level = models.CharField(max_length=50, db_column='Experience_Level')
     AvgApprovedCTC=models.FloatField(db_column="Avg_Approved_CTC")
     AvgBillRate=models.FloatField(db_column="Avg_Bill_Rate")
     MaximumExperiance=models.FloatField(db_column="Maximum_Experiance")

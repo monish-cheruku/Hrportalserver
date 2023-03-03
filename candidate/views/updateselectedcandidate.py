@@ -89,15 +89,18 @@ class updateselectedcandidate(ModelViewSet):
             salary=request.data["FinalCTC"]
             hourspermonth = request.data["NoOfHours"]  
             duration = request.data["Duration"]  
+            Responsibilities=request.data["Responsibilities"]
              
            
             sco =  Selected_Candidates.objects.filter(Selected_Candidate_ID=request.data["selectedcandidateid"]).update(
+
                 designation= designation,      
                 DateOfJoining=startdate,
                 FinalCTC = salary,
                 EndDate = enddate,
                 NoOfHours = hourspermonth,
                 Duration = duration,                
+                Responsibilities=Responsibilities,
                 Modified_By=request.data["Modified_By"],
                 Modified_On=datetime.now(),
 
