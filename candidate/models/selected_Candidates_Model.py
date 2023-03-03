@@ -45,6 +45,7 @@ class Selected_Candidates(models.Model):
     NoOfHours=models.IntegerField(null=True, default=None)
     Duration = models.IntegerField(null=True, default=None,db_column='Duration')
     JoiningBonusLetter = models.FileField(upload_to=get_upload_path1,null=True,default=None,db_column="JoiningBonus_Letter")
+    Responsibilities=models.CharField(max_length=2000,null=True,db_column="Responsibilities")
 
     class Meta:  
         db_table="Selected_Candidates"
