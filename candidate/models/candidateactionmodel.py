@@ -1,5 +1,7 @@
 from django.db import models
 
+from ManageExperienceLevel.models import Experience
+
 class CandidateActionModel(models.Model):
     id = models.BigIntegerField(primary_key=True)
     CandidateApprovalID = models.BigIntegerField(db_column='Candidate_Approval_ID')
@@ -53,7 +55,7 @@ class CandidateActionModel(models.Model):
     serviceline_name = models.CharField(max_length=50, db_column='Service_Line_Name')
     customer_name = models.CharField(max_length=50, db_column='Customer_Name')
     location_name = models.CharField(max_length=50, db_column='Location_Name')
-    experience_Level = models.CharField(max_length=50, db_column='Experience_Level')
+    ExperianceLevel = models.ForeignKey(Experience, null =True, on_delete=models.CASCADE, db_column='Experience_Level')
     DefAvgApprovedCTC = models.IntegerField(db_column='Avg_Approved_CTC')
     DefAvgBillRate = models.IntegerField(db_column='Avg_Bill_Rate')
     MinimumExperiance = models.IntegerField(db_column='Minimum_Experiance')

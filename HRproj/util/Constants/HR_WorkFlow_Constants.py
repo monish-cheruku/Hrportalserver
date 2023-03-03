@@ -27,7 +27,8 @@ class Constants1():
     STAGE_HM_HOLD = "HM Hold"
     HR_HOLD = "HR Hold"
     STAGE_HR_HOLD = "HR Hold"
-    REJECTED = "Rejected"
+    HM_REJECTED = "Rejected at technical interview"
+    HR_REJECTED = "Rejected at HR interview"
     STAGE_REJECTED = "Candidate Rejected"
     # STAGE_SHORTLIST="HR Interview"
     SHORTLIST = "Shortlisted"
@@ -35,7 +36,7 @@ class Constants1():
     HR_SHORTLISTED = "HR Shortlisted"
 
     STAGE_FURTHERREVIEW = "Further Review"
-    FURTHERREVIEW = "Further Review"
+    HM_FURTHER_REVIEW = "Further Review"
     SELECTED = "Selected"
     STAGE_SELECTED = "Selected"
 
@@ -53,3 +54,4 @@ class Constants1():
     GM_Approval_REJECTED = "GM Approval Rejected"
 
     STAGE_BH_CANDIDATE_APPROVAL = "BH Candidate Approval"
+    HR_OFFER_LETTER_PROCESS = ""
